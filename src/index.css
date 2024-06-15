@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  color: #000;
+  font-size: 14px;
+  font-weight: normal;
+  background: #fff;
+}
+
+
+/* Webkit Scrollbar Styles */
+.sidebar-custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  background-color: transparent;
+}
+
+.sidebar-custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #2c5282;
+  border-radius: 10px;
+  opacity: 0; /* Initially hidden */
+}
+
+.sidebar-custom-scrollbar:hover::-webkit-scrollbar-thumb {
+  opacity: 1; /* Visible on hover */
+}
+
+.sidebar-custom-scrollbar::-webkit-scrollbar-track {
+  background-color: transparent;
+}
