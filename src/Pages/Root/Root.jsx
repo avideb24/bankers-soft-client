@@ -4,11 +4,11 @@ import Sidebar from "../../components/Shared/Sidebar/Sidebar";
 
 const Root = () => {
     return (
-        <div className="flex gap-0">
-            <div className="w-3/12">
+        <div className="lg:flex">
+            <div className="min-w-72 max-w-[25%] absolute -left-72 lg:static">
                 <Sidebar />
             </div>
-            <div className="w-9/12">
+            <div className="">
                 <Outlet />
             </div>
         </div>

@@ -37,7 +37,7 @@ const Sidebar = () => {
     };
 
     return (
-        <div className="min-h-screen overflow-y-scroll sidebar-custom-scrollbar bg-transparent flex flex-col items-start gap-3 text-black px-8 py-5 text-base shadow-xl">
+        <div className="w-full min-h-screen overflow-y-scroll sidebar-custom-scrollbar bg-transparent flex flex-col items-start gap-3 text-black px-8 py-5 text-base shadow-xl">
 
             {/* logo */}
             <Link to={'/'} className="text-3xl font-bold py-2">Bankers</Link>
