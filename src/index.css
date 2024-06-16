@@ -10,22 +10,33 @@ body{
 }
 
 
-/* Webkit Scrollbar Styles */
-.sidebar-custom-scrollbar::-webkit-scrollbar {
-  width: 8px;
-  background-color: transparent;
+/* website custom scrollbar */
+::-webkit-scrollbar{
+  width: 4px;
+}
+::-webkit-scrollbar-thumb{
+  background: #BDC3C7;
+  border-radius: 20px;
+}
+::-webkit-scrollbar-track{
+  background: transparent;
 }
 
-.sidebar-custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #2c5282;
-  border-radius: 10px;
-  opacity: 0; /* Initially hidden */
+/* sidebar custom scrollbar */
+.sidebar-custom-scrollbar::-webkit-scrollbar{
+  width: 0px;
+}
+.sidebar-custom-scrollbar::-webkit-scrollbar-track{
+  background: transparent;
+}
+.sidebar-custom-scrollbar:hover::-webkit-scrollbar{
+  width: 4px;
+}
+.sidebar-custom-scrollbar::-webkit-scrollbar-thumb{
+  background: #BDC3C7;
+  border-radius: 20px;
 }
 
-.sidebar-custom-scrollbar:hover::-webkit-scrollbar-thumb {
-  opacity: 1; /* Visible on hover */
-}
 
-.sidebar-custom-scrollbar::-webkit-scrollbar-track {
-  background-color: transparent;
-}
+
+

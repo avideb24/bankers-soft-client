@@ -18,6 +18,7 @@ const SidebarLink = ({ to, icon: Icon, iconSize, children }) => (
     </NavLink>
 );
 
+
 const Sidebar = () => {
     const [expandMenus, setExpandMenus] = useState({
         users: false,
@@ -37,7 +38,7 @@ const Sidebar = () => {
     };
 
     return (
-        <div className="w-full min-h-screen overflow-y-scroll sidebar-custom-scrollbar bg-transparent flex flex-col items-start gap-3 text-black px-8 py-5 text-base shadow-xl">
+        <div className="w-full min-h-screen bg-transparent flex flex-col items-start gap-3 text-black px-8 py-5 text-base shadow-xl">
 
             {/* logo */}
             <Link to={'/'} className="text-3xl font-bold py-2">Bankers</Link>
@@ -100,6 +101,105 @@ const Sidebar = () => {
                     <SidebarLink to='/' icon={RiFlowerFill}>Insurance</SidebarLink>
                 </div>
             </div>
+
+
+
+
+
+
+{/* accounts */}
+<button className="w-full flex justify-between items-center gap-2" onClick={() => toggleMenu('accounts')}>
+                <span className="flex items-center gap-2"><BsPieChartFill />Accounts</span>
+                <IoIosArrowDown className={expandMenus.accounts ? 'rotate-180 duration-200' : 'duration-200'} />
+            </button>
+            <div className={`overflow-hidden transition-all duration-300 ${expandMenus.accounts ? 'max-h-96' : 'max-h-0'}`}>
+                <div className="flex flex-col gap-3 ml-8">
+                    <SidebarLink to='/' icon={RiStackshareFill}>Share</SidebarLink>
+                    <SidebarLink to='/' icon={RiBankCardFill }>Savings</SidebarLink>
+                    <SidebarLink to='/' icon={RiDonutChartFill}>Fixed Deposite</SidebarLink>
+                    <SidebarLink to='/' icon={SiGoogletagmanager}>DPS</SidebarLink>
+                    <SidebarLink to='/' icon={BsGridFill }>Loan</SidebarLink>
+                    <SidebarLink to='/' icon={RiFlowerFill}>Insurance</SidebarLink>
+                </div>
+            </div>{/* accounts */}
+            <button className="w-full flex justify-between items-center gap-2" onClick={() => toggleMenu('accounts')}>
+                <span className="flex items-center gap-2"><BsPieChartFill />Accounts</span>
+                <IoIosArrowDown className={expandMenus.accounts ? 'rotate-180 duration-200' : 'duration-200'} />
+            </button>
+            <div className={`overflow-hidden transition-all duration-300 ${expandMenus.accounts ? 'max-h-96' : 'max-h-0'}`}>
+                <div className="flex flex-col gap-3 ml-8">
+                    <SidebarLink to='/' icon={RiStackshareFill}>Share</SidebarLink>
+                    <SidebarLink to='/' icon={RiBankCardFill }>Savings</SidebarLink>
+                    <SidebarLink to='/' icon={RiDonutChartFill}>Fixed Deposite</SidebarLink>
+                    <SidebarLink to='/' icon={SiGoogletagmanager}>DPS</SidebarLink>
+                    <SidebarLink to='/' icon={BsGridFill }>Loan</SidebarLink>
+                    <SidebarLink to='/' icon={RiFlowerFill}>Insurance</SidebarLink>
+                </div>
+            </div>{/* accounts */}
+            <button className="w-full flex justify-between items-center gap-2" onClick={() => toggleMenu('accounts')}>
+                <span className="flex items-center gap-2"><BsPieChartFill />Accounts</span>
+                <IoIosArrowDown className={expandMenus.accounts ? 'rotate-180 duration-200' : 'duration-200'} />
+            </button>
+            <div className={`overflow-hidden transition-all duration-300 ${expandMenus.accounts ? 'max-h-96' : 'max-h-0'}`}>
+                <div className="flex flex-col gap-3 ml-8">
+                    <SidebarLink to='/' icon={RiStackshareFill}>Share</SidebarLink>
+                    <SidebarLink to='/' icon={RiBankCardFill }>Savings</SidebarLink>
+                    <SidebarLink to='/' icon={RiDonutChartFill}>Fixed Deposite</SidebarLink>
+                    <SidebarLink to='/' icon={SiGoogletagmanager}>DPS</SidebarLink>
+                    <SidebarLink to='/' icon={BsGridFill }>Loan</SidebarLink>
+                    <SidebarLink to='/' icon={RiFlowerFill}>Insurance</SidebarLink>
+                </div>
+            </div>{/* accounts */}
+            <button className="w-full flex justify-between items-center gap-2" onClick={() => toggleMenu('accounts')}>
+                <span className="flex items-center gap-2"><BsPieChartFill />Accounts</span>
+                <IoIosArrowDown className={expandMenus.accounts ? 'rotate-180 duration-200' : 'duration-200'} />
+            </button>
+            <div className={`overflow-hidden transition-all duration-300 ${expandMenus.accounts ? 'max-h-96' : 'max-h-0'}`}>
+                <div className="flex flex-col gap-3 ml-8">
+                    <SidebarLink to='/' icon={RiStackshareFill}>Share</SidebarLink>
+                    <SidebarLink to='/' icon={RiBankCardFill }>Savings</SidebarLink>
+                    <SidebarLink to='/' icon={RiDonutChartFill}>Fixed Deposite</SidebarLink>
+                    <SidebarLink to='/' icon={SiGoogletagmanager}>DPS</SidebarLink>
+                    <SidebarLink to='/' icon={BsGridFill }>Loan</SidebarLink>
+                    <SidebarLink to='/' icon={RiFlowerFill}>Insurance</SidebarLink>
+                </div>
+            </div>{/* accounts */}
+            <button className="w-full flex justify-between items-center gap-2" onClick={() => toggleMenu('accounts')}>
+                <span className="flex items-center gap-2"><BsPieChartFill />Accounts</span>
+                <IoIosArrowDown className={expandMenus.accounts ? 'rotate-180 duration-200' : 'duration-200'} />
+            </button>
+            <div className={`overflow-hidden transition-all duration-300 ${expandMenus.accounts ? 'max-h-96' : 'max-h-0'}`}>
+                <div className="flex flex-col gap-3 ml-8">
+                    <SidebarLink to='/' icon={RiStackshareFill}>Share</SidebarLink>
+                    <SidebarLink to='/' icon={RiBankCardFill }>Savings</SidebarLink>
+                    <SidebarLink to='/' icon={RiDonutChartFill}>Fixed Deposite</SidebarLink>
+                    <SidebarLink to='/' icon={SiGoogletagmanager}>DPS</SidebarLink>
+                    <SidebarLink to='/' icon={BsGridFill }>Loan</SidebarLink>
+                    <SidebarLink to='/' icon={RiFlowerFill}>Insurance</SidebarLink>
+                </div>
+            </div>{/* accounts */}
+            <button className="w-full flex justify-between items-center gap-2" onClick={() => toggleMenu('accounts')}>
+                <span className="flex items-center gap-2"><BsPieChartFill />Accounts</span>
+                <IoIosArrowDown className={expandMenus.accounts ? 'rotate-180 duration-200' : 'duration-200'} />
+            </button>
+            <div className={`overflow-hidden transition-all duration-300 ${expandMenus.accounts ? 'max-h-96' : 'max-h-0'}`}>
+                <div className="flex flex-col gap-3 ml-8">
+                    <SidebarLink to='/' icon={RiStackshareFill}>Share</SidebarLink>
+                    <SidebarLink to='/' icon={RiBankCardFill }>Savings</SidebarLink>
+                    <SidebarLink to='/' icon={RiDonutChartFill}>Fixed Deposite</SidebarLink>
+                    <SidebarLink to='/' icon={SiGoogletagmanager}>DPS</SidebarLink>
+                    <SidebarLink to='/' icon={BsGridFill }>Loan</SidebarLink>
+                    <SidebarLink to='/' icon={RiFlowerFill}>Insurance</SidebarLink>
+                </div>
+            </div>  
+
+
+
+
+
+
+
+
 
             {/* banking */}
             <SidebarLink to='/' icon={PiBankFill} iconSize={'text-xl'}>Banking</SidebarLink>
