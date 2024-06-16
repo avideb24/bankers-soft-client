@@ -42,7 +42,7 @@ const Sidebar = ({showSidebar,setShowSidebar}) => {
     return (
         <div className={`w-80 lg:w-[25%] h-full overflow-y-scroll fixed z-50 top-0  ${showSidebar ? 'left-0' : '-left-full'} lg:left-0 sidebar-custom-scrollbar flex items-start duration-300`}>
 
-            <div className="w-full min-h-screen bg-white flex flex-col items-start gap-3 text-black px-8 py-5 text-base shadow-xl">
+            <div className="w-full min-h-screen bg-white flex flex-col items-start gap-3 text-black px-8 py-5 text-base shadow-xl relative">
 
                 {/* logo */}
                 <Link to={'/'} className="text-3xl font-bold py-2">Bankers</Link>
@@ -216,7 +216,7 @@ const Sidebar = ({showSidebar,setShowSidebar}) => {
             </div>
 
              {/* mobile - menu hide btn */}
-             <button onClick={() => setShowSidebar(false)} className="text-2xl bg-white border-2 text-primary-color border-primary-color mt-3 lg:hidden"><FaXmark /></button>
+             <button onClick={() => setShowSidebar(false)} className="absolute top-3 right-4 text-2xl bg-white border-2 text-primary-color border-primary-color mt-3 lg:hidden"><FaXmark /></button>
 
         </div>
     );
