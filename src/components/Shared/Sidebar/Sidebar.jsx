@@ -71,7 +71,7 @@ const Sidebar = ({showSidebar,setShowSidebar}) => {
                     <div className="flex flex-col gap-3 ml-8">
                         <SidebarLink to='/area' icon={MdSpaceDashboard}>Area</SidebarLink>
                         <SidebarLink to='/add-customer' icon={RiUserAddFill}>Add New</SidebarLink>
-                        <SidebarLink to='/' icon={FaUsers}>Customer List</SidebarLink>
+                        <SidebarLink to='/customers-list' icon={FaUsers}>Customer List</SidebarLink>
                         <SidebarLink to='/' icon={GrGrid}>Customer Laser</SidebarLink>
                     </div>
                 </div>

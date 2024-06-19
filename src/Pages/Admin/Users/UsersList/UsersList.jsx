@@ -14,7 +14,7 @@ const UsersList = () => {
                 <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4">
                     <h2 className="flex items-center gap-2 text-base font-bold"><FaUsers className="text-2xl" /> <span>All Users</span></h2>
                     <form className="flex items-center gap-2">
-                        <input type="text" className="w-full border-2 border-slate-200 bg-transparent px-2 py-[6px] rounded-sm outline-none" placeholder="Type user's name..." />
+                        <input type="text" className="w-full border-2 border-slate-200 bg-transparent px-2 py-[6px] rounded-sm outline-none" placeholder="User's name..." />
                         <button className="flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-sm">
                             <FaSearch />
                             <span>Search</span>
