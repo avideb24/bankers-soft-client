@@ -10,7 +10,7 @@ const Root = () => {
 
 
     return (
-        <div className="lg:flex min-h-screen max-w-screen-2xl 2xl:mx-auto bg-white text-black text-xs md:text-sm">
+        <div className="lg:flex min-h-screen max-w-screen-2xl 2xl:mx-auto text-xs md:text-sm">
             <div className="min-w-72 w-[25%] ">
                 <Sidebar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
             </div>

@@ -3,11 +3,24 @@
 @tailwind utilities;
 
 body{
-  color: #000;
+  color: black;
   font-size: 14px;
   font-weight: normal;
-  background: #fff;
+  background: #fbfbfb;
 }
+
+/* deafault input number css */
+/* Hide the arrow buttons */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Hide the arrow buttons in Firefox */
+input[type='number'] {
+    -moz-appearance: textfield;
+} 
 
 
 /* website custom scrollbar */
