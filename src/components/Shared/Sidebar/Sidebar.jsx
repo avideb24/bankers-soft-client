@@ -13,7 +13,7 @@ import { SiGoogletagmanager } from "react-icons/si";
 import { FaXmark } from "react-icons/fa6";
 
 const SidebarLink = ({ to, icon: Icon, iconSize, children }) => (
-    <NavLink to={to} className='flex items-center gap-2'>
+    <NavLink to={to} className='flex items-center gap-2 font-semibold'>
         <Icon className={iconSize} />
         {children}
     </NavLink>
@@ -52,7 +52,7 @@ const Sidebar = ({showSidebar,setShowSidebar}) => {
 
                 {/* users */}
                 <button className="w-full flex justify-between items-center gap-2" onClick={() => toggleMenu('users')}>
-                    <span className="flex items-center gap-2"><FaUserTie />Users</span>
+                    <span className="flex items-center gap-2 font-semibold"><FaUserTie />Users</span>
                     <IoIosArrowDown className={expandMenus.users ? 'rotate-180 duration-200' : 'duration-200'} />
                 </button>
                 <div className={`overflow-hidden transition-all duration-300 ${expandMenus.users ? 'max-h-96' : 'max-h-0'}`}>
@@ -64,13 +64,13 @@ const Sidebar = ({showSidebar,setShowSidebar}) => {
 
                 {/* customers */}
                 <button className="w-full flex justify-between items-center gap-2" onClick={() => toggleMenu('customers')}>
-                    <span className="flex items-center gap-2"><FaUserGroup />Customers</span>
+                    <span className="flex items-center gap-2 font-semibold"><FaUserGroup />Customers</span>
                     <IoIosArrowDown className={expandMenus.customers ? 'rotate-180 duration-200' : 'duration-200'} />
                 </button>
                 <div className={`overflow-hidden transition-all duration-300 ${expandMenus.customers ? 'max-h-96' : 'max-h-0'}`}>
                     <div className="flex flex-col gap-3 ml-8">
-                        <SidebarLink to='/' icon={MdSpaceDashboard}>Area</SidebarLink>
-                        <SidebarLink to='/' icon={RiUserAddFill}>Add New</SidebarLink>
+                        <SidebarLink to='/area' icon={MdSpaceDashboard}>Area</SidebarLink>
+                        <SidebarLink to='/add-customer' icon={RiUserAddFill}>Add New</SidebarLink>
                         <SidebarLink to='/' icon={FaUsers}>Customer List</SidebarLink>
                         <SidebarLink to='/' icon={GrGrid}>Customer Laser</SidebarLink>
                     </div>
@@ -78,7 +78,7 @@ const Sidebar = ({showSidebar,setShowSidebar}) => {
 
                 {/* reports */}
                 <button className="w-full flex justify-between items-center gap-2" onClick={() => toggleMenu('reports')}>
-                    <span className="flex items-center gap-2"><BsPieChartFill />Reports</span>
+                    <span className="flex items-center gap-2 font-semibold"><BsPieChartFill />Reports</span>
                     <IoIosArrowDown className={expandMenus.reports ? 'rotate-180 duration-200' : 'duration-200'} />
                 </button>
                 <div className={`overflow-hidden transition-all duration-300 ${expandMenus.reports ? 'max-h-96' : 'max-h-0'}`}>
@@ -92,7 +92,7 @@ const Sidebar = ({showSidebar,setShowSidebar}) => {
 
                 {/* accounts */}
                 <button className="w-full flex justify-between items-center gap-2" onClick={() => toggleMenu('accounts')}>
-                    <span className="flex items-center gap-2"><BsPieChartFill />Accounts</span>
+                    <span className="flex items-center gap-2 font-semibold"><BsPieChartFill />Accounts</span>
                     <IoIosArrowDown className={expandMenus.accounts ? 'rotate-180 duration-200' : 'duration-200'} />
                 </button>
                 <div className={`overflow-hidden transition-all duration-300 ${expandMenus.accounts ? 'max-h-96' : 'max-h-0'}`}>

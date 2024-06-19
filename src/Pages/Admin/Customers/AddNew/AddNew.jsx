@@ -1,13 +1,14 @@
 import { useState } from "react";
-import Header from "../../../../components/Shared/Header/Header";
 import { FaPlusCircle, FaSave } from "react-icons/fa";
 import { IoCloudUploadOutline } from "react-icons/io5";
+import Header from "../../../../components/Shared/Header/Header";
 
 
-const AddUser = () => {
+
+const AddNew = () => {
 
     const [gender, setGender] = useState(null);
-    const [designation, setDesignation] = useState(null);
+    const [area, setArea] = useState(null);
     const [image, setImage] = useState(null);
 
     const handleImageChange = (e) => {
@@ -17,9 +18,9 @@ const AddUser = () => {
     };
 
 
-    // add user 
-    const handleAddUser = e => {
+    const handleAddCustomer = e => {
         e.preventDefault();
+
         const form = e.target;
 
         const nameEn = form.nameEn.value;
@@ -31,31 +32,30 @@ const AddUser = () => {
         const permanentAddress = form.permanentAddress.value;
         const mobile = form.mobile.value;
         const password = form.password.value;
-        const joiningDate = form.joiningDate.value;
+        const acNumber = form.acNumber.value;
+        const registrationDate = form.registrationDate.value;
 
-        const newUser = {
-            nameEn, nameBn, fatherName, motherName, birthDate, presentAddress, permanentAddress, mobile, password, joiningDate, gender: gender, designation: designation
+        const newCustomer = {
+            nameEn, nameBn, fatherName, motherName, birthDate, presentAddress, permanentAddress, mobile, password, acNumber, registrationDate, gender: gender, area: area
         }
 
-        console.log(newUser);
+        console.log(newCustomer);
 
     }
 
 
 
-
     return (
         <div>
-
-            <Header title="New User" />
+            <Header title="New Customer" />
 
             <div className="bg-white px-5 m-4">
 
                 <div>
-                    <h2 className="text-base font-bold flex items-center gap-2 pb-3 border-b-2 border-b-slate-200 pt-6"><FaPlusCircle /> Add Your User</h2>
+                    <h2 className="text-base font-bold flex items-center gap-2 pb-3 border-b-2 border-b-slate-200 pt-6"><FaPlusCircle /> Add Your Customer</h2>
                 </div>
 
-                <form onSubmit={handleAddUser}>
+                <form onSubmit={handleAddCustomer}>
 
                     <div className="md:flex md:gap-4 pt-3 pb-3 border-b-2 border-b-slate-200">
                         <div className="md:w-10/12 space-y-4">
@@ -70,15 +70,18 @@ const AddUser = () => {
                                     <input type="text" name="nameBn" className="bg-transparent w-full border-2 px-2 py-1 mt-2 outline-none rounded-sm" placeholder='Type here...' id="nameBn" required />
                                 </div>
                                 <div>
-                                    <label htmlFor="date" className="font-bold">Date Of Birth</label>
-                                    <input type="date" name="birthdate" className="bg-transparent w-full border-2 px-2 py-1 mt-2 outline-none rounded-sm" id="date" required />
-                                </div>
-                                <div>
                                     <label htmlFor="gender" className="font-bold">Gender</label>
                                     <select name="" className="bg-transparent w-full border-2 px-2 py-1 mt-2 outline-none rounded-sm" id="gender" defaultValue={'df'} onChange={(e) => setGender(e.target.value)}>
                                         <option value="df" disabled>Choose One</option>
                                         <option value="Male">Male</option>
                                         <option value="Female">Female</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label htmlFor="area" className="font-bold">Area</label>
+                                    <select name="" className="bg-transparent w-full border-2 px-2 py-1 mt-2 outline-none rounded-sm" id="area" defaultValue={'df'} onChange={(e) => setArea(e.target.value)}>
+                                        <option value="df" disabled>Choose One</option>
+                                        <option value="Nilphamari">Nilphamari</option>
                                     </select>
                                 </div>
                             </div>
@@ -104,7 +107,7 @@ const AddUser = () => {
                             </div>
 
                             {/* 3rd row */}
-                            <div className="w-full grid grid-cols-2 md:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4 gap-2">
+                            <div className="w-full grid grid-cols-2 md:grid-cols-5 lg:grid-cols-2 xl:grid-cols-5 gap-2">
                                 <div>
                                     <label htmlFor="number" className="font-bold">Mobile</label>
                                     <input type="number" name="mobile" className="bg-transparent w-full border-2 px-2 py-1 mt-2 outline-none rounded-sm" placeholder='Type here...' id="number" required />
@@ -114,17 +117,16 @@ const AddUser = () => {
                                     <input type="password" name="password" className="bg-transparent w-full border-2 px-2 py-1 mt-2 outline-none rounded-sm" placeholder='Type here...' id="password" required />
                                 </div>
                                 <div>
-                                    <label htmlFor="joiningDate" className="font-bold">Joining Date</label>
-                                    <input type="date" name="joiningDate" className="bg-transparent w-full border-2 px-2 py-1 mt-2 outline-none rounded-sm" id="joiningDate" required />
+                                    <label htmlFor="acNumber" className="font-bold">Account Number</label>
+                                    <input type="number" name="acNumber" className="bg-transparent w-full border-2 px-2 py-1 mt-2 outline-none rounded-sm" placeholder='Type here...' id="acNumber" required />
                                 </div>
                                 <div>
-                                    <label htmlFor="designation" className="font-bold"> Designation</label>
-                                    <select name="" className="bg-transparent w-full border-2 px-2 py-1 mt-2 outline-none rounded-sm" id="designation" defaultValue={'df'} onChange={(e) => setDesignation(e.target.value)}>
-                                        <option value="df" disabled>Choose One</option>
-                                        <option value="manager">Manager</option>
-                                        <option value="assistant">Asistant</option>
-                                        <option value="shareHolder">Share Holder</option>
-                                    </select>
+                                    <label htmlFor="date" className="font-bold">Date Of Birth</label>
+                                    <input type="date" name="birthdate" className="bg-transparent w-full border-2 px-2 py-1 mt-2 outline-none rounded-sm" id="date" required />
+                                </div>
+                                <div>
+                                    <label htmlFor="registrationDate" className="font-bold">Registration Date</label>
+                                    <input type="date" name="registrationDate" className="bg-transparent w-full border-2 px-2 py-1 mt-2 outline-none rounded-sm" id="registrationDate" required />
                                 </div>
                             </div>
                         </div>
@@ -156,4 +158,4 @@ const AddUser = () => {
     );
 };
 
-export default AddUser;
+export default AddNew;

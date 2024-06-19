@@ -4,6 +4,8 @@ import Root from "../Pages/Root/Root";
 import Home from "../Pages/Home/Home";
 import AddUser from "../Pages/Admin/Users/AddUser/AddUser";
 import UsersList from "../Pages/Admin/Users/UsersList/UsersList";
+import Area from "../Pages/Admin/Customers/Area/Area";
+import AddNew from "../Pages/Admin/Customers/AddNew/AddNew";
 
 
 const Routes = createBrowserRouter([
@@ -23,6 +25,14 @@ const Routes = createBrowserRouter([
             {
                 path: '/userslist',
                 element: <UsersList />
+            },
+            {
+                path: '/area',
+                element: <Area />
+            },
+            {
+                path: '/add-customer',
+                element: <AddNew />
             },
         ]
     }
