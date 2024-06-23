@@ -49,7 +49,9 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
                 <Link to={'/'} className="text-3xl font-bold py-2">Bankers</Link>
 
                 {/* dashboard */}
-                <SidebarLink to='/' icon={MdOutlineDesktopMac}>Dashboard</SidebarLink>
+                <div className="pb-1">
+                    <SidebarLink to='/' icon={MdOutlineDesktopMac}>Dashboard</SidebarLink>
+                </div>
 
                 {/* users */}
                 <button className="w-full flex justify-between items-center gap-5" onClick={() => toggleMenu('users')}>
@@ -111,18 +113,24 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
                 <SidebarLink to='/' icon={PiBankFill} iconSize={'text-xl'}>Banking</SidebarLink>
 
                 {/* income - expenditure */}
-                <SidebarLink to='/' icon={BsGraphUp} iconSize={'text-base'}>Income - Expenditure</SidebarLink>
+                <div className="py-2">
+                    <SidebarLink to='/' icon={BsGraphUp} iconSize={'text-base'}>Income - Expenditure</SidebarLink>
+                </div>
 
                 {/* salary */}
                 <SidebarLink to='/' icon={FaMoneyCheckDollar} iconSize={'text-base'}>Salaries of Employees</SidebarLink>
 
                 {/* profits */}
-                <SidebarLink to='/' icon={MdGraphicEq} iconSize={'text-xl'}>Profitsa of Distribution</SidebarLink>
+                <div className="py-2">
+                    <SidebarLink to='/' icon={MdGraphicEq} iconSize={'text-xl'}>Profitsa of Distribution</SidebarLink>
+                </div>
 
                 <div className="w-full h-[1px] bg-slate-200"></div>
 
                 {/* help center */}
-                <SidebarLink to='/' icon={MdOutlineSupportAgent} iconSize={'text-xl'}>Help Center</SidebarLink>
+                <div className="py-2">
+                    <SidebarLink to='/' icon={MdOutlineSupportAgent} iconSize={'text-xl'}>Help Center</SidebarLink>
+                </div>
 
                 {/* logout */}
                 <SidebarLink to='/' icon={ImSwitch} iconSize={'text-base'}>Log Out</SidebarLink>
