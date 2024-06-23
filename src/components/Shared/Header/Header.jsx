@@ -24,7 +24,7 @@ const Header = ({ title }) => {
                             :
                             <h1 className='text-base lg:text-xl font-semibold'>{title}</h1>
                     }
-                    <button className='bg-primary-color text-white font-semibold px-3 py-1 rounded-md'>+ Add New</button>
+                    <button className='bg-primary-color text-white font-semibold px-3 py-1 rounded-sm'>+ Add New</button>
                 </div>
             </div>
         </div>

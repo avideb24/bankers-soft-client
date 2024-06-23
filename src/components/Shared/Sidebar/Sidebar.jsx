@@ -73,7 +73,7 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
                         <SidebarLink to='/area' icon={MdSpaceDashboard}>Area</SidebarLink>
                         <SidebarLink to='/add-customer' icon={RiUserAddFill}>Add New</SidebarLink>
                         <SidebarLink to='/customers-list' icon={FaUsers}>Customer List</SidebarLink>
-                        <SidebarLink to='/' icon={GrGrid}>Customer Laser</SidebarLink>
+                        <SidebarLink to='/customer-laser' icon={GrGrid}>Customer Laser</SidebarLink>
                     </div>
                 </div>
 

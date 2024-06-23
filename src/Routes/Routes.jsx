@@ -7,6 +7,7 @@ import UsersList from "../Pages/Admin/Users/UsersList/UsersList";
 import Area from "../Pages/Admin/Customers/Area/Area";
 import AddNew from "../Pages/Admin/Customers/AddNew/AddNew";
 import CustomersList from "../Pages/Admin/Customers/CustomersList/CustomersList";
+import CustomerLaser from "../Pages/Admin/Customers/CustomerLaser/CustomerLaser";
 
 
 const Routes = createBrowserRouter([
@@ -38,6 +39,10 @@ const Routes = createBrowserRouter([
             {
                 path: '/customers-list',
                 element: <CustomersList />
+            },
+            {
+                path: '/customer-laser',
+                element: <CustomerLaser />
             },
         ]
     }
