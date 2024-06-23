@@ -1,26 +1,27 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import PropTypes from 'prop-types';
-import { MdOutlineDesktopMac, MdSpaceDashboard, MdMessage, MdSettings } from "react-icons/md";
+import { MdOutlineDesktopMac, MdSpaceDashboard, MdMessage, MdGraphicEq, MdOutlineSupportAgent } from "react-icons/md";
 import { FaUsers, FaUserTie } from "react-icons/fa";
 import { RiUserAddFill, RiDonutChartFill, RiStackshareFill, RiBankCardFill, RiFlowerFill } from "react-icons/ri";
-import { FaUserGroup } from "react-icons/fa6";
+import { FaUserGroup, FaMoneyCheckDollar, FaXmark } from "react-icons/fa6";
 import { GrGrid } from "react-icons/gr";
 import { IoIosArrowDown } from "react-icons/io";
-import { BsPieChartFill, BsBarChartLineFill, BsFileEarmarkSpreadsheetFill, BsGridFill } from "react-icons/bs";
+import { BsPieChartFill, BsBarChartLineFill, BsFileEarmarkSpreadsheetFill, BsGridFill, BsGraphUp } from "react-icons/bs";
 import { PiBankFill } from "react-icons/pi";
 import { SiGoogletagmanager } from "react-icons/si";
-import { FaXmark } from "react-icons/fa6";
+import { ImSwitch } from "react-icons/im";
 
 const SidebarLink = ({ to, icon: Icon, iconSize, children }) => (
-    <NavLink to={to} className='flex items-center gap-2 font-semibold'>
+    <NavLink to={to} className='flex items-center gap-5 font-semibold'>
         <Icon className={iconSize} />
         {children}
     </NavLink>
 );
 
 
-const Sidebar = ({showSidebar,setShowSidebar}) => {
+const Sidebar = ({ showSidebar, setShowSidebar }) => {
+
 
     const [expandMenus, setExpandMenus] = useState({
         users: false,
@@ -51,8 +52,8 @@ const Sidebar = ({showSidebar,setShowSidebar}) => {
                 <SidebarLink to='/' icon={MdOutlineDesktopMac}>Dashboard</SidebarLink>
 
                 {/* users */}
-                <button className="w-full flex justify-between items-center gap-2" onClick={() => toggleMenu('users')}>
-                    <span className="flex items-center gap-2 font-semibold"><FaUserTie />Users</span>
+                <button className="w-full flex justify-between items-center gap-5" onClick={() => toggleMenu('users')}>
+                    <span className="flex items-center gap-5 font-semibold"><FaUserTie />Users</span>
                     <IoIosArrowDown className={expandMenus.users ? 'rotate-180 duration-200' : 'duration-200'} />
                 </button>
                 <div className={`overflow-hidden transition-all duration-300 ${expandMenus.users ? 'max-h-96' : 'max-h-0'}`}>
@@ -64,7 +65,7 @@ const Sidebar = ({showSidebar,setShowSidebar}) => {
 
                 {/* customers */}
                 <button className="w-full flex justify-between items-center gap-2" onClick={() => toggleMenu('customers')}>
-                    <span className="flex items-center gap-2 font-semibold"><FaUserGroup />Customers</span>
+                    <span className="flex items-center gap-5 font-semibold"><FaUserGroup />Customers</span>
                     <IoIosArrowDown className={expandMenus.customers ? 'rotate-180 duration-200' : 'duration-200'} />
                 </button>
                 <div className={`overflow-hidden transition-all duration-300 ${expandMenus.customers ? 'max-h-96' : 'max-h-0'}`}>
@@ -78,7 +79,7 @@ const Sidebar = ({showSidebar,setShowSidebar}) => {
 
                 {/* reports */}
                 <button className="w-full flex justify-between items-center gap-2" onClick={() => toggleMenu('reports')}>
-                    <span className="flex items-center gap-2 font-semibold"><BsPieChartFill />Reports</span>
+                    <span className="flex items-center gap-6 font-semibold"><BsPieChartFill />Reports</span>
                     <IoIosArrowDown className={expandMenus.reports ? 'rotate-180 duration-200' : 'duration-200'} />
                 </button>
                 <div className={`overflow-hidden transition-all duration-300 ${expandMenus.reports ? 'max-h-96' : 'max-h-0'}`}>
@@ -92,7 +93,7 @@ const Sidebar = ({showSidebar,setShowSidebar}) => {
 
                 {/* accounts */}
                 <button className="w-full flex justify-between items-center gap-2" onClick={() => toggleMenu('accounts')}>
-                    <span className="flex items-center gap-2 font-semibold"><BsPieChartFill />Accounts</span>
+                    <span className="flex items-center gap-6 font-semibold"><BsPieChartFill />Accounts</span>
                     <IoIosArrowDown className={expandMenus.accounts ? 'rotate-180 duration-200' : 'duration-200'} />
                 </button>
                 <div className={`overflow-hidden transition-all duration-300 ${expandMenus.accounts ? 'max-h-96' : 'max-h-0'}`}>
@@ -109,15 +110,27 @@ const Sidebar = ({showSidebar,setShowSidebar}) => {
                 {/* banking */}
                 <SidebarLink to='/' icon={PiBankFill} iconSize={'text-xl'}>Banking</SidebarLink>
 
+                {/* income - expenditure */}
+                <SidebarLink to='/' icon={BsGraphUp} iconSize={'text-base'}>Income - Expenditure</SidebarLink>
+
+                {/* salary */}
+                <SidebarLink to='/' icon={FaMoneyCheckDollar} iconSize={'text-base'}>Salaries of Employees</SidebarLink>
+
+                {/* profits */}
+                <SidebarLink to='/' icon={MdGraphicEq} iconSize={'text-xl'}>Profitsa of Distribution</SidebarLink>
+
                 <div className="w-full h-[1px] bg-slate-200"></div>
 
-                {/* setting */}
-                <SidebarLink to='/' icon={MdSettings} iconSize={'text-xl'}>Setting</SidebarLink>
+                {/* help center */}
+                <SidebarLink to='/' icon={MdOutlineSupportAgent} iconSize={'text-xl'}>Help Center</SidebarLink>
+
+                {/* logout */}
+                <SidebarLink to='/' icon={ImSwitch} iconSize={'text-base'}>Log Out</SidebarLink>
 
             </div>
 
-             {/* mobile - menu hide btn */}
-             <button onClick={() => setShowSidebar(false)} className="absolute top-3 right-4 text-2xl bg-white border-2 text-primary-color border-primary-color mt-3 lg:hidden"><FaXmark /></button>
+            {/* mobile - menu hide btn */}
+            <button onClick={() => setShowSidebar(false)} className="absolute top-3 right-4 text-2xl bg-white border-2 text-primary-color border-primary-color mt-3 lg:hidden"><FaXmark /></button>
 
         </div>
     );
