@@ -41,7 +41,7 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
     };
 
     return (
-        <div className={`w-80 lg:w-[25%] h-full overflow-y-scroll fixed z-50 top-0  ${showSidebar ? 'left-0' : '-left-full'} lg:left-0 sidebar-custom-scrollbar flex items-start duration-300`}>
+        <div className={`w-72 lg:w-[20%] h-full overflow-y-scroll fixed z-50 top-0  ${showSidebar ? 'left-0' : '-left-full'} lg:left-0 sidebar-custom-scrollbar flex items-start duration-300`}>
 
             <div className="w-full min-h-screen bg-white flex flex-col items-start gap-3 text-black px-8 py-5 text-base shadow-xl relative">
 
@@ -69,7 +69,7 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
                     <IoIosArrowDown className={expandMenus.customers ? 'rotate-180 duration-200' : 'duration-200'} />
                 </button>
                 <div className={`overflow-hidden transition-all duration-300 ${expandMenus.customers ? 'max-h-96' : 'max-h-0'}`}>
-                    <div className="flex flex-col gap-3 ml-8">
+                    <div className="flex flex-col gap-3 ml-8 ">
                         <SidebarLink to='/area' icon={MdSpaceDashboard}>Area</SidebarLink>
                         <SidebarLink to='/add-customer' icon={RiUserAddFill}>Add New</SidebarLink>
                         <SidebarLink to='/customers-list' icon={FaUsers}>Customer List</SidebarLink>
@@ -84,8 +84,8 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
                 </button>
                 <div className={`overflow-hidden transition-all duration-300 ${expandMenus.reports ? 'max-h-96' : 'max-h-0'}`}>
                     <div className="flex flex-col gap-3 ml-8">
-                        <SidebarLink to='/' icon={RiDonutChartFill}>Sattlement Reports</SidebarLink>
-                        <SidebarLink to='/' icon={BsBarChartLineFill}>Coolection Reports</SidebarLink>
+                        <SidebarLink to='/settlement-reports' icon={RiDonutChartFill}>Sattlement Reports</SidebarLink>
+                        <SidebarLink to='/collection-reports' icon={BsBarChartLineFill}>Collection Reports</SidebarLink>
                         <SidebarLink to='/' icon={BsFileEarmarkSpreadsheetFill}>Collection Sheet</SidebarLink>
                         <SidebarLink to='/' icon={MdMessage}>Message Reports</SidebarLink>
                     </div>

@@ -8,6 +8,8 @@ import Area from "../Pages/Admin/Customers/Area/Area";
 import AddNew from "../Pages/Admin/Customers/AddNew/AddNew";
 import CustomersList from "../Pages/Admin/Customers/CustomersList/CustomersList";
 import CustomerLaser from "../Pages/Admin/Customers/CustomerLaser/CustomerLaser";
+import SettlementReports from "../Pages/Admin/Reports/SettlementReports/SettlementReports";
+import CollectionReports from "../Pages/Admin/Reports/CollectionReports/CollectionReports";
 
 
 const Routes = createBrowserRouter([
@@ -43,6 +45,14 @@ const Routes = createBrowserRouter([
             {
                 path: '/customer-laser',
                 element: <CustomerLaser />
+            },
+            {
+                path: '/settlement-reports',
+                element: <SettlementReports />
+            },
+            {
+                path: '/collection-reports',
+                element: <CollectionReports />
             },
         ]
     }
