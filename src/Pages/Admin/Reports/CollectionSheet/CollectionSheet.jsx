@@ -40,7 +40,7 @@ const CollectionSheet = () => {
 
                     {/* data table */}
                     <div className="overflow-x-scroll md:overscroll-none">
-                        <table className="w-full text-center border-collapse">
+                        <table className="bg bg-slate-100 w-full text-center border-collapse">
                             <thead>
                                 <tr>
                                     {
@@ -52,15 +52,29 @@ const CollectionSheet = () => {
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td className="border border-slate-300 p-1">24545</td>
+                                    <td className="border border-slate-300 p-1"><span className="text-base md:text-lg">৳</span>24545</td>
                                     <td className="border border-slate-300 p-1">Avi Debnath</td>
                                     <td className="border border-slate-300 p-1">01723622125</td>
-                                    <td className="border border-slate-300 p-1">5454</td>
-                                    <td className="grid grid-cols-2 gap-3 border border-slate-300 p-1 min-w-60">
-                                        <p className="flex justify-between"><span className="font-bold">Per Instalment</span>500</p>
-                                        <p className="flex justify-between"><span className="font-bold">Colletion</span>2000</p>
+                                    {/* savings */}
+                                    <td className="border border-slate-300 p-1">
+                                        <span className="text-base md:text-lg">৳</span>5454
                                     </td>
-                                    <td className="border border-slate-300 p-1">545</td>
+                                    <td className="grid grid-cols-2 items-center gap-3 border border-slate-300 p-1 min-w-60">
+                                        {/* per instalment */}
+                                        <p className="flex justify-between items-center">
+                                            <span className="font-bold">Per Instalment</span>
+                                            <span><span className="text-base md:text-lg">৳</span>500</span>
+                                        </p>
+                                        {/* collection */}
+                                        <p className="flex justify-between items-center">
+                                            <span className="font-bold">Colletion</span>
+                                            <span><span className="text-base md:text-lg">৳</span>2000</span>
+                                        </p>
+                                    </td>
+                                    {/* DPS */}
+                                    <td className="border border-slate-300 p-1">
+                                        <span className="text-base md:text-lg">৳</span>545
+                                    </td>
                                     <td className="border border-slate-300 p-1">Nilphamari</td>
                                 </tr>
 
