@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 
 
-const Button = ({text, icon:Icon, bg}) => {
+const Button = ({text, icon:Icon, bg, handleClick}) => {
     return (
-        <button className={`${bg} text-white px-4 py-1 rounded-sm flex items-center gap-1 font-semibold`}>
+        <button onClick={handleClick} className={`${bg} text-white px-4 pt-1 pb-[6px] rounded-[4px] flex items-center gap-1 font-semibold`}>
             <Icon className='mt-[2px]' />
             {text}
         </button>
@@ -17,4 +17,5 @@ Button.propTypes = {
     text: PropTypes.string.isRequired,
     bg: PropTypes.string.isRequired,
     icon: PropTypes.elementType.isRequired,
+    handleClick: PropTypes.func
 }

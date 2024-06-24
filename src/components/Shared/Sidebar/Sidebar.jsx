@@ -100,17 +100,17 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
                 </button>
                 <div className={`overflow-hidden transition-all duration-300 ${expandMenus.accounts ? 'max-h-96' : 'max-h-0'}`}>
                     <div className="flex flex-col gap-3 ml-8">
-                        <SidebarLink to='/' icon={RiStackshareFill}>Share</SidebarLink>
-                        <SidebarLink to='/' icon={RiBankCardFill}>Savings</SidebarLink>
-                        <SidebarLink to='/' icon={RiDonutChartFill}>Fixed Deposite</SidebarLink>
-                        <SidebarLink to='/' icon={SiGoogletagmanager}>DPS</SidebarLink>
-                        <SidebarLink to='/' icon={BsGridFill}>Loan</SidebarLink>
-                        <SidebarLink to='/' icon={RiFlowerFill}>Insurance</SidebarLink>
+                        <SidebarLink to='/share' icon={RiStackshareFill}>Share</SidebarLink>
+                        <SidebarLink to='/savings' icon={RiBankCardFill}>Savings</SidebarLink>
+                        <SidebarLink to='/fixed-deposit' icon={RiDonutChartFill}>Fixed Deposite</SidebarLink>
+                        <SidebarLink to='/dps' icon={SiGoogletagmanager}>DPS</SidebarLink>
+                        <SidebarLink to='/loan' icon={BsGridFill}>Loan</SidebarLink>
+                        <SidebarLink to='/insurance' icon={RiFlowerFill}>Insurance</SidebarLink>
                     </div>
                 </div>
 
                 {/* banking */}
-                <SidebarLink to='/' icon={PiBankFill} iconSize={'text-xl'}>Banking</SidebarLink>
+                <SidebarLink to='/banking' icon={PiBankFill} iconSize={'text-xl'}>Banking</SidebarLink>
 
                 {/* income - expenditure */}
                 <div className="py-2">

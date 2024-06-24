@@ -12,6 +12,13 @@ import SettlementReports from "../Pages/Admin/Reports/SettlementReports/Settleme
 import CollectionReports from "../Pages/Admin/Reports/CollectionReports/CollectionReports";
 import CollectionSheet from "../Pages/Admin/Reports/CollectionSheet/CollectionSheet";
 import MessageReports from "../Pages/Admin/Reports/MessageReports/MessageReports";
+import Share from "../Pages/Admin/Accounts/Share/Share";
+import Dps from "../Pages/Admin/Accounts/DPS/DPS";
+import Savings from "../Pages/Admin/Accounts/Savings/Savings";
+import FixedDeposit from "../Pages/Admin/Accounts/FixedDeposit/FixedDeposit";
+import Loan from "../Pages/Admin/Accounts/Loan/Loan";
+import Insurance from "../Pages/Admin/Accounts/Insurance/Insurance";
+import Banking from "../Pages/Admin/Banking/Banking";
 
 
 const Routes = createBrowserRouter([
@@ -63,6 +70,34 @@ const Routes = createBrowserRouter([
             {
                 path: '/message-reports',
                 element: <MessageReports />
+            },
+            {
+                path: '/share',
+                element: <Share />
+            },
+            {
+                path: '/savings',
+                element: <Savings />
+            },
+            {
+                path: '/fixed-deposit',
+                element: <FixedDeposit />
+            },
+            {
+                path: '/dps',
+                element: <Dps />
+            },
+            {
+                path: '/loan',
+                element: <Loan />
+            },
+            {
+                path: '/insurance',
+                element: <Insurance />
+            },
+            {
+                path: '/banking',
+                element: <Banking />
             },
         ]
     }
