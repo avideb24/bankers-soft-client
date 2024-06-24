@@ -114,7 +114,7 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
 
                 {/* income - expenditure */}
                 <div className="py-2">
-                    <SidebarLink to='/' icon={BsGraphUp} iconSize={'text-base'}>Income - Expenditure</SidebarLink>
+                    <SidebarLink to='/income-expenditure' icon={BsGraphUp} iconSize={'text-base'}>Income - Expenditure</SidebarLink>
                 </div>
 
                 {/* salary */}

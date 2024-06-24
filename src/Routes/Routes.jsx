@@ -19,6 +19,7 @@ import FixedDeposit from "../Pages/Admin/Accounts/FixedDeposit/FixedDeposit";
 import Loan from "../Pages/Admin/Accounts/Loan/Loan";
 import Insurance from "../Pages/Admin/Accounts/Insurance/Insurance";
 import Banking from "../Pages/Admin/Banking/Banking";
+import IncomeExpenditure from "../Pages/Admin/IncomeExpenditure/IncomeExpenditure";
 
 
 const Routes = createBrowserRouter([
@@ -98,6 +99,10 @@ const Routes = createBrowserRouter([
             {
                 path: '/banking',
                 element: <Banking />
+            },
+            {
+                path: '/income-expenditure',
+                element: <IncomeExpenditure />
             },
         ]
     }

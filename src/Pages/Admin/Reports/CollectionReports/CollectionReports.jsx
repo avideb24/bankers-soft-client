@@ -25,7 +25,7 @@ const CollectionReports = () => {
 
         console.log(fromDate, toDate);
 
-    }
+    };
 
     return (
         <div>
