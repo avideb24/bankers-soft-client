@@ -88,7 +88,7 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
                     <div className="flex flex-col gap-3 ml-8">
                         <SidebarLink to='/settlement-reports' icon={RiDonutChartFill}>Sattlement Reports</SidebarLink>
                         <SidebarLink to='/collection-reports' icon={BsBarChartLineFill}>Collection Reports</SidebarLink>
-                        <SidebarLink to='/' icon={BsFileEarmarkSpreadsheetFill}>Collection Sheet</SidebarLink>
+                        <SidebarLink to='/collection-sheet' icon={BsFileEarmarkSpreadsheetFill}>Collection Sheet</SidebarLink>
                         <SidebarLink to='/' icon={MdMessage}>Message Reports</SidebarLink>
                     </div>
                 </div>

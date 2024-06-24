@@ -10,6 +10,7 @@ import CustomersList from "../Pages/Admin/Customers/CustomersList/CustomersList"
 import CustomerLaser from "../Pages/Admin/Customers/CustomerLaser/CustomerLaser";
 import SettlementReports from "../Pages/Admin/Reports/SettlementReports/SettlementReports";
 import CollectionReports from "../Pages/Admin/Reports/CollectionReports/CollectionReports";
+import CollectionSheet from "../Pages/Admin/Reports/CollectionSheet/CollectionSheet";
 
 
 const Routes = createBrowserRouter([
@@ -53,6 +54,10 @@ const Routes = createBrowserRouter([
             {
                 path: '/collection-reports',
                 element: <CollectionReports />
+            },
+            {
+                path: '/collection-sheet',
+                element: <CollectionSheet />
             },
         ]
     }
