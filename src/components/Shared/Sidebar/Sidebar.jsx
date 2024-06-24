@@ -89,7 +89,7 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
                         <SidebarLink to='/settlement-reports' icon={RiDonutChartFill}>Sattlement Reports</SidebarLink>
                         <SidebarLink to='/collection-reports' icon={BsBarChartLineFill}>Collection Reports</SidebarLink>
                         <SidebarLink to='/collection-sheet' icon={BsFileEarmarkSpreadsheetFill}>Collection Sheet</SidebarLink>
-                        <SidebarLink to='/' icon={MdMessage}>Message Reports</SidebarLink>
+                        <SidebarLink to='/message-reports' icon={MdMessage}>Message Reports</SidebarLink>
                     </div>
                 </div>
 

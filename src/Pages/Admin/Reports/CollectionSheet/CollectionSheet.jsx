@@ -40,7 +40,7 @@ const CollectionSheet = () => {
 
                     {/* data table */}
                     <div className="overflow-x-scroll md:overscroll-none">
-                        <table className="bg bg-slate-100 w-full text-center border-collapse">
+                        <table className="bg bg-slate-50 w-full text-center border-collapse">
                             <thead>
                                 <tr>
                                     {
