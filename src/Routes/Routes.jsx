@@ -20,6 +20,7 @@ import Loan from "../Pages/Admin/Accounts/Loan/Loan";
 import Insurance from "../Pages/Admin/Accounts/Insurance/Insurance";
 import Banking from "../Pages/Admin/Banking/Banking";
 import IncomeExpenditure from "../Pages/Admin/IncomeExpenditure/IncomeExpenditure";
+import SalariesOfEmployees from "../Pages/Admin/SalariesOfEmployees/SalariesOfEmployees";
 
 
 const Routes = createBrowserRouter([
@@ -103,6 +104,10 @@ const Routes = createBrowserRouter([
             {
                 path: '/income-expenditure',
                 element: <IncomeExpenditure />
+            },
+            {
+                path: '/salaries-of-employeees',
+                element: <SalariesOfEmployees />
             },
         ]
     }

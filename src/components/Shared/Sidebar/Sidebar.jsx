@@ -118,7 +118,7 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
                 </div>
 
                 {/* salary */}
-                <SidebarLink to='/' icon={FaMoneyCheckDollar} iconSize={'text-base'}>Salaries of Employees</SidebarLink>
+                <SidebarLink to='/salaries-of-employeees' icon={FaMoneyCheckDollar} iconSize={'text-base'}>Salaries of Employees</SidebarLink>
 
                 {/* profits */}
                 <div className="py-2">
