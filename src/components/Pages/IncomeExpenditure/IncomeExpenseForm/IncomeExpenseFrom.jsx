@@ -33,7 +33,7 @@ const IncomeExpenseFrom = () => {
     
     return (
         <div className="bg-white p-5 shadow-sm">
-            <h2 className="flex items-center gap-2 text-base md:text-lg font-bold pb-3 border-b border-b-slate-300"><PiPlusMinusFill />Income - Expenditure</h2>
+            <h2 className="flex items-center gap-2 text-base md:text-lg font-bold pb-3 border-b border-b-slate-300"><PiPlusMinusFill />Income - Expenditure (Form)</h2>
 
             {/* form */}
             <form onSubmit={handleAddIcomeExpense} className="pt-3 space-y-2">
