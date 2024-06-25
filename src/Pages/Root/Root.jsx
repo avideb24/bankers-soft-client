@@ -11,7 +11,7 @@ const Root = () => {
 
 
     return (
-        <div className="relative lg:flex min-h-screen max-w-screen-2xl 2xl:mx-auto text-xs md:text-sm">
+        <main className="lg:flex min-h-screen max-w-screen-2xl text-xs md:text-sm">
             <div className="min-w-60 w-[20%] ">
                 <Sidebar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
             </div>
@@ -21,10 +21,10 @@ const Root = () => {
             </div>
 
             {/* lan change */}
-            <div className="absolute right-14 bottom-10">
+            <div className="fixed right-14 bottom-10">
                 <LangChange />
             </div>
-        </div>
+        </main>
     );
 };
 

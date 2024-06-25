@@ -122,14 +122,14 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
 
                 {/* profits */}
                 <div className="py-2">
-                    <SidebarLink to='/' icon={MdGraphicEq} iconSize={'text-xl'}>Profitsa of Distribution</SidebarLink>
+                    <SidebarLink to='/profits-distribution' icon={MdGraphicEq} iconSize={'text-xl'}>Profits Distribution</SidebarLink>
                 </div>
 
                 <div className="w-full h-[1px] bg-slate-200"></div>
 
                 {/* help center */}
                 <div className="py-2">
-                    <SidebarLink to='/' icon={MdOutlineSupportAgent} iconSize={'text-xl'}>Help Center</SidebarLink>
+                    <SidebarLink to='/help-center' icon={MdOutlineSupportAgent} iconSize={'text-xl'}>Help Center</SidebarLink>
                 </div>
 
                 {/* logout */}

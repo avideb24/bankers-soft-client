@@ -21,6 +21,8 @@ import Insurance from "../Pages/Admin/Accounts/Insurance/Insurance";
 import Banking from "../Pages/Admin/Banking/Banking";
 import IncomeExpenditure from "../Pages/Admin/IncomeExpenditure/IncomeExpenditure";
 import SalariesOfEmployees from "../Pages/Admin/SalariesOfEmployees/SalariesOfEmployees";
+import ProfitsDistribution from "../Pages/Admin/ProfitsDistribution/ProfitDistribution";
+import HelpCenter from "../Pages/Admin/HelpCenter/HelpCenter";
 
 
 const Routes = createBrowserRouter([
@@ -108,6 +110,14 @@ const Routes = createBrowserRouter([
             {
                 path: '/salaries-of-employeees',
                 element: <SalariesOfEmployees />
+            },
+            {
+                path: '/profits-distribution',
+                element: <ProfitsDistribution />
+            },
+            {
+                path: '/help-center',
+                element: <HelpCenter />
             },
         ]
     }
