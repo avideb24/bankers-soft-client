@@ -1,9 +1,23 @@
 import { Link } from "react-router-dom";
 import { TbTransfer } from "react-icons/tb";
 import { MdOutlineChecklist } from "react-icons/md";
+import { FaCirclePlus } from "react-icons/fa6";
 
 
 const LastTransactions = () => {
+
+    const transactions = [
+        { name: 'Belal', mobile: '01723622125', image: 'https://i.ibb.co/GCYmQNR/user.png'},
+        { name: 'Belal', mobile: '01723622125', image: 'https://i.ibb.co/GCYmQNR/user.png'},
+        { name: 'Belal', mobile: '01723622125', image: 'https://i.ibb.co/GCYmQNR/user.png'},
+        { name: 'Belal', mobile: '01723622125', image: 'https://i.ibb.co/GCYmQNR/user.png'},
+        { name: 'Belal', mobile: '01723622125', image: 'https://i.ibb.co/GCYmQNR/user.png'},
+        { name: 'Belal', mobile: '01723622125', image: 'https://i.ibb.co/GCYmQNR/user.png'},
+        { name: 'Belal', mobile: '01723622125', image: 'https://i.ibb.co/GCYmQNR/user.png'},
+        { name: 'Belal', mobile: '01723622125', image: 'https://i.ibb.co/GCYmQNR/user.png'},
+    ]
+
+
     return (
         <div className="bg-white p-4 shadow-sm mt-6">
 
@@ -19,8 +33,44 @@ const LastTransactions = () => {
 
             {/* transaction table */}
             <div>
-                <table>
-                    
+                <table className="w-full bg-slate-50 text-center">
+                    <thead>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            transactions?.map((transac, idx) =>
+                            <tr key={idx} className="py-3 border-t border-t-slate-300">
+                                <td>
+                                    <img src={transac?.image} className="w-10 h-10 object-cover rounded-full" alt="" />
+                                </td>
+                                <td className="p-1">
+                                    <p className="font-bold">Belal</p>
+                                    <p>25-06-24</p>
+                                </td>
+                                <td className="p-1">
+                                    <p>Finances (Expense) </p>
+                                    <p className="flex justify-center items-center"><FaCirclePlus /><span className="text-sm md:text-lg ml-1">৳</span>100</p>
+                                </td>
+                                <td className="p-1">
+                                    <p className="font-semibold">Approver</p>
+                                    <p>Avi Debnath</p>
+                                </td>
+                                <td className="p-1">
+                                    <Link to={'/income-expenditure'}>
+                                        <button className="bg-blue-500 text-white font-semibold px-3 py-1 rounded-md">Check</button>
+                                    </Link>
+                                </td>
+                            </tr>
+                            )
+                        }
+                    </tbody>
                 </table>
             </div>
 
