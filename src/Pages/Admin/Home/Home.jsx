@@ -1,0 +1,23 @@
+import CompleteProfile from "../../../components/Pages/AdminHome/CompleteProfile/CompleteProfile";
+import LastTransactions from "../../../components/Pages/AdminHome/LastTransactions/LastTransactions";
+import Overview from "../../../components/Pages/AdminHome/Overview/Overview";
+import Header from "../../../components/Shared/Header/Header";
+
+const Home = () => {
+    return (
+        <div>
+            <Header title="home" />
+
+            <div className="m-4 p-5">
+                <CompleteProfile />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <Overview />
+                    <LastTransactions />
+                </div>
+            </div>
+
+        </div>
+    );
+};
+
+export default Home;

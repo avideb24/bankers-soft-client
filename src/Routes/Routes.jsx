@@ -1,7 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Error from "../Pages/Error/Error";
 import Root from "../Pages/Root/Root";
-import Home from "../Pages/Home/Home";
 import AddUser from "../Pages/Admin/Users/AddUser/AddUser";
 import UsersList from "../Pages/Admin/Users/UsersList/UsersList";
 import Area from "../Pages/Admin/Customers/Area/Area";
@@ -23,6 +22,7 @@ import IncomeExpenditure from "../Pages/Admin/IncomeExpenditure/IncomeExpenditur
 import SalariesOfEmployees from "../Pages/Admin/SalariesOfEmployees/SalariesOfEmployees";
 import ProfitsDistribution from "../Pages/Admin/ProfitsDistribution/ProfitDistribution";
 import HelpCenter from "../Pages/Admin/HelpCenter/HelpCenter";
+import Home from "../Pages/Admin/Home/Home";
 
 
 const Routes = createBrowserRouter([
