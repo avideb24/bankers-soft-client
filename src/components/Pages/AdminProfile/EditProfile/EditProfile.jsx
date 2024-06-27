@@ -3,6 +3,7 @@ import { FaEdit } from "react-icons/fa";
 
 const EditProfile = () => {
 
+    // update profile info
     const handleUpdateProfile = e => {
         e.preventDefault();
 

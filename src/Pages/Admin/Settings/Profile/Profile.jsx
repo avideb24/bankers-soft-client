@@ -1,14 +1,14 @@
 import Header from "../../../../components/Shared/Header/Header";
 import { MdDoubleArrow } from "react-icons/md";
-import userImg from '../../../../../public/images/user.png';
 import EditProfile from "../../../../components/Pages/AdminProfile/EditProfile/EditProfile";
 import ChangePassword from "../../../../components/Pages/AdminProfile/ChangePassword/ChangePassword";
+import ChangeImage from "../../../../components/Pages/AdminProfile/ChangeImage/ChangeImage";
 
 
 
 const Profile = () => {
 
-    const profileComplete = '38%';
+    const profileComplete = '38';
 
     return (
         <div>
@@ -21,8 +21,8 @@ const Profile = () => {
                         <div className="w-full md:w-[60%] lg:w-[50%] xl:w-[40%] bg-white flex items-center gap-2">
                             <p className="w-5/12 flex items-center font-bold px-3">Profile Setup <MdDoubleArrow className="mt-1" /></p>
                             <div className="w-7/12">
-                                <div style={{ width: profileComplete }} className="bg-green-600 py-1">
-                                    <p className="text-white font-semibold flex justify-center">{profileComplete}</p>
+                                <div style={{ width: `${profileComplete}%` }} className="bg-green-600 py-1">
+                                    <p className="text-white font-semibold flex justify-center">{profileComplete}%</p>
                                 </div>
                             </div>
                         </div>
@@ -31,7 +31,7 @@ const Profile = () => {
                     {/* name & others infos */}
                     <div className="absolute left-0 -bottom-20 md:-bottom-12 w-full flex flex-col md:flex-row md:justify-between md:items-end pl-5">
                         <div className="flex items-end gap-6">
-                            <img src={userImg} className="max-w-20 md:max-w-28 border-2 border-white rounded-sm" alt="" />
+                            <ChangeImage />
                             <div className="space-y-2">
                                 <h2 className="text-lg md:text-xl font-bold">Avi Debnath</h2>
                                 <p><span className="font-bold">Designation: </span>Admin</p>

@@ -18,7 +18,7 @@ const Header = ({ title }) => {
                     {
                         title == 'home' ?
                             <form className='max-w-sm relative'>
-                                <input type="text" onChange={(e) => handleSearchCustomer(e)} className='w-full pl-6 pr-2 py-1 border-2 border-slate-300 rounded-md outline-none' placeholder='Search Customer...' />
+                                <input type="text" onChange={(e) => handleSearchCustomer(e)} className='w-full bg-white pl-6 pr-2 py-1 border-2 border-slate-300 rounded-md outline-none' placeholder='Search Customer...' />
                                 <span className='absolute left-2 top-[10px] text-slate-600'><CiSearch /></span>
                             </form>
                             :
