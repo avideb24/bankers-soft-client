@@ -2,9 +2,9 @@ import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import PropTypes from 'prop-types';
 import { MdOutlineDesktopMac, MdSpaceDashboard, MdMessage, MdGraphicEq, MdOutlineSupportAgent } from "react-icons/md";
-import { FaUsers, FaUserTie } from "react-icons/fa";
+import { FaUsers, FaUserTie ,FaUserCircle } from "react-icons/fa";
 import { RiUserAddFill, RiDonutChartFill, RiStackshareFill, RiBankCardFill, RiFlowerFill } from "react-icons/ri";
-import { FaUserGroup, FaMoneyCheckDollar, FaXmark } from "react-icons/fa6";
+import { FaUserGroup, FaMoneyCheckDollar, FaXmark, FaGear ,FaKey } from "react-icons/fa6";
 import { GrGrid } from "react-icons/gr";
 import { IoIosArrowDown } from "react-icons/io";
 import { BsPieChartFill, BsBarChartLineFill, BsFileEarmarkSpreadsheetFill, BsGridFill, BsGraphUp } from "react-icons/bs";
@@ -28,6 +28,7 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
         customers: false,
         reports: false,
         accounts: false,
+        settings: false
     });
 
     const toggleMenu = (menu) => {
@@ -36,6 +37,7 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
             customers: false,
             reports: false,
             accounts: false,
+            settings: false,
             [menu]: !prev[menu],
         }));
     };
@@ -51,18 +53,6 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
                 {/* dashboard */}
                 <div className="pb-1">
                     <SidebarLink to='/' icon={MdOutlineDesktopMac}>Dashboard</SidebarLink>
-                </div>
-
-                {/* users */}
-                <button className="w-full flex justify-between items-center gap-5" onClick={() => toggleMenu('users')}>
-                    <span className="flex items-center gap-5 font-semibold"><FaUserTie />Users</span>
-                    <IoIosArrowDown className={expandMenus.users ? 'rotate-180 duration-200' : 'duration-200'} />
-                </button>
-                <div className={`overflow-hidden transition-all duration-300 ${expandMenus.users ? 'max-h-96' : 'max-h-0'}`}>
-                    <div className="flex flex-col gap-3 ml-8">
-                        <SidebarLink to='/add-user' icon={RiUserAddFill}>Add User</SidebarLink>
-                        <SidebarLink to='/userslist' icon={FaUsers}>Users</SidebarLink>
-                    </div>
                 </div>
 
                 {/* customers */}
@@ -123,6 +113,32 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
                 {/* profits */}
                 <div className="py-2">
                     <SidebarLink to='/profits-distribution' icon={MdGraphicEq} iconSize={'text-xl'}>Profits Distribution</SidebarLink>
+                </div>
+
+                <div className="w-full h-[1px] bg-slate-200"></div>
+
+                {/* settings */}
+                <button className="w-full flex justify-between items-center gap-5" onClick={() => toggleMenu('settings')}>
+                    <span className="flex items-center gap-5 font-semibold"><FaGear />Settings</span>
+                    <IoIosArrowDown className={expandMenus.settings ? 'rotate-180 duration-200' : 'duration-200'} />
+                </button>
+                <div className={`overflow-hidden transition-all duration-300 ${expandMenus.settings ? 'max-h-96' : 'max-h-0'}`}>
+                    <div className="flex flex-col gap-3 ml-8">
+                        <SidebarLink to='/business-settings' icon={FaKey}>Bussiness Settings</SidebarLink>
+                        <SidebarLink to='/profile' icon={FaUserCircle}>Profile</SidebarLink>
+                    </div>
+                </div>
+
+                {/* users */}
+                <button className="w-full flex justify-between items-center gap-5" onClick={() => toggleMenu('users')}>
+                    <span className="flex items-center gap-5 font-semibold"><FaUserTie />Users</span>
+                    <IoIosArrowDown className={expandMenus.users ? 'rotate-180 duration-200' : 'duration-200'} />
+                </button>
+                <div className={`overflow-hidden transition-all duration-300 ${expandMenus.users ? 'max-h-96' : 'max-h-0'}`}>
+                    <div className="flex flex-col gap-3 ml-8">
+                        <SidebarLink to='/add-user' icon={RiUserAddFill}>Add User</SidebarLink>
+                        <SidebarLink to='/userslist' icon={FaUsers}>Users</SidebarLink>
+                    </div>
                 </div>
 
                 <div className="w-full h-[1px] bg-slate-200"></div>

@@ -23,6 +23,8 @@ import SalariesOfEmployees from "../Pages/Admin/SalariesOfEmployees/SalariesOfEm
 import ProfitsDistribution from "../Pages/Admin/ProfitsDistribution/ProfitDistribution";
 import HelpCenter from "../Pages/Admin/HelpCenter/HelpCenter";
 import Home from "../Pages/Admin/Home/Home";
+import BusinessSettings from "../Pages/Admin/Settings/BusinessSettings/BusinessSettings";
+import Profile from "../Pages/Admin/Settings/Profile/Profile";
 
 
 const Routes = createBrowserRouter([
@@ -114,6 +116,14 @@ const Routes = createBrowserRouter([
             {
                 path: '/profits-distribution',
                 element: <ProfitsDistribution />
+            },
+            {
+                path: '/business-settings',
+                element: <BusinessSettings />
+            },
+            {
+                path: '/profile',
+                element: <Profile />
             },
             {
                 path: '/help-center',
