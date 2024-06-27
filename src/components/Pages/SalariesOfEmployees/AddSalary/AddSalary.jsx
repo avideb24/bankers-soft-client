@@ -54,7 +54,7 @@ const AddSalary = () => {
                 </select>
                 {/* salary amount */}
                 <label htmlFor="salaryAmount" className="font-bold inline-block pt-1">Assign Amount</label>
-                <input type="number" name="salaryAmount" className="w-full border border-slate-300 px-3 py-1 outline-none rounded-sm" id="salaryAmount" placeholder="0.00" required />
+                <input type="number" name="salaryAmount" className="w-full bg-white border border-slate-300 px-3 py-1 outline-none rounded-sm" id="salaryAmount" placeholder="0.00" required />
 
                 <input type="submit" value="Save" className="bg-blue-600 text-white font-semibold px-3 py-1 cursor-pointer float-right" />
             </form>

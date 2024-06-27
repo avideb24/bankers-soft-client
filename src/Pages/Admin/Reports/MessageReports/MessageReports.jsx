@@ -34,21 +34,21 @@ const MessageReports = () => {
                         </p>
                         {/* modal body */}
                         <dialog id="my_modal_1" className="modal">
-                            <div className="modal-box min-w-80 relative">
-                                <div className="p-4 rounded-sm">
+                            <div className="modal-box min-w-80 relative bg-white">
+                                <div className="rounded-sm">
                                     <h2 className="flex items-center gap-2 text-base md:text-xl font-bold pb-2"><IoSearch />Search Customer</h2>
                                     <form onSubmit={handleSearchCustomer} className="space-y-3">
                                         <label className="text-sm md:text-base font-semibold" htmlFor="mobile">Search By Mobile/AC</label>
-                                        <input type="number" name="mobile" className="w-full border border-slate-300 rounded-sm px-2 py-1 outline-none" id="mobile" placeholder="Type here..." required />
+                                        <input type="number" name="mobile" className="w-full bg-white border border-slate-300 rounded-sm px-2 py-1 outline-none" id="mobile" placeholder="Type here..." required />
                                         <div className="text-right">
                                             <input type="submit" value="Search" className="bg-green-600 px-3 py-1 rounded-sm text-white font-semibold cursor-pointer" />
                                         </div>
                                     </form>
                                 </div>
-                                <div className="modal-action">
+                                <div className="modal-action absolute right-28 bottom-6">
                                     <form method="dialog">
                                         {/* close btn */}
-                                        <button className="btn absolute right-24 bottom-4 bg-red-600 text-white px-3 py-1 rounded-sm">Close</button>
+                                        <button className=" bg-red-600 text-white px-3 py-1 rounded-sm">Close</button>
                                     </form>
                                 </div>
                             </div>

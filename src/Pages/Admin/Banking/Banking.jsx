@@ -32,26 +32,26 @@ const Banking = () => {
 
                     {/* modal body*/}
                     <dialog id="my_modal_1" className="modal">
-                        <div className="modal-box min-w-80 relative">
+                        <div className="modal-box min-w-80 relative bg-white">
                             <h2 className="flex items-center gap-2 text-base md:text-xl font-bold px-4 py-4 border-b border-b-slate-300"><FaCirclePlus className="mt-1" />New Bank</h2>
-                            <div className="p-4 rounded-sm">
+                            <div className="rounded-sm">
 
                                 {/* add new bank form */}
                                 <form onSubmit={handleAddBank} className="space-y-3">
                                     <div className="grid grid-cols-2 gap-3">
                                         <div>
                                             <label className="text-sm md:text-base font-semibold" htmlFor="bankNameEn">Bank Name (English)</label>
-                                            <input type="text" name="bankNameEn" className="w-full border border-slate-300 rounded-sm px-2 py-1 outline-none" id="bankNameEn" placeholder="Type here..." required />
+                                            <input type="text" name="bankNameEn" className="w-full bg-white border border-slate-300 rounded-sm px-2 py-1 outline-none" id="bankNameEn" placeholder="Type here..." required />
                                         </div>
                                         <div>
-                                            <label className="text-sm md:text-base font-semibold" htmlFor="bankNameBn">ব্যাংকের নাম(বাংলা)</label>
-                                            <input type="text" name="bankNameBn" className="w-full border border-slate-300 rounded-sm px-2 py-1 outline-none" id="bankNameBn" placeholder="Type here..." required />
+                                            <label className="text-sm md:text-base font-semibold" htmlFor="bankNameBn">Bank Name (বাংলা)</label>
+                                            <input type="text" name="bankNameBn" className="w-full bg-white border border-slate-300 rounded-sm px-2 py-1 outline-none" id="bankNameBn" placeholder="Type here..." required />
                                         </div>
                                     </div>
                                     {/* bank address */}
                                     <div>
                                         <label className="text-sm md:text-base font-semibold" htmlFor="address">Address</label>
-                                        <input type="text" name="address" className="w-full border border-slate-300 rounded-sm px-2 py-1 outline-none" id="address" placeholder="Type here..." required />
+                                        <input type="text" name="address" className="w-full bg-white border border-slate-300 rounded-sm px-2 py-1 outline-none" id="address" placeholder="Type here..." required />
                                     </div>
                                     <div className="text-right">
                                         <input type="submit" value="Save" className="bg-green-600 px-3 py-1 rounded-sm text-white font-semibold cursor-pointer" />
@@ -59,10 +59,10 @@ const Banking = () => {
                                 </form>
 
                             </div>
-                            <div className="modal-action">
+                            <div className="modal-action absolute right-24 bottom-6">
                                 <form method="dialog">
                                     {/* close btn */}
-                                    <button className="btn absolute right-24 bottom-4 bg-red-600 text-white px-3 py-1 rounded-sm">Close</button>
+                                    <button className="bg-red-600 text-white px-3 py-1 rounded-sm">Close</button>
                                 </form>
                             </div>
                         </div>
