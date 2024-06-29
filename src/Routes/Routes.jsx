@@ -25,6 +25,8 @@ import HelpCenter from "../Pages/Admin/HelpCenter/HelpCenter";
 import Home from "../Pages/Admin/Home/Home";
 import BusinessSettings from "../Pages/Admin/Settings/BusinessSettings/BusinessSettings";
 import Profile from "../Pages/Admin/Settings/Profile/Profile";
+import UserProfile from "../Pages/Admin/UserProfile/UserProfile";
+import CustomerProfile from "../Pages/Admin/CustomerProfile.jsx/CustomerProfile";
 
 
 const Routes = createBrowserRouter([
@@ -124,6 +126,14 @@ const Routes = createBrowserRouter([
             {
                 path: '/profile',
                 element: <Profile />
+            },
+            {
+                path: '/user-profile',
+                element: <UserProfile />
+            },
+            {
+                path: '/customer-profile',
+                element: <CustomerProfile />
             },
             {
                 path: '/help-center',

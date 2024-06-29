@@ -137,7 +137,7 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
                 <div className={`overflow-hidden transition-all duration-300 ${expandMenus.users ? 'max-h-96' : 'max-h-0'}`}>
                     <div className="flex flex-col gap-3 ml-8">
                         <SidebarLink to='/add-user' icon={RiUserAddFill}>Add User</SidebarLink>
-                        <SidebarLink to='/userslist' icon={FaUsers}>Users</SidebarLink>
+                        <SidebarLink to='/userslist' icon={FaUsers}>Users List</SidebarLink>
                     </div>
                 </div>
 
