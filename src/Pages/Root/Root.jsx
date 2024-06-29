@@ -15,7 +15,7 @@ const Root = () => {
                 <Sidebar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
             </div>
             <div className="lg:relative lg:w-[80%]">
-                <button onClick={() => setShowSidebar(true)} className="absolute top-3 md:top-[14px] left-3 z-40 text-2xl text-primary-color bg-white border-2 border-primary-color p-1 rounded-md lg:hidden"><GiHamburgerMenu /></button>
+                <button onClick={() => setShowSidebar(true)} className="absolute z-50 top-3 md:top-[14px] left-3  text-2xl text-primary-color bg-white border-2 border-primary-color p-1 rounded-md lg:hidden"><GiHamburgerMenu /></button>
                 <Outlet />
             </div>
         </main>
