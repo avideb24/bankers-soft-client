@@ -11,7 +11,7 @@ const Header = ({ title }) => {
 
 
     return (
-        <div className='sticky left-0 top-0 p-4 bg-white shadow-md'>
+        <div className='sticky z-50 left-0 top-0 p-4 bg-white shadow-md'>
 
             <div className='pl-10 lg:pl-0'>
                 <div className='flex justify-between gap-2'>

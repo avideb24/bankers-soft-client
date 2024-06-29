@@ -27,6 +27,8 @@ import BusinessSettings from "../Pages/Admin/Settings/BusinessSettings/BusinessS
 import Profile from "../Pages/Admin/Settings/Profile/Profile";
 import UserProfile from "../Pages/Admin/UserProfile/UserProfile";
 import CustomerProfile from "../Pages/Admin/CustomerProfile.jsx/CustomerProfile";
+import CustomerDocuments from "../Pages/Admin/CustomerDocuments/CustomerDocuments";
+import NomineeDocuments from "../Pages/Admin/NomineeDocuments/NomineeDocuments";
 
 
 const Routes = createBrowserRouter([
@@ -134,6 +136,14 @@ const Routes = createBrowserRouter([
             {
                 path: '/customer-profile',
                 element: <CustomerProfile />
+            },
+            {
+                path: '/customer-documents',
+                element: <CustomerDocuments />
+            },
+            {
+                path: '/nominee-documents',
+                element: <NomineeDocuments />
             },
             {
                 path: '/help-center',

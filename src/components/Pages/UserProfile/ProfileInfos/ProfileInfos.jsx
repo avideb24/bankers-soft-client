@@ -31,7 +31,7 @@ const ProfileInfos = () => {
                 </div>
             </div>
 
-            {/* admin infos */}
+            {/* user infos */}
             <div className="pt-24 md:pt-20 pl-5">
 
                 <h2 className="text-lg md:text-xl font-bold pb-3 mb-4 border-b border-b-slate-300">Profile Details</h2>
