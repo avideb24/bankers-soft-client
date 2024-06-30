@@ -19,7 +19,7 @@ const LastTransactions = () => {
 
 
     return (
-        <div className="bg-white p-4 shadow-sm mt-6">
+        <div className="bg-white p-4 shadow-sm mt-6 h-max">
 
             <div className="flex justify-between gap-4 pb-3 mb-3 border-b border-b-slate-300">
                 {/* title */}

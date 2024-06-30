@@ -1,0 +1,49 @@
+import { FaChartBar } from "react-icons/fa";
+
+
+const EmployeeReports = () => {
+
+    // fake data
+    const reports = [
+        { name: 'Avi Debnath', image: 'https://i.ibb.co/NZFtFPL/user.png', role: 'Admin', collection: 0, type: 'collection' },
+        { name: 'Avi Debnath', image: 'https://i.ibb.co/NZFtFPL/user.png', role: 'Admin', collection: 0, type: 'collection' },
+    ]
+
+    return (
+        <div className="w-1/2 p-4 border-t border-t-slate-300 pt-3">
+            <h2 className="flex items-center gap-1 text-lg md:text-xl font-bold pb-4"><FaChartBar />Employee Reports</h2>
+
+            {/* reports table */}
+            <div>
+                <table className="w-full">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            reports?.map((report, idx) =>
+                                <tr key={idx} className="border-t border-t-slate-300">
+                                    <td className="flex gap-2 p-1">
+                                        <img src={report?.image} className="w-10 h-10 object-contain rounded-lg" alt={report?.name} />
+                                        <div>
+                                            <p className="font-bold">{report?.name}</p>
+                                            <p>{report?.role}</p>
+                                        </div>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            )
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    );
+};
+
+export default EmployeeReports;

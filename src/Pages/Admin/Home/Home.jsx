@@ -1,6 +1,7 @@
 import CompleteProfile from "../../../components/Pages/AdminHome/CompleteProfile/CompleteProfile";
 import LastTransactions from "../../../components/Pages/AdminHome/LastTransactions/LastTransactions";
 import Overview from "../../../components/Pages/AdminHome/Overview/Overview";
+import TodaysReport from "../../../components/Pages/AdminHome/TodaysReport/TodaysReport";
 import Header from "../../../components/Shared/Header/Header";
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
                     <Overview />
                     <LastTransactions />
                 </div>
+                <TodaysReport />
             </div>
 
         </div>
