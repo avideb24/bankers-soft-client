@@ -4,8 +4,8 @@ import { PiPlusMinusFill } from "react-icons/pi";
 
 const IncomeExpenseFrom = () => {
 
-     // fake sector data
-     const sectors = [
+    // fake sector data
+    const sectors = [
         { name: 'Tea', amount: 200 },
         { name: 'Biscuits', amount: 100 },
     ];
@@ -24,13 +24,14 @@ const IncomeExpenseFrom = () => {
             dateTime: e.target.dateTime.value,
             ammont: e.target.amount.value,
             transDetail: e.target.transDetail.value,
+            description: e.target.description.value,
             type
         }
 
         console.log(addedItem);
     };
 
-    
+
     return (
         <div className="bg-white p-5 shadow-sm">
             <h2 className="flex items-center gap-2 text-base md:text-lg font-bold pb-3 border-b border-b-slate-300"><PiPlusMinusFill />Income - Expenditure (Form)</h2>
@@ -52,7 +53,7 @@ const IncomeExpenseFrom = () => {
                     {/* date & time */}
                     <div>
                         <label htmlFor="dateTime" className="font-bold">Select Date & Time</label>
-                        <input type="datetime-local" name="dateTime" id="dateTime" className="w-full px-2 py-1 bg-white border border-slate-300 mt-1" required />
+                        <input type="datetime-local" name="dateTime" id="dateTime" className="w-full px-2 py-1 bg-white border border-slate-300 mt-1 outline-none" required />
                     </div>
 
                     {/* type */}
@@ -68,14 +69,19 @@ const IncomeExpenseFrom = () => {
                     {/* amount */}
                     <div>
                         <label htmlFor="amount" className="font-bold">Amount</label>
-                        <input type="number" name="amount" id="amount" className="w-full px-2 py-1 bg-white border border-slate-300 mt-1" placeholder="Type here..." required />
+                        <input type="number" name="amount" id="amount" className="w-full px-2 py-1 bg-white border border-slate-300 mt-1 outline-none" placeholder="Type here..." required />
                     </div>
 
                     {/* transaction detail */}
                     <div>
                         <label htmlFor="transDetail" className="font-bold">Transaction Details</label>
-                        <input type="text" name="transDetail" id="transDetail" className="w-full px-2 py-1 bg-white border border-slate-300 mt-1" placeholder="Type here..." />
+                        <input type="text" name="transDetail" id="transDetail" className="w-full px-2 py-1 bg-white border border-slate-300 mt-1 outline-none" placeholder="Type here..." required />
                     </div>
+                </div>
+                {/* description */}
+                <div>
+                    <label htmlFor="description" className="font-bold">Description</label>
+                    <input type="text" name="description" id="description" className="w-full px-2 py-1 bg-white border border-slate-300 mt-1 outline-none" placeholder="Type here..." required />
                 </div>
                 {/* submit btn */}
                 <div className="text-right">
