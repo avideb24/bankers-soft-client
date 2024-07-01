@@ -3,9 +3,19 @@ import { FaExclamationCircle, FaSave } from "react-icons/fa";
 import { BsNintendoSwitch } from "react-icons/bs";
 import { IoMdWallet } from "react-icons/io";
 import { GrLanguage } from "react-icons/gr";
+import { useState } from "react";
+import { IoCloudUploadOutline } from "react-icons/io5";
 
 
 const BusinessSettings = () => {
+
+    const [image, setImage] = useState(null);
+
+    const handleImageChange = (e) => {
+        if (e.target.files && e.target.files[0]) {
+            setImage(URL.createObjectURL(e.target.files[0]));
+        }
+    };
 
 
     // update settings fn
@@ -98,6 +108,19 @@ const BusinessSettings = () => {
                                 <div className="w-7/12">
                                     {/* email input */}
                                     <input type="email" name="email" className="w-full bg-white px-2 py-1 outline-none rounded-sm border border-slate-300" placeholder="Type here..." required />
+                                </div>
+                            </div>
+                            <div className="flex items-start gap-2 my-2">
+                                <div className="w-5/12 flex justify-between font-semibold">
+                                    <span>Logo</span>
+                                    <span>:</span>
+                                </div>
+                                {/* uploaded image */}
+                                <div className="w-7/12 pt-1">
+                                    <label htmlFor="file-upload" className="flex justify-center items-center w-full h-44 border-2 border-slate-200 rounded-lg cursor-pointer relative overflow-hidden">
+                                        {image ? <img src={image} alt="uploaded" className="absolute inset-0 w-full h-full object-contain" /> : <div className=" text-gray-500 flex flex-col items-center"><IoCloudUploadOutline className="text-xl" /> <span>Upload Photo</span></div>}
+                                    </label>
+                                    <input type="file" id="file-upload" className="hidden" onChange={handleImageChange} />
                                 </div>
                             </div>
                         </div>
