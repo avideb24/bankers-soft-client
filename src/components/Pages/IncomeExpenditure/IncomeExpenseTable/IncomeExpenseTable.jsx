@@ -11,9 +11,9 @@ const IncomeExpenseTable = () => {
 
     // fake data
     const datas = [
-        { type: 'Income', date: '24-06-2024', amount: 200 },
-        { type: 'Expense', date: '24-06-2024', amount: 100 },
-        { type: 'Income', date: '24-06-2024', amount: 200 },
+        { type: 'Income', date: '2024-06-24', amount: 200 },
+        { type: 'Expense', date: '2024-06-21', amount: 100 },
+        { type: 'Income', date: '2024-06-27', amount: 200 },
     ];
 
     const tableHeads = ['Trx Type', 'Trx Date', 'Amount', 'Current Balance', 'Edit'];
@@ -33,7 +33,7 @@ const IncomeExpenseTable = () => {
 
         const updatedData = {
             type: e.target.type.value,
-            date: e.target.date.value?.split('-')?.reverse()?.join('-'),
+            date: e.target.date.value,
             amount: e.target.amount.value,
         }
 
@@ -96,7 +96,7 @@ const IncomeExpenseTable = () => {
                                                             {/* date */}
                                                             <div>
                                                                 <label className="text-sm md:text-base font-semibold text-left block mb-2" htmlFor="date">Date</label>
-                                                                <input type="date" name="date" className="w-full bg-white border border-slate-300 rounded-sm px-2 py-1 outline-none" id="date" placeholder="Type here..." required defaultValue={data?.date?.split('-')?.reverse()?.join('-')} />
+                                                                <input type="date" name="date" className="w-full bg-white border border-slate-300 rounded-sm px-2 py-1 outline-none" id="date" placeholder="Type here..." required defaultValue={data?.date} />
                                                             </div>
                                                         </div>
                                                         {/* amount */}

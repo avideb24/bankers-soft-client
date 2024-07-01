@@ -21,7 +21,7 @@ const IncomeExpenseFrom = () => {
 
         const addedItem = {
             sector,
-            date: e.target.date.value?.split('-')?.reverse()?.join('-'),
+            date: e.target.date.value,
             ammont: e.target.amount.value,
             transDetail: e.target.transDetail.value,
             description: e.target.description.value,

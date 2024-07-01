@@ -7,8 +7,6 @@ import Header from "../../../../components/Shared/Header/Header";
 
 const AddNew = () => {
 
-    const [gender, setGender] = useState(null);
-    const [area, setArea] = useState(null);
     const [image, setImage] = useState(null);
 
     const handleImageChange = (e) => {
@@ -23,20 +21,23 @@ const AddNew = () => {
 
         const form = e.target;
 
-        const nameEn = form.nameEn.value;
-        const nameBn = form.nameBn.value;
-        const fatherName = form.fatherName.value;
-        const motherName = form.motherName.value;
-        const birthDate = form.birthdate.value;
-        const presentAddress = form.presentAddress.value;
-        const permanentAddress = form.permanentAddress.value;
-        const mobile = form.mobile.value;
-        const password = form.password.value;
-        const acNumber = form.acNumber.value;
-        const registrationDate = form.registrationDate.value;
-
         const newCustomer = {
-            nameEn, nameBn, fatherName, motherName, birthDate, presentAddress, permanentAddress, mobile, password, acNumber, registrationDate, gender: gender, area: area
+            nameEn: form.nameEn.value,
+            nameBn: form.nameBn.value,
+            fatherName: form.fatherName.value,
+            motherName: form.motherName.value,
+            birthDate: form.birthdate.value,
+            gender: form.gender.value,
+            area: form.area.value,
+            presentAddress: form.presentAddress.value,
+            permanentAddress: form.permanentAddress.value,
+            identityType: form.identityType.value,
+            identityNumber: form.identityNumber.value,
+            mobile: form.mobile.value,
+            password: form.password.value,
+            acNumber: form.acNumber.value,
+            registrationFee: form.registrationFee.value,
+            registrationDate: form.registrationDate.value,
         }
 
         console.log(newCustomer);
@@ -71,16 +72,16 @@ const AddNew = () => {
                                 </div>
                                 <div>
                                     <label htmlFor="gender" className="font-bold">Gender</label>
-                                    <select name="" className="bg-transparent w-full border-2 px-2 py-1 mt-2 outline-none rounded-sm" id="gender" defaultValue={'df'} onChange={(e) => setGender(e.target.value)}>
-                                        <option value="df" disabled>Choose One</option>
+                                    <select name="gender" className="bg-transparent w-full border-2 px-2 py-1 mt-2 outline-none rounded-sm" id="gender" defaultValue="" required >
+                                        <option value="" disabled>Choose One</option>
                                         <option value="Male">Male</option>
                                         <option value="Female">Female</option>
                                     </select>
                                 </div>
                                 <div>
                                     <label htmlFor="area" className="font-bold">Area</label>
-                                    <select name="" className="bg-transparent w-full border-2 px-2 py-1 mt-2 outline-none rounded-sm" id="area" defaultValue={'df'} onChange={(e) => setArea(e.target.value)}>
-                                        <option value="df" disabled>Choose One</option>
+                                    <select name="area" className="bg-transparent w-full border-2 px-2 py-1 mt-2 outline-none rounded-sm" id="area" defaultValue="" required>
+                                        <option value="" disabled>Choose One</option>
                                         <option value="Nilphamari">Nilphamari</option>
                                     </select>
                                 </div>
@@ -107,7 +108,31 @@ const AddNew = () => {
                             </div>
 
                             {/* 3rd row */}
-                            <div className="w-full grid grid-cols-2 md:grid-cols-5 lg:grid-cols-2 xl:grid-cols-5 gap-2">
+                            <div className="w-full grid grid-cols-2 md:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4 gap-2">
+                                <div>
+                                    <label htmlFor="identityType" className="font-bold">Identity Type</label>
+                                    <select name="identityType" className="bg-transparent w-full border-2 px-2 py-1 mt-2 outline-none rounded-sm" id="identityType" defaultValue="" required>
+                                        <option value="" disabled>Choose One</option>
+                                        <option value="NID">NID</option>
+                                        <option value="Birth Certificate">Birth Certificate</option>
+                                        <option value="Passport">Passport</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label htmlFor="identityNumber" className="font-bold">Identity Number</label>
+                                    <input type="number" name="identityNumber" className="bg-transparent w-full border-2 px-2 py-1 mt-2 outline-none rounded-sm" placeholder='Type here...' id="identityNumber" required />
+                                </div>
+                                <div>
+                                    <label htmlFor="acNumber" className="font-bold">Account Number</label>
+                                    <input type="number" name="acNumber" className="bg-transparent w-full border-2 px-2 py-1 mt-2 outline-none rounded-sm" placeholder='Type here...' id="acNumber" required />
+                                </div>
+                                <div>
+                                    <label htmlFor="date" className="font-bold">Date Of Birth</label>
+                                    <input type="date" name="birthdate" className="bg-transparent w-full border-2 px-2 py-1 mt-2 outline-none rounded-sm" id="date" required />
+                                </div>
+                            </div>
+                            {/* 4th row */}
+                            <div className="w-full grid grid-cols-2 md:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4 gap-2">
                                 <div>
                                     <label htmlFor="number" className="font-bold">Mobile</label>
                                     <input type="number" name="mobile" className="bg-transparent w-full border-2 px-2 py-1 mt-2 outline-none rounded-sm" placeholder='Type here...' id="number" required />
@@ -117,12 +142,8 @@ const AddNew = () => {
                                     <input type="password" name="password" className="bg-transparent w-full border-2 px-2 py-1 mt-2 outline-none rounded-sm" placeholder='Type here...' id="password" required />
                                 </div>
                                 <div>
-                                    <label htmlFor="acNumber" className="font-bold">Account Number</label>
-                                    <input type="number" name="acNumber" className="bg-transparent w-full border-2 px-2 py-1 mt-2 outline-none rounded-sm" placeholder='Type here...' id="acNumber" required />
-                                </div>
-                                <div>
-                                    <label htmlFor="date" className="font-bold">Date Of Birth</label>
-                                    <input type="date" name="birthdate" className="bg-transparent w-full border-2 px-2 py-1 mt-2 outline-none rounded-sm" id="date" required />
+                                    <label htmlFor="registrationFee" className="font-bold">Registration Fee</label>
+                                    <input type="number" name="registrationFee" className="bg-transparent w-full border-2 px-2 py-1 mt-2 outline-none rounded-sm" placeholder='Type here...' id="registrationFee" required />
                                 </div>
                                 <div>
                                     <label htmlFor="registrationDate" className="font-bold">Registration Date</label>
