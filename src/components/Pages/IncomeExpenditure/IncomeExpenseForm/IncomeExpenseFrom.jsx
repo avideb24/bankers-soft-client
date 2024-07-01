@@ -10,7 +10,7 @@ const IncomeExpenseFrom = () => {
         { name: 'Biscuits', amount: 100 },
     ];
 
-
+    // ---------------------------------------
     const [sector, setSector] = useState(sectors[0]?.name);
     const [type, setType] = useState('Income');
 
@@ -21,7 +21,7 @@ const IncomeExpenseFrom = () => {
 
         const addedItem = {
             sector,
-            dateTime: e.target.dateTime.value,
+            date: e.target.date.value?.split('-')?.reverse()?.join('-'),
             ammont: e.target.amount.value,
             transDetail: e.target.transDetail.value,
             description: e.target.description.value,
@@ -50,10 +50,10 @@ const IncomeExpenseFrom = () => {
                     </select>
                 </div>
                 <div className="grid grid-cols-2 gap-3">
-                    {/* date & time */}
+                    {/* date */}
                     <div>
-                        <label htmlFor="dateTime" className="font-bold">Select Date & Time</label>
-                        <input type="datetime-local" name="dateTime" id="dateTime" className="w-full px-2 py-1 bg-white border border-slate-300 mt-1 outline-none" required />
+                        <label htmlFor="date" className="font-bold">Select Date & Time</label>
+                        <input type="date" name="date" id="date" className="w-full px-2 py-1 bg-white border border-slate-300 mt-1 outline-none" required />
                     </div>
 
                     {/* type */}
