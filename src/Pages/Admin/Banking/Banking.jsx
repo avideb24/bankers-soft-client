@@ -2,11 +2,24 @@ import Button from "../../../components/Shared/Button/Button";
 import Header from "../../../components/Shared/Header/Header";
 import { PiBankFill } from "react-icons/pi";
 import { FaCirclePlus } from "react-icons/fa6";
+import { FaEdit } from "react-icons/fa";
+import { RiDeleteBin7Fill } from "react-icons/ri";
+import { MdAccountBalanceWallet } from "react-icons/md";
+import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 
 const Banking = () => {
 
+    // fake data
+    const banks = [
+        { nameEn: 'Sonali Bank', nameBn: 'সোনালি ব্যাংক', address: 'Nilphamari' },
+        { nameEn: 'Rupali Bank', nameBn: 'রুপালি ব্যাংক', address: 'Dinajpur' },
+        { nameEn: 'Pubali Bank', nameBn: 'পুবালি ব্যাংক', address: 'Nilphamari' },
+    ];
 
+
+    // ------------------------------
     const handleAddBank = e => {
         e.preventDefault();
 
@@ -18,7 +31,43 @@ const Banking = () => {
 
         console.log(newBankData);
 
-    }
+    };
+
+    // delete bank
+    const handleDeleteBank = id => {
+
+        console.log(id);
+
+        Swal.fire({
+            title: "Are you sure?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Delete"
+        }).then((result) => {
+
+
+            // call your delete api here
+
+            if (result.isConfirmed) {
+                Swal.fire({
+                    title: "Deleted!",
+                    icon: "success"
+                });
+            }
+        });
+    };
+
+    // update bank
+    const handleUpdateBank = (e, id) => {
+        e.preventDefault();
+
+        console.log(id);
+
+    };
+
+
 
     return (
         <div>
@@ -75,7 +124,69 @@ const Banking = () => {
                     <h2 className="p-3 text-base md:text-lg font-bold bg-slate-200 mt-3">Bank Name</h2>
                     {/* bank list */}
                     <div className="p-3">
-                        <p>No record found!</p>
+                        {
+                            banks?.length == 0 ?
+                                <div>No data found!</div>
+                                :
+                                <div>
+                                    {
+                                        banks?.map((bank, idx) =>
+                                            <div key={idx} className="flex justify-between items-center gap-3 pt-3">
+                                                <Link to={'/bank-profile'}>
+                                                    <p className="font-bold mb-1">{idx + 1}. {bank?.nameEn}</p>
+                                                    <p><span className="font-bold">Address: </span>{bank?.address}</p>
+                                                </Link>
+                                                <div className="flex gap-3">
+                                                    <button onClick={() => handleDeleteBank(1)} className="text-lg md:text-2xl text-red-600"><RiDeleteBin7Fill /></button>
+
+                                                    <button onClick={() => document.getElementById(`my_modal_${idx + 5}`).showModal()} className="text-lg md:text-2xl"><FaEdit /></button>
+
+                                                    {/* modal body */}
+                                                    <dialog id={`my_modal_${idx + 5}`} className="modal">
+                                                        <div className="modal-box p-4 relative bg-white">
+                                                            <h3 className="text-base md:text-xl font-semibold flex items-center gap-2"><FaEdit />Edit Bank</h3>
+                                                            {/* date form */}
+                                                            <form onSubmit={(e) => handleUpdateBank(e, 2)} className="pt-4">
+                                                                <div className="flex gap-5">
+                                                                    {/* name en */}
+                                                                    <div className="w-1/2">
+                                                                        <label htmlFor="nameEn" className="font-bold">Name (English)</label>
+                                                                        <input type="text" className="w-full px-2 py-1 my-2 bg-white border border-slate-300" name="nameEn" id="nameEn" defaultValue={bank?.nameEn} required />
+                                                                    </div>
+                                                                    {/* name bn */}
+                                                                    <div className="w-1/2">
+                                                                        <label htmlFor="nameBn" className="font-bold">Name (বাংলা)</label>
+                                                                        <input type="text" className="w-full px-2 py-1 my-2 bg-white border border-slate-300" name="nameBn" id="nameBn" defaultValue={bank?.nameBn} required />
+                                                                    </div>
+                                                                </div>
+                                                                {/* address */}
+                                                                <div className="w-full">
+                                                                    <label htmlFor="address" className="font-bold">Address</label>
+                                                                    <input type="text" className="w-full px-2 py-1 mt-2 bg-white border border-slate-300" name="address" id="address" defaultValue={bank?.address} required />
+                                                                </div>
+                                                                <div className="text-right">
+                                                                    <input type="submit" value="Search" className="bg-green-600 text-white font-semibold px-3 py-1 rounded-sm mt-6 cursor-pointer" />
+                                                                </div>
+                                                            </form>
+                                                            {/* close btn */}
+                                                            <div className="modal-action text-right absolute right-24 bottom-4">
+                                                                <form method="dialog">
+                                                                    <button className=" bg-red-600 text-white font-semibold px-3 py-1 rounded-sm mt-5">Close</button>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </dialog>
+
+                                                    {/* link to bank detail page */}
+                                                    <Link to={'/bank-profile'}>
+                                                        <button className="text-lg md:text-2xl text-blue-500"><MdAccountBalanceWallet /></button>
+                                                    </Link>
+                                                </div>
+                                            </div>
+                                        )
+                                    }
+                                </div>
+                        }
                     </div>
                 </div>
 

@@ -30,6 +30,7 @@ import CustomerProfile from "../Pages/Admin/CustomerProfile.jsx/CustomerProfile"
 import CustomerDocuments from "../Pages/Admin/CustomerDocuments/CustomerDocuments";
 import NomineeDocuments from "../Pages/Admin/NomineeDocuments/NomineeDocuments";
 import UserReports from "../Pages/Admin/UserReports/UserReports";
+import BankProfile from "../Pages/Admin/BankProfile/BankProfile";
 
 
 const Routes = createBrowserRouter([
@@ -109,6 +110,10 @@ const Routes = createBrowserRouter([
             {
                 path: '/banking',
                 element: <Banking />
+            },
+            {
+                path: '/bank-profile',
+                element: <BankProfile />
             },
             {
                 path: '/income-expenditure',
