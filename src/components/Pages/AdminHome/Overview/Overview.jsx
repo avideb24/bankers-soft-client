@@ -54,7 +54,7 @@ const Overview = () => {
                 <div className="flex justify-between gap-4 pb-3 mb-3 border-b border-b-slate-300 pt-10">
                     {/* title */}
                     <h2 className="text-base md:text-xl font-bold flex items-center gap-2"><FaUsersGear className="mt-1" />Active Customers</h2>
-                    <Link to={'/settlement-reports'}>
+                    <Link to={'/customers-list'}>
                         <p className="flex items-center gap-1 bg-slate-200 px-3 py-1"><FaUsers />Total Customers:{customers?.length}</p>
                     </Link>
                 </div>
@@ -66,7 +66,7 @@ const Overview = () => {
                             <div key={idx} className="space-y-3 my-3">
                                 <img src={customer?.image} className="max-w-28 max-h-28 object-cover rounded-full flex flex-col justify-center" alt={customer?.name} />
                                 <a href={`tel:${customer?.mobile}`} className="block text-center hover:underline">{customer?.mobile}</a>
-                                <Link to={'/'} className="w-24 mx-auto flex items-center gap-1 text-white font-semibold bg-blue-600 px-3 py-1 rounded-md">
+                                <Link to={'/customer-profile'} className="w-24 mx-auto flex items-center gap-1 text-white font-semibold bg-blue-600 px-3 py-1 rounded-md">
                                     <FaUserCircle />
                                     Profile
                                 </Link>
