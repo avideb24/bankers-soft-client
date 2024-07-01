@@ -1,4 +1,5 @@
 import { FaChartBar } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 
 const EmployeeReports = () => {
@@ -15,31 +16,40 @@ const EmployeeReports = () => {
 
             {/* reports table */}
             <div>
-                <table className="w-full">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            reports?.map((report, idx) =>
-                                <tr key={idx} className="border-t border-t-slate-300">
-                                    <td className="flex gap-2 p-1">
-                                        <img src={report?.image} className="w-10 h-10 object-contain rounded-lg" alt={report?.name} />
-                                        <div>
-                                            <p className="font-bold">{report?.name}</p>
-                                            <p>{report?.role}</p>
-                                        </div>
-                                    </td>
-                                    <td></td>
+                {
+                    reports?.length == 0 ?
+                        <div className="py-4">No reports found!</div>
+                        :
+                        <table className="w-full">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
                                 </tr>
-                            )
-                        }
-                    </tbody>
-                </table>
+                            </thead>
+                            <tbody>
+                                {
+                                    reports?.map((report, idx) =>
+                                        <tr key={idx} className="border-t border-t-slate-300">
+                                            <td className="flex gap-2 p-1">
+                                                <img src={report?.image} className="w-10 h-10 object-contain rounded-lg" alt={report?.name} />
+                                                <Link to={'/user-reports'}>
+                                                    <p className="font-bold">{report?.name}</p>
+                                                    <p>{report?.role}</p>
+                                                </Link>
+                                            </td>
+                                            <td>:</td>
+                                            <td className="text-right p-1">
+                                                <p className="font-bold"><span className="text-base md:text-lg">৳</span>{report?.collection}</p>
+                                                <p className="capitalize">{report?.type}</p>
+                                            </td>
+                                        </tr>
+                                    )
+                                }
+                            </tbody>
+                        </table>
+                }
             </div>
 
         </div>
