@@ -43,7 +43,7 @@ const Sidebar = ({showSidebar, setShowSidebar}) => {
     };
 
     return (
-        <div className={`lg:w-[250px] xl:w-[300px] ${showSidebar ? 'left-0' : '-left-[400]'} fixed top-0 lg:left-0 z-[100] z h-full overflow-y-scroll sidebar-custom-scrollbar flex items-start duration-500`}>
+        <div className={`lg:w-[250px] xl:w-[300px] ${showSidebar ? 'left-0' : '-left-[400]'} fixed top-0 lg:left-0 z-[100] z h-full overflow-y-scroll sidebar-custom-scrollbar flex items-start transition-all duration-500 ease-in-out`}>
 
             <div className="w-full min-h-screen bg-white flex flex-col items-start gap-3 text-black px-8 py-5  shadow-xl relative">
 

@@ -10,7 +10,7 @@ import { useReactToPrint } from "react-to-print";
 const CollectionReports = () => {
 
     const printedContentRef = useRef();
-    
+
     const handlePrint = useReactToPrint({
         content: () => printedContentRef.current
     })
@@ -35,9 +35,9 @@ const CollectionReports = () => {
                 <div className="flex justify-center gap-5">
                     <button onClick={handlePrint} className="bg-sky-600 px-3 py-1 text-white  font-semibold flex items-center gap-2 rounded-sm"><MdLocalPrintshop />Print</button>
 
-                    {/* modal btn */}
+                    {/* search btn */}
                     <button onClick={() => document.getElementById('my_modal_1').showModal()} className="bg-slate-600 px-3 py-1 text-white  font-semibold flex items-center gap-2 rounded-sm"><RiSearchLine />Search</button>
-
+                    {/* search modal body */}
                     <dialog id="my_modal_1" className="modal">
                         <div className="modal-box p-4 relative bg-white">
                             <h3 className="text-base md:text-xl font-semibold flex items-center gap-2"><FaCalendarAlt />Search By Date</h3>
@@ -53,7 +53,7 @@ const CollectionReports = () => {
                                         <input type="date" className="w-full mt-2 bg-white border border-slate-300" name="toDate" id="to" required />
                                     </div>
                                 </div>
-                                <p className="mt-4"><span className="text-red-600 font-semibold"><FaExclamationCircle className="inline" /> Special Note: </span>If no dates are selected, deposits will be made on today&apos;s date.</p>
+                                <p className="mt-4"><span className="text-red-600 font-semibold"><FaExclamationCircle className="inline" /> Special Note: </span>If no dates are selected, search result will be made on today&apos;s date.</p>
                                 <div className="text-right">
                                     <input type="submit" value="Search" className="bg-green-600 text-white font-semibold px-3 py-1 rounded-sm mt-6 cursor-pointer" />
                                 </div>

@@ -1,37 +1,12 @@
-import ChangeCustomerPassword from "../ChangeCustomerPassword/ChangeCustomerPassword";
-import EditInfos from "../EditInfos/EditInfos";
+import PropTypes from 'prop-types';
 
 
-const CustomerInfos = () => {
-
-    // fake data
-    const customer = {
-        nameEn: 'Belal',
-        nameBn: 'বেলাল',
-        father: 'Hasan Ali',
-        mother: 'Moriam Begum',
-        birthDate: '1999-08-03',
-        registrationDate: '2024-06-25',
-        occupation: 'Farmer',
-        gender: 'Male',
-        presentAddress: 'Nilphamari',
-        permanentAddress: 'Nilphamari',
-        accountNumber: '586354',
-        identityType: 'NID',
-        identityNumber: '7854654654',
-        mobile: '01723622125',
-        email: 'belal@gmail.com',
-    };
-
-
+const CustomerInfo = ({customer}) => {
     return (
-        <div>
-            {/* customer infos */}
-            <div className="pt-24 md:pt-20 pl-5 border-b border-b-slate-300 pb-4" >
+        <div className="pt-5 md:pt-0 border-b border-b-slate-300 pb-4" >
 
                 <div className=" pb-3 mb-4 border-b border-b-slate-300 flex justify-between items-center flex-wrap">
                     <h2 className="text-lg md:text-xl font-bold">Customer Details</h2>
-                    <EditInfos modalId={1} title={'Customer'} data={customer} />
                 </div>
 
                 <div className="space-y-2">
@@ -144,14 +119,29 @@ const CustomerInfos = () => {
                 </div>
 
             </div>
-
-            {/* pass change btn */}
-            <div className="py-4">
-                <ChangeCustomerPassword />
-            </div>
-
-        </div>
     );
 };
 
-export default CustomerInfos;
+export default CustomerInfo;
+
+
+CustomerInfo.propTypes = {
+    customer: PropTypes.shape({
+        nameEn: PropTypes.string,
+        image: PropTypes.string,
+        nameBn: PropTypes.string,
+        father: PropTypes.string,
+        mother: PropTypes.string,
+        birthDate: PropTypes.string,
+        registrationDate: PropTypes.string,
+        occupation: PropTypes.string,
+        gender: PropTypes.string,
+        presentAddress: PropTypes.string,
+        permanentAddress: PropTypes.string,
+        accountNumber: PropTypes.string,
+        identityType: PropTypes.string,
+        identityNumber: PropTypes.string,
+        mobile: PropTypes.string,
+        email: PropTypes.string,
+    })
+};

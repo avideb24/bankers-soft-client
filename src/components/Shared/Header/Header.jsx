@@ -22,7 +22,7 @@ const Header = ({ title }) => {
                                 <span className='absolute left-2 top-[10px] text-slate-600'><CiSearch /></span>
                             </form>
                             :
-                            <h1 className='text-base lg:text-xl font-semibold'>{title}</h1>
+                            <h1 className='text-base lg:text-xl font-semibold capitalize'>{title}</h1>
                     }
                     <button className='bg-primary-color text-white font-semibold px-3 py-1 rounded-sm'>+ Add New</button>
                 </div>

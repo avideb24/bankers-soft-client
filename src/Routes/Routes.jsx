@@ -32,6 +32,7 @@ import NomineeDocuments from "../Pages/Admin/NomineeDocuments/NomineeDocuments";
 import UserReports from "../Pages/Admin/UserReports/UserReports";
 import BankProfile from "../Pages/Admin/BankProfile/BankProfile";
 import Transactions from "../Pages/Admin/Transactions/Transactions";
+import Wallet from "../Pages/Admin/Accounts/Wallet/Wallet";
 
 
 const Routes = createBrowserRouter([
@@ -109,10 +110,16 @@ const Routes = createBrowserRouter([
                 element: <Insurance />
             },
             {
+                // dynamic route
+                path: '/wallet/:accountType/:id',
+                element: <Wallet />
+            },
+            {
                 path: '/banking',
                 element: <Banking />
             },
             {
+                // dynamic route
                 path: '/bank-profile',
                 element: <BankProfile />
             },

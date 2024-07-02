@@ -16,6 +16,8 @@ const IncomeExpenseTable = () => {
         { type: 'Income', date: '2024-06-27', amount: 200 },
     ];
 
+
+    // ---------------------------------------
     const tableHeads = ['Trx Type', 'Trx Date', 'Amount', 'Current Balance', 'Edit'];
 
 

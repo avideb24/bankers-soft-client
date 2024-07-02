@@ -15,7 +15,7 @@ const Root = () => {
             <button onClick={() => setShowSidebar(true)} className="fixed top-[14px] md:top-4 left-2 text-2xl p-1 z-[90] lg:hidden"><HiMenuAlt1 /></button>
 
             {/* sidebar */}
-            <div className={`lg:w-[250px] xl:w-[300px] fixed top-0 ${showSidebar ? 'left-0' : '-left-[400px]'} lg:left-0 z-[100] duration-500`}>
+            <div className={`lg:w-[250px] xl:w-[300px] fixed top-0 ${showSidebar ? 'left-0' : '-left-[400px]'} lg:left-0 z-[100] transition-all duration-500 ease-in-out`}>
                 <Sidebar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
             </div>
 
