@@ -5,6 +5,9 @@ import Profile from "../../../../components/Pages/Admin/Wallet/Profile/Profile";
 import WalletBtns from "../../../../components/Pages/Admin/Wallet/WalletBtns/WalletBtns";
 import SavingsElement from "../../../../components/Pages/Admin/Wallet/SavingsElement/SavingsElement";
 import CustomerInfo from "../../../../components/Pages/Admin/Wallet/CustomerInfo/CustomerInfo";
+import ShareElement from "../../../../components/Pages/Admin/Wallet/ShareElement/ShareElement";
+import FixedDepositElement from "../../../../components/Pages/Admin/Wallet/FixedDepositElement/FixedDepositElement";
+import DpsElement from "../../../../components/Pages/Admin/Wallet/DpsElement/DpsElement";
 
 
 const Wallet = () => {
@@ -59,8 +62,25 @@ const Wallet = () => {
                         <h2><span className="font-bold capitalize">{accountType}: </span><span className="text-base md:text-lg">৳</span>500</h2>
                     </div>
 
+                    {/* share element */}
+                    <div className={`${accountType == 'share' ? '' : 'hidden'}`}>
+                        <ShareElement />
+                    </div>
+
                     {/* savings element */}
-                    <SavingsElement accountType={accountType} />
+                    <div className={`${accountType == 'savings' ? '' : 'hidden'}`}>
+                        <SavingsElement />
+                    </div>
+
+                    {/* fixed deposit element */}
+                    <div className={`${accountType == 'dps' ? '' : 'hidden'}`}>
+                        <DpsElement />
+                    </div>
+
+                    {/* dps element */}
+                    <div className={`${accountType == 'fixed-deposit' ? '' : 'hidden'}`}>
+                        <FixedDepositElement />
+                    </div>
 
 
                     {/* customer info */}

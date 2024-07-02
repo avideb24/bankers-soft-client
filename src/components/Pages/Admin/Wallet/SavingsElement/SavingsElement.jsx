@@ -1,10 +1,9 @@
-import PropTypes from 'prop-types';
 import { FaEdit } from "react-icons/fa";
 import Button from '../../../../Shared/Button/Button';
 import { FaSquarePlus,FaRegMoneyBill1 } from "react-icons/fa6";
 
 
-const SavingsElement = ({ accountType }) => {
+const SavingsElement = () => {
 
 
     // also set the interest defaultValue at modal
@@ -27,7 +26,7 @@ const SavingsElement = ({ accountType }) => {
 
 
     return (
-        <div className={`${accountType == 'savings' ? '' : 'hidden'} py-4 `}>
+        <div className="py-4">
 
             <div className='flex items-center gap-3'>
                 <p className='w-[30%] font-bold'>Savings Interest</p>
@@ -114,8 +113,3 @@ const SavingsElement = ({ accountType }) => {
 };
 
 export default SavingsElement;
-
-
-SavingsElement.propTypes = {
-    accountType: PropTypes.string.isRequired
-};
