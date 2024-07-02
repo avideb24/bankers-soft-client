@@ -9,7 +9,7 @@ const Home = () => {
         <div>
             <Header title="home" />
 
-            <div className="m-4 p-5">
+            <div className="m-4">
                 <CompleteProfile />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <Overview />
