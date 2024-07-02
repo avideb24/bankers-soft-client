@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { MdOutlineDesktopMac, MdSpaceDashboard, MdMessage, MdGraphicEq, MdOutlineSupportAgent } from "react-icons/md";
 import { FaUsers, FaUserTie ,FaUserCircle } from "react-icons/fa";
 import { RiUserAddFill, RiDonutChartFill, RiStackshareFill, RiBankCardFill, RiFlowerFill } from "react-icons/ri";
-import { FaUserGroup, FaMoneyCheckDollar, FaXmark, FaGear ,FaKey } from "react-icons/fa6";
+import { FaUserGroup, FaMoneyCheckDollar,  FaGear ,FaKey, FaXmark } from "react-icons/fa6";
 import { GrGrid } from "react-icons/gr";
 import { IoIosArrowDown } from "react-icons/io";
 import { BsPieChartFill, BsBarChartLineFill, BsFileEarmarkSpreadsheetFill, BsGridFill, BsGraphUp } from "react-icons/bs";
@@ -20,7 +20,7 @@ const SidebarLink = ({ to, icon: Icon, iconSize, children }) => (
 );
 
 
-const Sidebar = ({ showSidebar, setShowSidebar }) => {
+const Sidebar = ({showSidebar, setShowSidebar}) => {
 
 
     const [expandMenus, setExpandMenus] = useState({
@@ -43,7 +43,7 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
     };
 
     return (
-        <div className={`w-72 lg:w-[20%] h-full overflow-y-scroll fixed z-50 top-0  ${showSidebar ? 'left-0' : '-left-full'} lg:left-0 sidebar-custom-scrollbar flex items-start duration-300`}>
+        <div className={`lg:w-[250px] xl:w-[300px] ${showSidebar ? 'left-0' : '-left-[400]'} fixed top-0 lg:left-0 z-[100] z h-full overflow-y-scroll sidebar-custom-scrollbar flex items-start duration-500`}>
 
             <div className="w-full min-h-screen bg-white flex flex-col items-start gap-3 text-black px-8 py-5  shadow-xl relative">
 
@@ -154,7 +154,7 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
             </div>
 
             {/* mobile - menu hide btn */}
-            <button onClick={() => setShowSidebar(false)} className="absolute top-3 right-4 text-2xl bg-white border-2 text-primary-color border-primary-color mt-3 lg:hidden"><FaXmark /></button>
+            <button onClick={() => setShowSidebar(false)}  className="absolute top-3 right-4 text-2xl bg-white border-2 border-slate-700 mt-3 lg:hidden"><FaXmark /></button> 
 
         </div>
     );

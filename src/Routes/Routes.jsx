@@ -31,6 +31,7 @@ import CustomerDocuments from "../Pages/Admin/CustomerDocuments/CustomerDocument
 import NomineeDocuments from "../Pages/Admin/NomineeDocuments/NomineeDocuments";
 import UserReports from "../Pages/Admin/UserReports/UserReports";
 import BankProfile from "../Pages/Admin/BankProfile/BankProfile";
+import Transactions from "../Pages/Admin/Transactions/Transactions";
 
 
 const Routes = createBrowserRouter([
@@ -154,6 +155,10 @@ const Routes = createBrowserRouter([
             {
                 path: '/nominee-documents',
                 element: <NomineeDocuments />
+            },
+            {
+                path: '/transactions',
+                element: <Transactions />
             },
             {
                 path: '/help-center',

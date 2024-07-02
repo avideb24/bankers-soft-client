@@ -25,14 +25,14 @@ const LastTransactions = () => {
                 {/* title */}
                 <h2 className="text-base md:text-xl font-bold flex items-center gap-2"><TbTransfer className="mt-1" />Last Transactions</h2>
                 <div className="flex items-center gap-3">
-                    <Link to={'/'}>
+                    <Link to={'/transactions'}>
                         <p className="flex items-center gap-1 bg-slate-200 px-3 py-1"><MdOutlineChecklist /> See All</p>
                     </Link>
                 </div>
             </div>
 
             {/* transaction table */}
-            <div>
+            <div className="overflow-x-scroll">
                 <table className="w-full bg-slate-50 text-center">
                     <thead>
                         <tr>

@@ -1,21 +1,26 @@
 import { Outlet } from "react-router-dom";
 import Sidebar from "../../components/Shared/Sidebar/Sidebar";
 import { useState } from "react";
-import { GiHamburgerMenu } from "react-icons/gi";
+import { HiMenuAlt1 } from "react-icons/hi";
 
 
 const Root = () => {
 
     const [showSidebar, setShowSidebar] = useState(false);
 
-
     return (
-        <main className="lg:flex min-h-screen max-w-screen-2xl text-xs md:text-sm">
-            <div className="min-w-60 w-[20%] ">
+        <main className="min-h-screen text-xs md:text-sm">
+
+            {/* mobile menu btn */}
+            <button onClick={() => setShowSidebar(true)} className="fixed top-[14px] md:top-4 left-2 text-2xl p-1 z-[90] lg:hidden"><HiMenuAlt1 /></button>
+
+            {/* sidebar */}
+            <div className={`lg:w-[250px] xl:w-[300px] fixed top-0 ${showSidebar ? 'left-0' : '-left-[400px]'} lg:left-0 z-[100] duration-500`}>
                 <Sidebar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
             </div>
-            <div className="lg:relative lg:w-[80%]">
-                <button onClick={() => setShowSidebar(true)} className="absolute z-50 top-3 md:top-[14px] left-3  text-2xl text-primary-color bg-white border-2 border-primary-color p-1 rounded-md lg:hidden"><GiHamburgerMenu /></button>
+
+            {/* outlet */}
+            <div className="ml-0 lg:ml-[250px] xl:ml-[300px]">
                 <Outlet />
             </div>
         </main>
