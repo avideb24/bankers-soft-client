@@ -1,7 +1,6 @@
 import ChangeUserImage from "../ChangeUserImage/ChangeUserImage";
 import ChangeUserPassword from "../ChangeUserPassword/ChangeUserPassword";
 import EditUserProfile from "../EditUserProfile/EditUserProfile";
-import UserProfileBtns from "../UserProfileBtns/UserProfileBtns";
 
 
 const ProfileInfos = () => {
@@ -23,11 +22,6 @@ const ProfileInfos = () => {
                             <p><span className="font-bold">Mobile: </span>01723622125</p>
                         </div>
                     </div>
-                    {/* update profile btn */}
-                    <div className="mt-3 flex gap-2">
-                        <UserProfileBtns />
-                    </div>
-
                 </div>
             </div>
 

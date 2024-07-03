@@ -11,7 +11,7 @@ const EditInfos = ({ modalId, title, data }) => {
     const handleUpdateInfos = e => {
         e.preventDefault();
 
-        const updatedInfos = {
+        const updatedCustomerInfos = {
             nameEn: e.target.nameEn.value,
             nameBn: e.target.nameBn.value,
             father: e.target.father.value,
@@ -29,7 +29,32 @@ const EditInfos = ({ modalId, title, data }) => {
             gender: e.target.gender.value,
         }
 
-        console.log(updatedInfos);
+        const updatedNomineeInfos = {
+            nameEn: e.target.nameEn.value,
+            nameBn: e.target.nameBn.value,
+            father: e.target.father.value,
+            mother: e.target.mother.value,
+            presentAddress: e.target.presentAddress.value,
+            permanentAddress: e.target.permanentAddress.value,
+            birthDate: e.target.birthDate.value,
+            relation: e.target.relation.value,
+            identityType: e.target.identityType.value,
+            identityNumber: e.target.identityNumber.value,
+            mobile: e.target.mobile.value,
+            email: e.target.email.value,
+            accountNumber: e.target.accountNumber.value,
+            occupation: e.target.occupation.value,
+            gender: e.target.gender.value,
+        }
+
+        console.log(updatedCustomerInfos, updatedNomineeInfos);
+
+        if(title == 'Customer'){
+            // call api with => updatedCustomerInfos
+        }
+        else{
+            // call api with => updatedNomineeInfos
+        }
 
     };
 
@@ -39,7 +64,7 @@ const EditInfos = ({ modalId, title, data }) => {
             <button onClick={() => document.getElementById(`my_modal_${modalId}`).showModal()} className="bg-blue-600 px-3 py-1 text-white font-semibold flex items-center gap-2 rounded-sm"><FaEdit />Edit</button>
             {/* edit profile modal */}
             <dialog id={`my_modal_${modalId}`} className="modal">
-                <div className="modal-box p-4 relative bg-white">
+                <div className="modal-box p-4 relative bg-white rounded-none">
                     <h3 className="text-base md:text-xl font-semibold flex items-center gap-2"><FaEdit />Edit {title} Details</h3>
                     {/* date form */}
                     <form onSubmit={handleUpdateInfos} className="pt-4 space-y-2 text-left">
@@ -99,7 +124,7 @@ const EditInfos = ({ modalId, title, data }) => {
                             }
                         </div>
 
-                        {/* identity */}
+                        {/* identity type / identity number */}
                         <div className="grid grid-cols-2 gap-4">
                             <div>
                                 <label htmlFor="identityType" className="font-bold">Identity Type</label>

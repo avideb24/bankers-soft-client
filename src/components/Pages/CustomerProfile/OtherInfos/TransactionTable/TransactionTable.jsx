@@ -44,6 +44,6 @@ const TransactionTable = ({ title, data }) => {
 export default TransactionTable;
 
 TransactionTable.propTypes = {
-    title: PropTypes.string.isRequired,
-    data: PropTypes.object.isRequired,
+    title: PropTypes.string,
+    data: PropTypes.array,
 };

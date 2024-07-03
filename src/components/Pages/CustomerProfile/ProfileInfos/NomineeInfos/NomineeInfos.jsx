@@ -26,7 +26,7 @@ const NomineeInfos = () => {
     return (
         <div>
             {/* nominee infos */}
-            < div className="pt-24 md:pt-20 pl-5 border-b pb-4 border-b-slate-300" >
+            < div className="pl-5 border-b pb-4 border-b-slate-300" >
 
                 <div className=" pb-3 mb-4 border-b border-b-slate-300 flex justify-between items-center flex-wrap">
                     <h2 className="text-lg md:text-xl font-bold">Nominee Details</h2>

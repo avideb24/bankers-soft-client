@@ -27,7 +27,7 @@ const CustomerInfos = () => {
     return (
         <div>
             {/* customer infos */}
-            <div className="pt-24 md:pt-20 pl-5 border-b border-b-slate-300 pb-4" >
+            <div className="pl-5 border-b border-b-slate-300 pb-4" >
 
                 <div className=" pb-3 mb-4 border-b border-b-slate-300 flex justify-between items-center flex-wrap">
                     <h2 className="text-lg md:text-xl font-bold">Customer Details</h2>
