@@ -17,6 +17,7 @@ const EditUserProfile = () => {
             birthDate: e.target.birthDate.value,
             joiningnDate: e.target.joiningnDate.value,
             gender: e.target.gender.value,
+            designation: e.target.designation.value,
         }
 
         console.log(updatedInfos);
@@ -81,13 +82,23 @@ const EditUserProfile = () => {
                             </div>
                         </div>
 
-                        {/* gender */}
-                        <div>
-                            <label htmlFor="gender" className="font-bold">Gender</label>
-                            <select name="gender" id="gender" className="w-full bg-white px-3 py-1 mt-2 border border-slate-300">
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
-                            </select>
+                        {/* gender and designation */}
+                        <div className="grid grid-cols-2 gap-4">
+                            <div>
+                                <label htmlFor="gender" className="font-bold">Gender</label>
+                                <select name="gender" id="gender" className="w-full bg-white px-3 py-1 mt-2 border border-slate-300">
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label htmlFor="designation" className="font-bold">Designation</label>
+                                <select name="designation" id="designation" className="w-full bg-white px-3 py-1 mt-2 border border-slate-300" defaultValue={'Field Worker'}>
+                                    <option value="Field Worker">Field Worker</option>
+                                    <option value="Manager">Manager</option>
+                                    <option value="Share">Holder</option>
+                                </select>
+                            </div>
                         </div>
 
                         {/* submit btn */}

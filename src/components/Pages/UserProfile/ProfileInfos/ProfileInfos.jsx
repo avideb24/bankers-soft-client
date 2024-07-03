@@ -6,7 +6,7 @@ import EditUserProfile from "../EditUserProfile/EditUserProfile";
 const ProfileInfos = () => {
 
     return (
-        <div className="w-full lg:w-7/12 bg-white p-5 shadow-sm">
+        <div className="w-full bg-white p-5 shadow-sm">
 
             <div className="relative">
                 <div className="bg-slate-300 px-4 pt-4 pb-20 flex justify-end relative">

@@ -20,7 +20,7 @@ const Root = () => {
             </div>
 
             {/* outlet */}
-            <div className="ml-0 lg:ml-[250px] xl:ml-[300px]">
+            <div className="ml-0 lg:ml-[250px] xl:ml-[300px] pb-6">
                 <Outlet />
             </div>
         </main>

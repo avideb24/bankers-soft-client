@@ -61,7 +61,7 @@ const EditInfos = ({ modalId, title, data }) => {
     return (
         <>
             {/* edit profile btn */}
-            <button onClick={() => document.getElementById(`my_modal_${modalId}`).showModal()} className="bg-blue-600 px-3 py-1 text-white font-semibold flex items-center gap-2 rounded-sm"><FaEdit />Edit</button>
+            <button onClick={() => document.getElementById(`my_modal_${modalId}`).showModal()} className="bg-blue-600 px-3 py-1 text-white font-semibold flex items-center gap-2 rounded-[4px]"><FaEdit />Edit</button>
             {/* edit profile modal */}
             <dialog id={`my_modal_${modalId}`} className="modal">
                 <div className="modal-box p-4 relative bg-white rounded-none">

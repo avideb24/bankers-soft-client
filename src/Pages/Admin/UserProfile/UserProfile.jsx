@@ -8,7 +8,7 @@ const UserProfile = () => {
         <div>
             <Header title="User Profile" />
 
-            <div className="m-4 flex flex-col lg:flex-row gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <ProfileInfos />
                 <LastTransactions />
             </div>
