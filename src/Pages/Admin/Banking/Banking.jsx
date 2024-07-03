@@ -7,6 +7,7 @@ import { RiDeleteBin7Fill } from "react-icons/ri";
 import { MdAccountBalanceWallet } from "react-icons/md";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 
 const Banking = () => {
@@ -20,6 +21,13 @@ const Banking = () => {
 
 
     // ------------------------------
+    
+    // translation-----------------
+    const { t } = useTranslation();
+    const lang = t('Banking');
+    // ----------------------------
+
+
     const handleAddBank = e => {
         e.preventDefault();
 
@@ -71,13 +79,13 @@ const Banking = () => {
 
     return (
         <div>
-            <Header title="Banking" />
+            <Header title={lang.banking} />
 
             <div className="bg-white m-4 p-5 shadow-sm">
 
                 <div className="flex justify-between items-center gap-3 pb-3 border-b border-b-slate-300">
-                    <h2 className="flex items-center gap-2 text-base md:text-xl font-bold"><PiBankFill className="mt-1" />Banking</h2>
-                    <Button text="New Bank" icon={FaCirclePlus} bg="bg-sky-600" handleClick={() => document.getElementById('my_modal_1').showModal()} />
+                    <h2 className="flex items-center gap-2 text-base md:text-xl font-bold"><PiBankFill className="mt-1" />{lang.banking}</h2>
+                    <Button text={lang.newBank} icon={FaCirclePlus} bg="bg-sky-600" handleClick={() => document.getElementById('my_modal_1').showModal()} />
 
                     {/* modal body*/}
                     <dialog id="my_modal_1" className="modal">
@@ -121,12 +129,12 @@ const Banking = () => {
 
                 {/* content */}
                 <div>
-                    <h2 className="p-3 text-base md:text-lg font-bold bg-slate-200 mt-3">Bank Name</h2>
+                    <h2 className="p-3 text-base md:text-lg font-bold bg-slate-200 mt-3">{lang.bankName}</h2>
                     {/* bank list */}
                     <div className="p-3">
                         {
                             banks?.length == 0 ?
-                                <div>No data found!</div>
+                                <div>{lang.notFound}</div>
                                 :
                                 <div>
                                     {
@@ -134,7 +142,7 @@ const Banking = () => {
                                             <div key={idx} className="flex justify-between items-center gap-3 pt-3">
                                                 <Link to={'/bank-profile'}>
                                                     <p className="font-bold mb-1">{idx + 1}. {bank?.nameEn}</p>
-                                                    <p><span className="font-bold">Address: </span>{bank?.address}</p>
+                                                    <p><span className="font-bold">{lang.address}: </span>{bank?.address}</p>
                                                 </Link>
                                                 <div className="flex gap-3">
                                                     <button onClick={() => handleDeleteBank(1)} className="text-lg md:text-2xl text-red-600"><RiDeleteBin7Fill /></button>

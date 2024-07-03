@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import Button from "../../../../components/Shared/Button/Button";
 import Header from "../../../../components/Shared/Header/Header";
 import { IoIosMailOpen } from "react-icons/io";
@@ -5,6 +6,11 @@ import { IoSearch } from "react-icons/io5";
 
 
 const MessageReports = () => {
+
+     // translation ----------------
+     const { t } = useTranslation();
+     const lang = t('Reports').MessageReports;
+     // ---------------------------
 
 
     const handleSearchCustomer = e => {
@@ -17,20 +23,20 @@ const MessageReports = () => {
 
     return (
         <div>
-            <Header title="Message Reports" />
+            <Header title={lang.messageReports} />
 
             <div className="bg-white m-4 p-5 shadow-sm">
 
                 <div className="flex justify-between items-center gap-2 pb-3 border-b border-b-slate-300">
                     <div className="flex items-center gap-2 text-lg md:text-2xl font-semibold">
                         <IoIosMailOpen className="" />
-                        <h2>Message List</h2>
+                        <h2>{lang.messageList}</h2>
                     </div>
 
                     {/* search modal */}
                     <div>
                         <p onClick={() => document.getElementById('my_modal_1').showModal()} >
-                            <Button text="Search" icon={IoSearch} bg="bg-sky-500" />
+                            <Button text={lang.search} icon={IoSearch} bg="bg-sky-500" />
                         </p>
                         {/* modal body */}
                         <dialog id="my_modal_1" className="modal">
@@ -59,7 +65,7 @@ const MessageReports = () => {
 
                 {/* message list */}
                 <div className="py-3">
-                    <p>No records found!</p>
+                    <p>{lang.notFound}</p>
                 </div>
 
             </div>

@@ -5,9 +5,14 @@ import { IoMdWallet } from "react-icons/io";
 import { GrLanguage } from "react-icons/gr";
 import { useState } from "react";
 import { IoCloudUploadOutline } from "react-icons/io5";
+import { useTranslation } from "react-i18next";
 
 
 const BusinessSettings = () => {
+
+    const {i18n} = useTranslation();
+
+    console.log(i18n?.language);
 
     const [image, setImage] = useState(null);
 
@@ -41,7 +46,7 @@ const BusinessSettings = () => {
     const handleChangeLanguage = e => {
         const selectedLan = e.target.value;
 
-        console.log(selectedLan);
+        i18n.changeLanguage(selectedLan)
     }
 
 
@@ -54,7 +59,7 @@ const BusinessSettings = () => {
                 {/* language */}
                 <div className="pb-8 flex gap-2 items-start">
                     <h2 className="text-lg md:text-xl font-bold flex items-center gap-1"><GrLanguage />Language: </h2>
-                    <select onChange={(e) => handleChangeLanguage(e)} className="bg-white px-4 py-1 border border-slate-300 rounded-sm">
+                    <select onChange={(e) => handleChangeLanguage(e)} className="bg-white px-4 py-1 border border-slate-300 rounded-sm" defaultValue={i18n?.language}>
                         <option value="en">English</option>
                         <option value="bn">বাংলা</option>
                     </select>

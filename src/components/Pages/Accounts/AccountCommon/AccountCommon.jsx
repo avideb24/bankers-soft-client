@@ -4,20 +4,27 @@ import Button from '../../../Shared/Button/Button';
 import { FaCirclePlus } from "react-icons/fa6";
 import { IoSearch } from "react-icons/io5";
 import { Link, useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 
 const AccountCommon = ({ title, icon: Icon }) => {
 
     // fake data
     const data = [
-        { id: 1, name: 'Belal', image: 'https://i.ibb.co/NZFtFPL/user.png', accountNo: '5456412', mobile: '01723622125' },
-        { id: 2, name: 'Belal', image: 'https://i.ibb.co/NZFtFPL/user.png', accountNo: '5456412', mobile: '01723622125' },
-        { id: 3, name: 'Belal', image: 'https://i.ibb.co/NZFtFPL/user.png', accountNo: '5456412', mobile: '01723622125' },
-        { id: 4, name: 'Belal', image: 'https://i.ibb.co/NZFtFPL/user.png', accountNo: '5456412', mobile: '01723622125' },
-        { id: 5, name: 'Belal', image: 'https://i.ibb.co/NZFtFPL/user.png', accountNo: '5456412', mobile: '01723622125' },
+        { id: 1, name: 'Belal', image: 'https://i.ibb.co/NZFtFPL/user.png', accountNo: '5456412', balance: '5000' },
+        { id: 2, name: 'Belal', image: 'https://i.ibb.co/NZFtFPL/user.png', accountNo: '5456412', balance: '5000' },
+        { id: 3, name: 'Belal', image: 'https://i.ibb.co/NZFtFPL/user.png', accountNo: '5456412', balance: '5000' },
+        { id: 4, name: 'Belal', image: 'https://i.ibb.co/NZFtFPL/user.png', accountNo: '5456412', balance: '5000' },
+        { id: 5, name: 'Belal', image: 'https://i.ibb.co/NZFtFPL/user.png', accountNo: '5456412', balance: '5000' },
     ]
 
     // -----------------------
+
+     // translation -----------
+     const {t} = useTranslation();
+     const lang = t('Accounts').AccountCommon;
+     // -----------------------
+
     const navigate = useNavigate();
     
 
@@ -41,8 +48,8 @@ const AccountCommon = ({ title, icon: Icon }) => {
             <Header title={title} />
 
             <div className='m-4 py-2 flex gap-4'>
-                <Button text={`New ${title}`} icon={FaCirclePlus} bg='bg-blue-600' handleClick={handleNavigate} />
-                <Button text='Search Customer' icon={IoSearch} bg='bg-orange-600' handleClick={() => document.getElementById('my_modal_1').showModal()} />
+                <Button text={`${lang.new} ${title}`} icon={FaCirclePlus} bg='bg-blue-600' handleClick={handleNavigate} />
+                <Button text={lang.searchCustomer} icon={IoSearch} bg='bg-orange-600' handleClick={() => document.getElementById('my_modal_1').showModal()} />
 
                 {/* modal body */}
                 <dialog id="my_modal_1" className="modal">
@@ -69,13 +76,13 @@ const AccountCommon = ({ title, icon: Icon }) => {
 
             <div className='bg-white m-4 p-5 shadow-sm'>
 
-                <h2 className='text-lg md:text-2xl flex items-center gap-2 font-semibold pb-3 border-b border-b-slate-300'><Icon className='mt-1' />{title} Customers</h2>
+                <h2 className='text-lg md:text-2xl flex items-center gap-2 font-semibold pb-3 border-b border-b-slate-300'><Icon className='mt-1' />{title} {lang.customer}</h2>
 
                 {/* content */}
                 <div className='mt-3 border border-slate-300 p-4 rounded-sm'>
                     {
                         data?.length == 0 ?
-                            <p>No records found!</p>
+                            <p>{lang.notFound}</p>
                             :
                             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3'>
                                 {
@@ -84,8 +91,8 @@ const AccountCommon = ({ title, icon: Icon }) => {
                                             <img src={data?.image} className='max-w-14 max-h-16 object-contain rounded-md' alt={data?.name} />
                                             <div className='hover:text-blue-600 duration-300'>
                                                 <h3 className='font-bold'>{data?.name}</h3>
-                                                <p><span className='font-bold'>Account No: </span>{data?.accountNo}</p>
-                                                <p><span className='font-bold'>Mobile: </span>{data?.mobile}</p>
+                                                <p><span className='font-bold'>{lang.accountNo}: </span>{data?.accountNo}</p>
+                                                <p><span className='font-bold'>{lang.balance}: </span><span className='text-base md:text-lg'>৳</span>{data?.balance}</p>
                                             </div>
                                         </Link>
                                     )

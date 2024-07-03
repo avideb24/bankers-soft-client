@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { FaChartBar } from "react-icons/fa";
 import { FaCircleMinus, FaCirclePlus } from "react-icons/fa6";
 
@@ -12,13 +13,22 @@ const SalaryTable = () => {
         { type: 'Income', date: '24-06-24', amount: 200 },
     ];
 
+
+    // -----------------------
+
+     // translation----------------
+     const {t} = useTranslation();
+     const lang = t('SalariesOfEmployees');
+     // ---------------------------
+
+
     const tableHeads = ['Trx Type', 'Trx Date', 'Amount', 'Current Balance'];
 
     return (
         <div className="bg-white p-5">
 
             <div className="flex justify-between items-center gap-3 pb-3 border-b border-b-slate-300 mb-5">
-                <h2 className="flex items-center gap-2 text-base md:text-lg font-bold"><FaChartBar className="mt-1" />Income Expenditure</h2>
+                <h2 className="flex items-center gap-2 text-base md:text-lg font-bold"><FaChartBar className="mt-1" />{lang.incomeExpenditure}</h2>
             </div>
 
             {/* content / table */}

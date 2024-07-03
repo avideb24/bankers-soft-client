@@ -10,6 +10,7 @@ import { PiBankFill } from "react-icons/pi";
 import PropTypes from 'prop-types';
 import { useRef } from "react";
 import { useReactToPrint } from "react-to-print";
+import { useTranslation } from "react-i18next";
 
 
 const ReportElement = ({ text, amount, icon: Icon }) => (
@@ -25,6 +26,11 @@ const ReportElement = ({ text, amount, icon: Icon }) => (
 
 const SattlementReports = () => {
 
+    // translation ----------------
+    const { t } = useTranslation();
+    const lang = t('Reports').SettlementReports;
+    // ---------------------------
+
     const printedContentRef = useRef();
 
     const handlePrint = useReactToPrint({
@@ -33,23 +39,23 @@ const SattlementReports = () => {
 
     return (
         <div>
-            <Header title="Settlement Reports" />
+            <Header title={lang.settlementReports} />
 
             <div className="bg-white m-4 p-5">
 
-                <button onClick={handlePrint} className="bg-sky-600 px-3 py-1 text-white  font-semibold flex items-center gap-2 rounded-sm mx-auto"><MdLocalPrintshop />Print</button>
+                <button onClick={handlePrint} className="bg-sky-600 px-3 py-1 text-white  font-semibold flex items-center gap-2 rounded-sm mx-auto"><MdLocalPrintshop />{lang.print}</button>
 
                 {/* reports */}
                 <div ref={printedContentRef} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-4 pt-10 pb-6">
-                    <ReportElement text={'Owners Shares'} amount={'204'} icon={FaUserTie} />
-                    <ReportElement text={'Customers Shares'} amount={'10004'} icon={IoMdWallet} />
-                    <ReportElement text={'Customers Savings'} amount={'204'} icon={FaWallet} />
-                    <ReportElement text={'Fixed Deposits'} amount={'204'} icon={RiDonutChartFill} />
-                    <ReportElement text={'Customers DPS'} amount={'204'} icon={SiGoogletagmanager} />
-                    <ReportElement text={'Insurance'} amount={'204'} icon={RiFlowerFill} />
-                    <ReportElement text={'Customer Loan'} amount={'204'} icon={BsGridFill} />
-                    <ReportElement text={'Bank Deposit'} amount={'204'} icon={PiBankFill} />
-                    <ReportElement text={'Total cash with profit'} amount={'204'} icon={IoMdCash} />
+                    <ReportElement text={lang.ownersShare} amount={'204'} icon={FaUserTie} />
+                    <ReportElement text={lang.customersShare} amount={'10004'} icon={IoMdWallet} />
+                    <ReportElement text={lang.customersSavings} amount={'204'} icon={FaWallet} />
+                    <ReportElement text={lang.fixedDeposit} amount={'204'} icon={RiDonutChartFill} />
+                    <ReportElement text={lang.customerDps} amount={'204'} icon={SiGoogletagmanager} />
+                    <ReportElement text={lang.insurance} amount={'204'} icon={RiFlowerFill} />
+                    <ReportElement text={lang.customerLoan} amount={'204'} icon={BsGridFill} />
+                    <ReportElement text={lang.bankDeposit} amount={'204'} icon={PiBankFill} />
+                    <ReportElement text={lang.totalProfit} amount={'204'} icon={IoMdCash} />
                 </div>
 
             </div>

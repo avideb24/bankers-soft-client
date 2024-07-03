@@ -4,19 +4,27 @@ import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { RiDeleteBin6Fill } from "react-icons/ri";
+import { useTranslation } from "react-i18next";
 
 
 const CustomersList = () => {
-
     
     // fake data
     const customers = [
-        { name: 'Belal', role: 'Manager', mobile: '01723622125', joiningDate: '30-06-24', img: 'https://i.ibb.co/XFw1xTb/user.png' },
-        { name: 'Belal', role: 'Manager', mobile: '01723622125', joiningDate: '30-06-24', img: 'https://i.ibb.co/XFw1xTb/user.png' },
-        { name: 'Belal', role: 'Manager', mobile: '01723622125', joiningDate: '30-06-24', img: 'https://i.ibb.co/XFw1xTb/user.png' },
-        { name: 'Belal', role: 'Manager', mobile: '01723622125', joiningDate: '30-06-24', img: 'https://i.ibb.co/XFw1xTb/user.png' },
-        { name: 'Belal', role: 'Manager', mobile: '01723622125', joiningDate: '30-06-24', img: 'https://i.ibb.co/XFw1xTb/user.png' },
+        { name: 'Belal', area: 'Nilphamari', mobile: '01723622125', accountNo: '657465456', img: 'https://i.ibb.co/XFw1xTb/user.png' },
+        { name: 'Belal', area: 'Nilphamari', mobile: '01723622125', accountNo: '657465456', img: 'https://i.ibb.co/XFw1xTb/user.png' },
+        { name: 'Belal', area: 'Nilphamari', mobile: '01723622125', accountNo: '657465456', img: 'https://i.ibb.co/XFw1xTb/user.png' },
+        { name: 'Belal', area: 'Nilphamari', mobile: '01723622125', accountNo: '657465456', img: 'https://i.ibb.co/XFw1xTb/user.png' },
+        { name: 'Belal', area: 'Nilphamari', mobile: '01723622125', accountNo: '657465456', img: 'https://i.ibb.co/XFw1xTb/user.png' },
     ];
+
+
+    // ---------------------------------
+
+    // translation -----------
+    const { t } = useTranslation();
+    const lang = t('Customers')
+    // -----------------------
 
 
     // delete customer fn
@@ -49,17 +57,17 @@ const CustomersList = () => {
     return (
         <div>
             
-            <Header title="Customers List" />
+            <Header title={lang.customerList} />
 
             <div className="bg-white m-3 px-5 py-4">
 
                 <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mb-5 pb-3 border-b border-b-slate-300">
-                    <h2 className="flex items-center gap-2 text-base font-bold"><FaUsers className="text-2xl" /> <span>All Customers</span></h2>
+                    <h2 className="flex items-center gap-2 text-base font-bold"><FaUsers className="text-2xl" /> <span>{lang.allCustomers}</span></h2>
                     <form className="flex items-center gap-2">
-                        <input type="text" className="w-full border-2 border-slate-200 bg-transparent px-2 py-[6px] rounded-sm outline-none" placeholder="Customers's name..." />
+                        <input type="text" className="w-full border-2 border-slate-200 bg-transparent px-2 py-[6px] rounded-sm outline-none" placeholder={`${lang.customerName}...`} />
                         <button className="flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-sm">
                             <FaSearch />
-                            <span>Search</span>
+                            <span>{lang.search}</span>
                         </button>
                     </form>
                 </div>
@@ -78,13 +86,13 @@ const CustomersList = () => {
                                             <img src={customer?.img} className="w-12 h-12 object-contain" alt={customer?.name} />
                                             <div className="flex flex-col justify-between">
                                                 <h2 className="font-bold">{customer?.name}</h2>
-                                                <p>{customer?.role}</p>
+                                                <p><span className="font-bold">{lang.mobile}: </span>{customer?.mobile}</p>
                                             </div>
                                         </Link>
                                         {/* mobile / date */}
                                         <div className="text-center md:text-left">
-                                            <p><span className="font-bold">Mobile:</span> {customer?.mobile}</p>
-                                            <p><span className="font-bold">Joining Date: </span>{customer?.joiningDate}</p>
+                                            <p><span className="font-bold">{lang.area}:</span> {customer?.area}</p>
+                                            <p><span className="font-bold">{lang.accountNo}: </span>{customer?.accountNo}</p>
                                         </div>
                                         {/* delete btn */}
                                         <div className="text-right">

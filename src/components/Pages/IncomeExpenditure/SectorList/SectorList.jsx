@@ -3,6 +3,7 @@ import { FaCirclePlus } from "react-icons/fa6";
 import { IoSearch } from "react-icons/io5";
 import { FaCalendarAlt, FaExclamationCircle, FaEdit } from "react-icons/fa";
 import Button from "../../../Shared/Button/Button";
+import { useTranslation } from "react-i18next";
 
 
 
@@ -14,7 +15,12 @@ const SectorList = () => {
         { name: 'Biscuits', amount: 100 },
     ];
 
+    // ------------------------------
 
+    // translation-----------------
+    const { t } = useTranslation();
+    const lang = t('IncomeExpenditure');
+    // ----------------------------
 
     // add new sector
     const handleAddSector = e => {
@@ -54,11 +60,11 @@ const SectorList = () => {
         <div className="bg-white p-5 shadow-sm">
 
             <div className="flex justify-between items-center gap-3 mb-5 flex-wrap">
-                <h2 className="text-base md:text-lg font-bold flex items-center gap-2"><BsGraphUp />Income-Expenditure Sector</h2>
+                <h2 className="text-base md:text-lg font-bold flex items-center gap-2"><BsGraphUp />{lang.incomeExpenditure} {lang.sector}</h2>
                 <div className="flex gap-3">
 
                     {/* add sector */}
-                    <Button text="Add New" icon={FaCirclePlus} bg="bg-blue-600" handleClick={() => document.getElementById('my_modal_1').showModal()} />
+                    <Button text={lang.addNew} icon={FaCirclePlus} bg="bg-blue-600" handleClick={() => document.getElementById('my_modal_1').showModal()} />
                     {/* add sector modal body */}
                     <dialog id="my_modal_1" className="modal">
                         <div className="modal-box min-w-80 relative bg-white">
@@ -82,7 +88,7 @@ const SectorList = () => {
                     </dialog>
 
                     {/* search sector */}
-                    <Button text="Search" icon={IoSearch} bg="bg-orange-600" handleClick={() => document.getElementById('my_modal_2').showModal()} />
+                    <Button text={lang.search} icon={IoSearch} bg="bg-orange-600" handleClick={() => document.getElementById('my_modal_2').showModal()} />
                     {/* modal body */}
                     <dialog id="my_modal_2" className="modal">
                         <div className="modal-box p-4 relative bg-white">

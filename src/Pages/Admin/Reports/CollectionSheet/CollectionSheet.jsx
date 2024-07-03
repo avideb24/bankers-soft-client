@@ -2,9 +2,16 @@ import { useReactToPrint } from "react-to-print";
 import Header from "../../../../components/Shared/Header/Header";
 import { MdLocalPrintshop } from "react-icons/md";
 import { useRef } from "react";
+import { useTranslation } from "react-i18next";
 
 
 const CollectionSheet = () => {
+
+
+    // translation ----------------
+    const { t } = useTranslation();
+    const lang = t('Reports').CollectionSheet;
+    // ---------------------------
 
     const printedContentRef = useRef();
 
@@ -18,12 +25,12 @@ const CollectionSheet = () => {
 
     return (
         <div>
-            <Header title="Collection Sheet" />
+            <Header title={lang.collectionSheet} />
 
             <div className="bg-white m-4 p-5">
 
                 {/* print btn */}
-                <button onClick={handlePrint} className="bg-sky-600 px-3 py-1 text-white  font-semibold flex items-center gap-2 rounded-sm mx-auto"><MdLocalPrintshop />Print</button>
+                <button onClick={handlePrint} className="bg-sky-600 px-3 py-1 text-white  font-semibold flex items-center gap-2 rounded-sm mx-auto"><MdLocalPrintshop />{lang.print}</button>
 
                 {/* printed document */}
                 <div ref={printedContentRef}>
