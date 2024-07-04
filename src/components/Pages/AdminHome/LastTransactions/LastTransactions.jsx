@@ -2,10 +2,12 @@ import { Link } from "react-router-dom";
 import { TbTransfer } from "react-icons/tb";
 import { MdOutlineChecklist } from "react-icons/md";
 import { FaCirclePlus } from "react-icons/fa6";
+import { useTranslation } from "react-i18next";
 
 
 const LastTransactions = () => {
 
+    // fake data
     const transactions = [
         { name: 'Belal', mobile: '01723622125', image: 'https://i.ibb.co/GCYmQNR/user.png'},
         { name: 'Belal', mobile: '01723622125', image: 'https://i.ibb.co/GCYmQNR/user.png'},
@@ -15,7 +17,13 @@ const LastTransactions = () => {
         { name: 'Belal', mobile: '01723622125', image: 'https://i.ibb.co/GCYmQNR/user.png'},
         { name: 'Belal', mobile: '01723622125', image: 'https://i.ibb.co/GCYmQNR/user.png'},
         { name: 'Belal', mobile: '01723622125', image: 'https://i.ibb.co/GCYmQNR/user.png'},
-    ]
+    ];
+
+
+    // translation ----------------------
+    const { t } = useTranslation();
+    const lang = t('AdminDashboard').LastTransactions;
+    // ----------------------------------
 
 
     return (
@@ -23,10 +31,10 @@ const LastTransactions = () => {
 
             <div className="flex justify-between gap-4 pb-3 mb-3 border-b border-b-slate-300">
                 {/* title */}
-                <h2 className="text-base md:text-xl font-bold flex items-center gap-2"><TbTransfer className="mt-1" />Last Transactions</h2>
+                <h2 className="text-base md:text-xl font-bold flex items-center gap-2"><TbTransfer className="mt-1" />{lang.lastTransactions}</h2>
                 <div className="flex items-center gap-3">
                     <Link to={'/transactions'}>
-                        <p className="flex items-center gap-1 bg-slate-200 px-3 py-1"><MdOutlineChecklist /> See All</p>
+                        <p className="flex items-center gap-1 bg-slate-200 px-3 py-1"><MdOutlineChecklist /> {lang.seeAll}</p>
                     </Link>
                 </div>
             </div>

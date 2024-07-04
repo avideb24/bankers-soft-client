@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { FaChartBar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
@@ -8,17 +9,25 @@ const EmployeeReports = () => {
     const reports = [
         { name: 'Avi Debnath', image: 'https://i.ibb.co/NZFtFPL/user.png', role: 'Admin', collection: 0, type: 'collection' },
         { name: 'Avi Debnath', image: 'https://i.ibb.co/NZFtFPL/user.png', role: 'Admin', collection: 0, type: 'collection' },
-    ]
+    ];
+
+    // -------------------------------
+
+    // translation ---------------
+    const {t} = useTranslation();
+    const lang = t('AdminDashboard').TodaysReport;
+    // ---------------------------
+
 
     return (
         <div className="w-1/2 p-4 border-t border-t-slate-300 pt-3">
-            <h2 className="flex items-center gap-1 text-lg md:text-xl font-bold pb-4"><FaChartBar />Employee Reports</h2>
+            <h2 className="flex items-center gap-1 text-lg md:text-xl font-bold pb-4"><FaChartBar />{lang.employeeReports}</h2>
 
             {/* reports table */}
             <div>
                 {
                     reports?.length == 0 ?
-                        <div className="py-4">No reports found!</div>
+                        <div className="py-4">{lang.notFound}</div>
                         :
                         <table className="w-full">
                             <thead>

@@ -49,9 +49,46 @@ i18next.use(LanguageDetector).use(initReactI18next).init({
                     newDps: 'New DPS',
                     newSavings: 'New Savings',
                 },
+                AdminDashboard: {
+                    CompleteProfile: {
+                        warning: 'Warning',
+                        text: 'Your profile is incomplete. Please submit all information including your photo in the profile.',
+                        profileSetUp: 'Profile Setup',
+                    },
+                    Overview: {
+                        overview: 'Overview',
+                        fullReport: 'Full Report',
+                        availableBalance: 'Available Balance',
+                        businessCapital: 'Business Capital', 
+                        profits: 'Profits', 
+                        activeCustomers: 'Active Customers',
+                        totalCustomers: 'Total Customers',
+                        profile: 'Profile',
+                    },
+                    LastTransactions: {
+                        lastTransactions: 'Last Transactions',
+                        seeAll: 'See All',
+                    },
+                    TodaysReport: {
+                        todaysReport: "Today's Report",
+                        collections: 'Collections',
+                        distribution : 'Distribution',
+                        expenses : 'Expenses',
+                        profits : ' Profits',
+                        fineCollection : 'Fine Collection',
+                        totalCash  : 'Total Cash',
+                        employeeReports: 'Employee Reports',
+                        smsReports: 'SMS Reports',
+                        notFound: 'No records founds!',
+                        seeMore: 'See More',
+                    },
+                },
                 Customers: {
+                    area: 'Area',
                     newArea: 'New Area',
+                    editArea: 'Edit Area',
                     areaList: 'Area List',
+                    areaName: 'Area Name',
                     search: 'Search',
                     searchArea: 'Search Area',
                     customerList: 'Customer List',
@@ -61,6 +98,9 @@ i18next.use(LanguageDetector).use(initReactI18next).init({
                     accountNo: 'Account No',
                     customerLaser: 'Customer Laser',
                     print: 'Print',
+                    notFound: 'No Data found!',
+                    save: 'Save',
+                    close: 'Close',
                 },
                 Reports:{
                     SettlementReports: {
@@ -214,6 +254,10 @@ i18next.use(LanguageDetector).use(initReactI18next).init({
                         joiningDate: 'Joining Date',
                     },
                 },
+                ErrorPage: {
+                    errorText: 'Sorry! Your Requested page was not found!',
+                    goHome: 'Go Home',
+                },
             }
         },
         bn: {
@@ -256,10 +300,46 @@ i18next.use(LanguageDetector).use(initReactI18next).init({
                     newDps: 'নতুন ডিপিএস',
                     newSavings: 'নতুন সঞ্চয়',
                 },
+                AdminDashboard: {
+                    CompleteProfile: {
+                        warning: 'সতর্কতা',
+                        text: 'আপনার প্রোফাইলটি অসম্পূর্ণ, প্রোফাইলে আপনার ছবি সহ সমস্ত তথ্য জমা দিন।',
+                        profileSetUp: 'প্রোফাইল সেটআপ',
+                    },
+                    Overview: {
+                        overview: 'ওভারভিউ',
+                        fullReport: 'রিপোর্ট’স',
+                        availableBalance: 'উপলুব্ধ ব্যালেন্স',
+                        businessCapital: 'ব্যবসার মূলধন', 
+                        profits: 'লাভ', 
+                        activeCustomers: 'সক্রিয় গ্রাহক',
+                        totalCustomers: 'মোট গ্রাহক',
+                        profile: 'প্রোফাইল',
+                    },
+                    LastTransactions: {
+                        lastTransactions: 'সর্বশেষ লেনদেন',
+                        seeAll: 'সবগুলো দেখুন',
+                    },
+                    TodaysReport: {
+                        todaysReport: "আজকের রিপোর্ট",
+                        collections: 'গ্রহণ',
+                        distribution : 'বিতরণ',
+                        expenses : 'খরচ',
+                        profits : 'লাভ',
+                        fineCollection : 'জরিমানা আদায়',
+                        totalCash  : 'মোট ক্যাশ',
+                        employeeReports: 'কর্মচারীদের রিপোর্ট’স',
+                        smsReports: 'বার্তা রিপোর্ট’স',
+                        notFound: 'কোন রেকর্ড পাওয়া যায়নি!',
+                        seeMore: ' আরো দেখুন',
+                    },
+                },
                 Customers: {
                     area: 'এলাকা',
                     newArea: 'নতুন এলাকা ',
+                    editArea: 'এডিট এলাকা',
                     areaList: 'এলাকার তাালিকা',
+                    areaName: 'এলাকার নাম',
                     search: 'অনুসন্ধান',
                     searchArea: 'এলাকা অনুসন্ধান',
                     customerList: 'গ্রাহক তাালিকা',
@@ -269,6 +349,9 @@ i18next.use(LanguageDetector).use(initReactI18next).init({
                     accountNo: 'হিসাব নং',
                     customerLaser: 'গ্রাহক লেজার',
                     print: 'প্রিন্ট',
+                    notFound: 'কোন তথ্য পাওয়া যায়নি!',
+                    save: 'সেভ',
+                    close: 'ক্লোজ',
                 },
                 Reports:{
                     SettlementReports: {
@@ -422,6 +505,10 @@ i18next.use(LanguageDetector).use(initReactI18next).init({
                         mobile: 'মোবাইল',
                         joiningDate: 'যোগদানের তারিখ',
                     },
+                },
+                ErrorPage: {
+                    errorText: 'দুঃখিত! পেজটি খুঁজে পাওয়া যায়নি!',
+                    goHome: 'হোম',
                 },
             }
         }
