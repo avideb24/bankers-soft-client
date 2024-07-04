@@ -4,6 +4,7 @@ import { FaSearch } from "react-icons/fa";
 import { RiDeleteBin6Fill } from "react-icons/ri";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 
 const UsersList = () => {
@@ -17,6 +18,22 @@ const UsersList = () => {
         { name: 'Belal', role: 'Manager', mobile: '01723622125', joiningDate: '30-06-24', img: 'https://i.ibb.co/XFw1xTb/user.png' },
     ];
 
+    // -----------------------------
+
+    // translation -----------------
+    const { t } = useTranslation();
+    const lang = t('Users').UserList;
+    // -----------------------------
+
+
+    // search user fn
+    const handleSearchUser = e => {
+        e.preventDefault();
+
+        const userName = e.target.userName.value;
+
+        console.log(userName);
+    }
 
     // delete user fn
     const handleDeteleUser = id => {
@@ -48,17 +65,17 @@ const UsersList = () => {
     return (
         <div>
 
-            <Header title="Users List" />
+            <Header title={lang.userList} />
 
             <div className="bg-white m-3 px-5 py-4">
 
                 <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mb-6 border-b border-b-slate-300 pb-3">
-                    <h2 className="flex items-center gap-2 text-base font-bold"><FaUsers className="text-2xl" /> <span>All Users</span></h2>
-                    <form className="flex items-center gap-2">
-                        <input type="text" className="w-full border-2 border-slate-200 bg-transparent px-2 py-[6px] rounded-sm outline-none" placeholder="User's name..." />
+                    <h2 className="flex items-center gap-2 text-base font-bold"><FaUsers className="text-2xl" /> <span>{lang.allUsers}</span></h2>
+                    <form onSubmit={handleSearchUser} className="flex items-center gap-2">
+                        <input type="text" name="userName" className="w-full border-2 border-slate-200 bg-transparent px-2 py-[6px] rounded-sm outline-none" placeholder={lang.searchUser} required />
                         <button className="flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-sm">
                             <FaSearch />
-                            <span>Search</span>
+                            <span>{lang.search}</span>
                         </button>
                     </form>
                 </div>
@@ -66,7 +83,7 @@ const UsersList = () => {
                 {/* users list */}
                 {
                     users?.length == 0 ?
-                        <div className="font-bold text-center py-4">No users found!</div>
+                        <div className="font-bold text-center py-4">{lang.notFound}</div>
                         :
                         <div>
                             {
@@ -82,8 +99,8 @@ const UsersList = () => {
                                         </Link>
                                         {/* mobile / date */}
                                         <div className="text-center md:text-left">
-                                            <p><span className="font-bold">Mobile:</span> {user?.mobile}</p>
-                                            <p><span className="font-bold">Joining Date: </span>{user?.joiningDate}</p>
+                                            <p><span className="font-bold">{lang.mobile}:</span> {user?.mobile}</p>
+                                            <p><span className="font-bold">{lang.joiningDate}: </span>{user?.joiningDate}</p>
                                         </div>
                                         {/* delete btn */}
                                         <div className="text-right">
