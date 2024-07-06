@@ -1,7 +1,14 @@
+import { useTranslation } from "react-i18next";
 import { MdLock } from "react-icons/md";
 
 
 const ChangeUserPassword = () => {
+
+     // translation ------------------
+     const {t} = useTranslation();
+     const lang = t('Profile').User;
+     // ------------------------------
+
 
     // change password fn
     const handleChangePass = e => {
@@ -16,11 +23,11 @@ const ChangeUserPassword = () => {
     return (
         <>
             {/* edit profile btn */}
-            <button onClick={() => document.getElementById('my_modal_3').showModal()} className="bg-orange-600 px-3 py-1 text-white font-semibold flex items-center gap-2 rounded-sm"><MdLock />Change Password</button>
+            <button onClick={() => document.getElementById('my_modal_3').showModal()} className="bg-orange-600 px-3 py-1 text-white font-semibold flex items-center gap-2 rounded-sm"><MdLock />{lang.changePassword}</button>
             {/* edit profile modal */}
             <dialog id="my_modal_3" className="modal">
                 <div className="modal-box p-4 relative bg-white">
-                    <h3 className="text-base md:text-xl font-semibold flex items-center gap-2"><MdLock />Change Password</h3>
+                    <h3 className="text-base md:text-xl font-semibold flex items-center gap-2"><MdLock />{lang.changePassword}</h3>
                     {/* date form */}
                     <form onSubmit={handleChangePass} className="pt-4">
                         <div>

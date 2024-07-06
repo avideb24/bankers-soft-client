@@ -56,7 +56,7 @@ const Overview = () => {
                 </div>
                 <div className="grid grid-cols-2 gap-3">
                     <div className="bg-slate-200 p-3 rounded-md">
-                        <p>B{lang.businessCapital}</p>
+                        <p>{lang.businessCapital}</p>
                         <p className="font-semibold"><span className="text-base md:text-lg">৳</span>0</p>
                     </div>
                     <div className="bg-slate-200 p-3 rounded-md">

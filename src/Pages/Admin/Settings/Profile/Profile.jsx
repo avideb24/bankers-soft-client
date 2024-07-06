@@ -57,7 +57,7 @@ const Profile = () => {
                 {/* admin infos */}
                 <div className="pt-24 md:pt-20 pl-5">
 
-                    <h2 className="text-lg md:text-xl font-bold pb-3 mb-4 border-b border-b-slate-300">Profile Details</h2>
+                    <h2 className="text-lg md:text-xl font-bold pb-3 mb-4 border-b border-b-slate-300">{lang.profileDetails}</h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 

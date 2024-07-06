@@ -1,7 +1,15 @@
+import { useTranslation } from "react-i18next";
 import { FaEdit } from "react-icons/fa";
 
 
 const EditUserProfile = () => {
+
+
+    // translation ------------------
+    const { t } = useTranslation();
+    const lang = t('Profile').User;
+    // ------------------------------
+
 
     // update profile info
     const handleUpdateProfile = e => {
@@ -27,7 +35,7 @@ const EditUserProfile = () => {
     return (
         <>
             {/* edit profile btn */}
-            <button onClick={() => document.getElementById('my_modal_4').showModal()} className="bg-blue-600 px-3 py-1 text-white font-semibold flex items-center gap-2 rounded-sm"><FaEdit />Edit Profile</button>
+            <button onClick={() => document.getElementById('my_modal_4').showModal()} className="bg-blue-600 px-3 py-1 text-white font-semibold flex items-center gap-2 rounded-sm"><FaEdit />{lang.editProfile}</button>
             {/* edit profile modal */}
             <dialog id="my_modal_4" className="modal">
                 <div className="modal-box p-4 relative bg-white">

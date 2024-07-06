@@ -1,9 +1,17 @@
 import { FaEdit } from "react-icons/fa";
 import { FaCircleXmark } from "react-icons/fa6";
 import PropTypes from "prop-types";
+import { useTranslation } from "react-i18next";
 
 
 const EditInfos = ({ modalId, title, data }) => {
+
+
+    // translations --------------
+    const {t} = useTranslation();
+    const lang = t('Profile').Customer;
+    // ---------------------------
+
 
     const { nameEn, nameBn, father, mother, presentAddress, permanentAddress, birthDate, identityType, identityNumber, mobile, email, accountNumber, occupation, gender } = data;
 
@@ -61,7 +69,7 @@ const EditInfos = ({ modalId, title, data }) => {
     return (
         <>
             {/* edit profile btn */}
-            <button onClick={() => document.getElementById(`my_modal_${modalId}`).showModal()} className="bg-blue-600 px-3 py-1 text-white font-semibold flex items-center gap-2 rounded-[4px]"><FaEdit />Edit</button>
+            <button onClick={() => document.getElementById(`my_modal_${modalId}`).showModal()} className="bg-blue-600 px-3 py-1 text-white font-semibold flex items-center gap-2 rounded-[4px]"><FaEdit />{lang.edit}</button>
             {/* edit profile modal */}
             <dialog id={`my_modal_${modalId}`} className="modal">
                 <div className="modal-box p-4 relative bg-white rounded-none">

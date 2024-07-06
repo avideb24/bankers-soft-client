@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import ChangeCustomerImage from "./ChangeCustomerImage/ChangeCustomerImage";
 import CustomerInfos from "./CustomerInfos/CustomerInfos";
 import NomineeInfos from "./NomineeInfos/NomineeInfos";
@@ -6,6 +7,12 @@ import ProfileBtns from "./ProfileBtns/ProfileBtns";
 
 
 const ProfileInfos = () => {
+
+     // translations --------------
+     const {t} = useTranslation();
+     const lang = t('Profile').Customer;
+     // ---------------------------
+
 
     return (
         <div className="w-full md:w-8/12 h-max bg-white p-5 shadow-sm">
@@ -20,8 +27,8 @@ const ProfileInfos = () => {
                         <ChangeCustomerImage />
                         <div>
                             <h2 className="text-base md:text-lg font-bold">Avi Debnath</h2>
-                            <p><span className="font-bold">Area: </span>Nilphamari</p>
-                            <p><span className="font-bold">Mobile: </span>01723622125</p>
+                            <p><span className="font-bold">{lang.area}: </span>Nilphamari</p>
+                            <p><span className="font-bold">{lang.mobile}: </span>01723622125</p>
                         </div>
                     </div>
                 </div>

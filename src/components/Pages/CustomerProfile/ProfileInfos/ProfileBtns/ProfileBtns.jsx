@@ -1,8 +1,16 @@
+import { useTranslation } from "react-i18next";
 import Button from "../../../../Shared/Button/Button";
 import { FaCirclePlus } from "react-icons/fa6";
 
 
 const ProfileBtns = () => {
+
+
+     // translations --------------
+     const {t} = useTranslation();
+     const lang = t('Profile').Customer;
+     // ---------------------------
+
 
 
     // after completing this => navigate customer to specific wallet page 
@@ -100,7 +108,7 @@ const ProfileBtns = () => {
 
             {/* ---------------- LOAN ---------------------- */}
             {/* new loan btn */}
-            <Button text={'Loan'} icon={FaCirclePlus} bg={'bg-rose-600'} handleClick={() => document.getElementById('my_modal_8').showModal()} />
+            <Button text={lang.loan} icon={FaCirclePlus} bg={'bg-rose-600'} handleClick={() => document.getElementById('my_modal_8').showModal()} />
 
             {/* new loan modal */}
             <dialog id="my_modal_8" className="modal">
@@ -167,7 +175,7 @@ const ProfileBtns = () => {
 
             {/* ---------------- DPS ---------------------- */}
             {/* new dps btn */}
-            <Button text={'DPS'} icon={FaCirclePlus} bg={'bg-sky-500'} handleClick={() => document.getElementById('my_modal_4').showModal()} />
+            <Button text={lang.dps} icon={FaCirclePlus} bg={'bg-sky-500'} handleClick={() => document.getElementById('my_modal_4').showModal()} />
 
             {/* new dps modal */}
             <dialog id="my_modal_4" className="modal">
@@ -223,7 +231,7 @@ const ProfileBtns = () => {
 
             {/* ---------------- SAVINGS---------------------- */}
             {/* new savings btn */}
-            <Button text={'Savings'} icon={FaCirclePlus} bg={'bg-green-600'} handleClick={() => document.getElementById('my_modal_11').showModal()} />
+            <Button text={lang.savings} icon={FaCirclePlus} bg={'bg-green-600'} handleClick={() => document.getElementById('my_modal_11').showModal()} />
             {/* new savings modal */}
             <dialog id="my_modal_11" className="modal">
                 <div className="modal-box p-4 relative bg-white rounded-none">
@@ -265,7 +273,7 @@ const ProfileBtns = () => {
 
             {/* ---------------- SHARE---------------------- */}
             {/* new share btn */}
-            <Button text={'Share'} icon={FaCirclePlus} bg={'bg-violet-600'} handleClick={() => document.getElementById('my_modal_10').showModal()} />
+            <Button text={lang.share} icon={FaCirclePlus} bg={'bg-violet-600'} handleClick={() => document.getElementById('my_modal_10').showModal()} />
 
             {/* new share modal */}
             <dialog id="my_modal_10" className="modal">
@@ -317,7 +325,7 @@ const ProfileBtns = () => {
 
             {/* ---------------- FDR---------------------- */}
             {/* new fdr btn */}
-            <Button text={'FDR'} icon={FaCirclePlus} bg={'bg-orange-600'} handleClick={() => document.getElementById('my_modal_12').showModal()} />
+            <Button text={lang.fdr} icon={FaCirclePlus} bg={'bg-orange-600'} handleClick={() => document.getElementById('my_modal_12').showModal()} />
 
             {/* new fdr modal */}
             <dialog id="my_modal_12" className="modal">
@@ -369,7 +377,7 @@ const ProfileBtns = () => {
 
             {/* ---------------- INSURANCE ---------------------- */}
             {/* new insurance btn */}
-            <Button text={'Insurance'} icon={FaCirclePlus} bg={'bg-emerald-700'} handleClick={() => document.getElementById('my_modal_6').showModal()} />
+            <Button text={lang.insurance} icon={FaCirclePlus} bg={'bg-emerald-700'} handleClick={() => document.getElementById('my_modal_6').showModal()} />
 
             {/* new insurance modal */}
             <dialog id="my_modal_6" className="modal">

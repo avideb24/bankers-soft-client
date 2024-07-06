@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { FaChartBar } from "react-icons/fa";
 
 
@@ -9,11 +10,19 @@ const LastTransactions = () => {
         { type: 'Salary Expense', date: '02-07-2024', amount: 500, approval: 'Avi Debnath' },
         { type: 'Salary Expense', date: '02-07-2024', amount: 500, approval: 'Avi Debnath' },
         { type: 'Salary Expense', date: '02-07-2024', amount: 500, approval: 'Avi Debnath' },
-    ]
+    ];
+
+    // ----------------------------------
+
+     // translation ------------------
+     const {t} = useTranslation();
+     const lang = t('Profile').User;
+     // ------------------------------
+
 
     return (
         <div className="w-full bg-white p-5 shadow-sm h-max">
-            <h2 className="flex items-center gap-2 text-lg md:text-xl font-bold pb-3 border-b border-b-slate-300"><FaChartBar className="mt-1" />Last Transaction</h2>
+            <h2 className="flex items-center gap-2 text-lg md:text-xl font-bold pb-3 border-b border-b-slate-300"><FaChartBar className="mt-1" />{lang.lastTransactions}</h2>
 
             {/* transaction table */}
             <div className=" overflow-x-scroll mt-5">

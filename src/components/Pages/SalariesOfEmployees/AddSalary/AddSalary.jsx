@@ -50,7 +50,7 @@ const AddSalary = () => {
                 {/* select employee */}
                 <label htmlFor="select" className="font-bold">{lang.employee}</label>
                 <select id="select" name="selectEmployee" className="w-full border border-slate-300 px-3 py-1 bg-white rounded-sm" defaultValue={'default'}>
-                    <option value="default" disabled>Choose Employee</option>
+                    <option value="default" disabled>{lang.chooseOne}</option>
                     {
                         employees?.map((employee, idx) =>
                             <option key={idx} value={employee}>{employee}</option>
