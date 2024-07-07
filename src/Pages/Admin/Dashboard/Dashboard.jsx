@@ -4,7 +4,7 @@ import Overview from "../../../components/Pages/AdminHome/Overview/Overview";
 import TodaysReport from "../../../components/Pages/AdminHome/TodaysReport/TodaysReport";
 import Header from "../../../components/Shared/Header/Header";
 
-const Home = () => {
+const Dashboard = () => {
     return (
         <div>
             <Header title="home" />
@@ -22,4 +22,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default Dashboard;

@@ -22,7 +22,6 @@ import IncomeExpenditure from "../Pages/Admin/IncomeExpenditure/IncomeExpenditur
 import SalariesOfEmployees from "../Pages/Admin/SalariesOfEmployees/SalariesOfEmployees";
 import ProfitsDistribution from "../Pages/Admin/ProfitsDistribution/ProfitDistribution";
 import HelpCenter from "../Pages/Admin/HelpCenter/HelpCenter";
-import Home from "../Pages/Admin/Home/Home";
 import BusinessSettings from "../Pages/Admin/Settings/BusinessSettings/BusinessSettings";
 import Profile from "../Pages/Admin/Settings/Profile/Profile";
 import UserProfile from "../Pages/Admin/UserProfile/UserProfile";
@@ -33,6 +32,12 @@ import UserReports from "../Pages/Admin/UserReports/UserReports";
 import BankProfile from "../Pages/Admin/BankProfile/BankProfile";
 import Transactions from "../Pages/Admin/Transactions/Transactions";
 import Wallet from "../Pages/Admin/Accounts/Wallet/Wallet";
+import Home from "../Pages/Home/Home";
+import Login from "../Pages/Login/Login";
+import Dashboard from "../Pages/Admin/Dashboard/Dashboard";
+
+// customer
+import CustomerDashboard from '../Pages/Customer/CustomerDashboard/CustomerDashboard';
 
 
 const Routes = createBrowserRouter([
@@ -46,130 +51,148 @@ const Routes = createBrowserRouter([
                 element: <Home />
             },
             {
-                path: '/add-user',
+                path: '/login',
+                element: <Login />
+            },
+            {
+                path: '/admin',
+                element: <Dashboard />
+            },
+            {
+                path: '/admin/add-user',
                 element: <AddUser />
             },
             {
-                path: '/userslist',
+                path: '/admin/userslist',
                 element: <UsersList />
             },
             {
-                path: '/area',
+                path: '/admin/area',
                 element: <Area />
             },
             {
-                path: '/add-customer',
+                path: '/admin/add-customer',
                 element: <AddNew />
             },
             {
-                path: '/customers-list',
+                path: '/admin/customers-list',
                 element: <CustomersList />
             },
             {
-                path: '/customer-laser',
+                path: '/admin/customer-laser',
                 element: <CustomerLaser />
             },
             {
-                path: '/settlement-reports',
+                path: '/admin/settlement-reports',
                 element: <SettlementReports />
             },
             {
-                path: '/collection-reports',
+                path: '/admin/collection-reports',
                 element: <CollectionReports />
             },
             {
-                path: '/collection-sheet',
+                path: '/admin/collection-sheet',
                 element: <CollectionSheet />
             },
             {
-                path: '/message-reports',
+                path: '/admin/message-reports',
                 element: <MessageReports />
             },
             {
-                path: '/share',
+                path: '/admin/share',
                 element: <Share />
             },
             {
-                path: '/savings',
+                path: '/admin/savings',
                 element: <Savings />
             },
             {
-                path: '/fixed-deposit',
+                path: '/admin/fixed-deposit',
                 element: <FixedDeposit />
             },
             {
-                path: '/dps',
+                path: '/admin/dps',
                 element: <Dps />
             },
             {
-                path: '/loan',
+                path: '/admin/loan',
                 element: <Loan />
             },
             {
-                path: '/insurance',
+                path: '/admin/insurance',
                 element: <Insurance />
             },
             {
                 // dynamic route
-                path: '/wallet/:accountType/:id',
+                path: '/admin/wallet/:accountType/:id',
                 element: <Wallet />
             },
             {
-                path: '/banking',
+                path: '/admin/banking',
                 element: <Banking />
             },
             {
                 // dynamic route
-                path: '/bank-profile',
+                path: '/admin/bank-profile',
                 element: <BankProfile />
             },
             {
-                path: '/income-expenditure',
+                path: '/admin/income-expenditure',
                 element: <IncomeExpenditure />
             },
             {
-                path: '/salaries-of-employeees',
+                path: '/admin/salaries-of-employeees',
                 element: <SalariesOfEmployees />
             },
             {
-                path: '/profits-distribution',
+                path: '/admin/profits-distribution',
                 element: <ProfitsDistribution />
             },
             {
-                path: '/business-settings',
+                path: '/admin/business-settings',
                 element: <BusinessSettings />
             },
             {
-                path: '/profile',
+                path: '/admin/profile',
                 element: <Profile />
             },
             {
-                path: '/user-profile',
+                path: '/admin/user-profile',
                 element: <UserProfile />
             },
             {
-                path: '/user-reports',
+                path: '/admin/user-reports',
                 element: <UserReports />
             },
             {
-                path: '/customer-profile',
+                path: '/admin/customer-profile',
                 element: <CustomerProfile />
             },
             {
-                path: '/customer-documents',
+                path: '/admin/customer-documents',
                 element: <CustomerDocuments />
             },
             {
-                path: '/nominee-documents',
+                path: '/admin/nominee-documents',
                 element: <NomineeDocuments />
             },
             {
-                path: '/transactions',
+                path: '/admin/transactions',
                 element: <Transactions />
             },
             {
-                path: '/help-center',
+                path: '/admin/help-center',
                 element: <HelpCenter />
+            },
+            {
+                path: '/admin/help-center',
+                element: <HelpCenter />
+            },
+
+             // customer routes
+             {
+                path: '/customer',
+                element: <CustomerDashboard></CustomerDashboard>
             },
         ]
     }
