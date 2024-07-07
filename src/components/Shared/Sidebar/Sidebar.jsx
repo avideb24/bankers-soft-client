@@ -29,7 +29,7 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
     // ------------------------
 
 
-    const { isLoggedIn, userRole } = useLoggedUser();
+    const { isLoggedIn, userRole, setIsLoggedIn, setUserRole } = useLoggedUser();
     const navigate = useNavigate();
 
 
@@ -58,8 +58,10 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
         localStorage.setItem("isLoggedIn", null);
         localStorage.setItem("userRole", null);
 
+        setIsLoggedIn(null);
+        setUserRole(null)
         navigate('/login')
-        console.log('hitted');
+
     };
 
 
@@ -207,7 +209,7 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
                     <SidebarLink to='/help-center' icon={MdOutlineSupportAgent} iconSize={'text-xl'}>{lang?.helpCenter}</SidebarLink>
                 </div>
 
-               {/* logout */}
+                {/* logout */}
                 <button onClick={handleLogout} className="flex items-center gap-6 font-semibold"><ImSwitch />Logout</button>
 
             </div>

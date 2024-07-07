@@ -22,6 +22,8 @@ const Login = () => {
         }
     }, [isLoggedIn, userRole, navigate]);
 
+    console.log("old",isLoggedIn);
+
     // login fn
     const handleLogin = e => {
         e.preventDefault();
@@ -38,8 +40,9 @@ const Login = () => {
 
         if (isValidUser) {
             localStorage.setItem("isLoggedIn", "true");
-            setIsLoggedIn(true)
+            setIsLoggedIn(true);
 
+            console.log("new",isLoggedIn);
             if (checkbox) {
                 localStorage.setItem("userRole", "customer");
                 setUserRole("customer");
@@ -80,7 +83,7 @@ const Login = () => {
                         <input type="checkbox" name="checkbox" className="toggle toggle-success" />
                         <span>Customer</span>
                     </div>
-                    <input type="submit" value={'Login'} className="w-full bg-blue-600 font-bold text-white py-[6px] rounded-sm mt-2 cursor-pointer" />
+                    <input type="submit" value={'Log In'} className="w-full bg-blue-600 font-bold text-white py-[6px] rounded-sm mt-2 cursor-pointer" />
                 </form>
 
             </div>

@@ -38,6 +38,7 @@ import Dashboard from "../Pages/Admin/Dashboard/Dashboard";
 
 // customer
 import CustomerDashboard from '../Pages/Customer/CustomerDashboard/CustomerDashboard';
+import OurPolicy from "../Pages/OurPolicy/OurPolicy";
 
 
 const Routes = createBrowserRouter([
@@ -51,9 +52,14 @@ const Routes = createBrowserRouter([
                 element: <Home />
             },
             {
+                path: '/our-policy',
+                element: <OurPolicy />
+            },
+            {
                 path: '/login',
                 element: <Login />
             },
+            // admin routes ------------------->>>
             {
                 path: '/admin',
                 element: <Dashboard />
@@ -189,7 +195,7 @@ const Routes = createBrowserRouter([
                 element: <HelpCenter />
             },
 
-             // customer routes
+             // customer routes----------------------->>>
              {
                 path: '/customer',
                 element: <CustomerDashboard></CustomerDashboard>

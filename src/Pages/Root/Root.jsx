@@ -10,6 +10,7 @@ const Root = () => {
     const [showSidebar, setShowSidebar] = useState(false);
     const {isLoggedIn } = useLoggedUser();
 
+
     useEffect(() => {
         // This effect ensures the component re-renders when the login state changes
         // You can add any other logic here if necessary

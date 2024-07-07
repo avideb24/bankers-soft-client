@@ -11,6 +11,59 @@ i18next.use(LanguageDetector).use(initReactI18next).init({
     resources: {
         en: {
             translation: {
+                HomePage: {
+                    home: 'Home',
+                    ourPolicy: 'Our Policy',
+                    login: 'Log In',
+                    responsive: 'Device Responsive',
+                    responsiveText: 'Can be used simultaneously on mobile and computer.',
+                    features: 'What is in this software?',
+                    featuresText: 'It is a microcredit business management software. The facilities of this software are given below...',
+                    Accounting: {
+                        title: 'Accounting',
+                        text1: 'Deposit & withdraw',
+                        text2: 'Receivable & payable',
+                        text3: 'Transactions',
+                        text4: 'Income and Expense',
+                    },
+                    UsersRole: {
+                        title: 'Users Role',
+                        text1: 'Admin',
+                        text2: 'Investor',
+                        text3: 'Manager',
+                        text4: 'Field Assistant',
+                    },
+                    AccountsType: {
+                        title: 'Accounts Type',
+                        text1: 'Deposit',
+                        text2: 'Loan',
+                        text3: 'DPS',
+                        text4: 'FDR',
+                        text5: 'Insurance',
+                    },
+                    Customer: {
+                        title: 'Customer',
+                        text1: 'Customer Register',
+                        text2: 'Customer List',
+                        text3: 'Payment Request',
+                        text4: 'Error correction',
+                        text5: 'Give notice',
+                    },
+                    AdditionalFeatures: {
+                        title: 'Additional features',
+                        text1: 'Device Responsive',
+                        text2: 'Collection sheet',
+                        text3: 'Profits Distribution',
+                        text4: 'Bank transactions',
+                        text5: 'Laser print',
+                        text6: 'Customer activity',
+                        text7: 'Profile Control',
+                        text8: 'Customer filtering',
+                    },
+                },
+
+
+
                 Sidebar:{
                     dashboard: 'Dashboard',
                     customers: 'Customers',
@@ -333,6 +386,60 @@ i18next.use(LanguageDetector).use(initReactI18next).init({
         },
         bn: {
             translation: {
+                HomePage: {
+                    home: 'হোম',
+                    ourPolicy: 'আমাদের নীতি',
+                    login: 'লগ ইন',
+                    responsive: 'ডিভাইস প্রতিক্রিয়াশীল',
+                    responsiveText: 'একই সাথে মোবাইল এবং কম্পিউটারে ব্যবহার করা যাবে।',
+                    features: 'কি আছে এই সফটওয়্যারে?',
+                    featuresText: 'এটি একটি ক্ষুদ্রঋণ ব্যবসা ব্যবস্থাপনা সফটওয়্যার। এই সফটওয়্যারের সুবিধাগুলো নিচে দেওয়া হল...',
+                    Accounting: {
+                        title: 'অ্যাকাউন্টিং ',
+                        text1: 'জমা এবং উত্তোলন',
+                        text2: 'প্রাপ্য এবং প্রদেয়',
+                        text3: 'লেনদেন ম্যানেজমেন্ট',
+                        text4: 'আয় এবং ব্যয় হিসাব',
+                    },
+                    UsersRole: {
+                        title: 'ইউজার ব্যবস্থাপনা',
+                        text1: 'অ্যাডমিন ',
+                        text2: 'বিনিয়োগকারী ',
+                        text3: 'ম্যানেজার ',
+                        text4: 'মাঠকর্মী ',
+                    },
+                    AccountsType: {
+                        title: 'অ্যাকাউন্টের ধরন ',
+                        text1: 'জমা ',
+                        text2: 'ঋণ ',
+                        text3: 'ডিপিএস ',
+                        text4: 'এফডিআর ',
+                        text5: 'বীমা ',
+                    },
+                    Customer: {
+                        title: 'গ্রাহক ব্যবস্থাপনা',
+                        text1: 'গ্রাহক নিবন্ধন ',
+                        text2: 'গ্রাহক তালিকা',
+                        text3: 'পেমেন্ট অনুরোধ ',
+                        text4: 'ভুল সংশোধন ',
+                        text5: 'নির্দেশিকা প্রদান ',
+                    },
+                    AdditionalFeatures: {
+                        title: 'অতিরিক্ত বৈশিষ্ট্য সমূহ ',
+                        text1: 'ডিভাইস প্রতিক্রিয়াশীল ',
+                        text2: 'আদায় শীট',
+                        text3: 'প্রফিট বন্টন',
+                        text4: 'ব্যাংক লেনদেন',
+                        text5: 'লেজার প্রিন্ট',
+                        text6: 'গ্রাহক সক্রিয়/নিষ্ক্রিয়',
+                        text7: ' প্রোফাইল কন্ট্রোল',
+                        text8: 'গ্রাহক ফিল্টারিং',
+                    },
+                },
+
+
+
+
                 Sidebar:{
                     dashboard: 'ড্যাশবোর্ড',
                     customers: 'গ্রাহক',
