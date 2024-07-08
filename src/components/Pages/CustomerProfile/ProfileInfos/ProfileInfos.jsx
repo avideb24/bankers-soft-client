@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useTranslation } from "react-i18next";
 import ChangeCustomerImage from "./ChangeCustomerImage/ChangeCustomerImage";
 import CustomerInfos from "./CustomerInfos/CustomerInfos";
@@ -6,7 +7,7 @@ import ProfileBtns from "./ProfileBtns/ProfileBtns";
 
 
 
-const ProfileInfos = () => {
+const ProfileInfos = ({isAdmin}) => {
 
      // translations --------------
      const {t} = useTranslation();
@@ -17,7 +18,7 @@ const ProfileInfos = () => {
     return (
         <div className="w-full md:w-8/12 h-max bg-white p-5 shadow-sm">
 
-            <div className="relative z-10">
+            <div className="relative z-10 mb-12">
                 <div className="bg-slate-300 px-4 pt-4 pb-20 flex justify-end relative">
                 </div>
 
@@ -35,7 +36,7 @@ const ProfileInfos = () => {
             </div>
 
             {/* profile btns */}
-            <div className="pt-16">
+            <div className={`${isAdmin == true ? '' : 'hidden'}  pt-16`}>
                 <ProfileBtns />
             </div>
 
@@ -50,3 +51,8 @@ const ProfileInfos = () => {
 };
 
 export default ProfileInfos;
+
+
+ProfileInfos.propTypes = {
+    isAdmin: PropTypes.bool,
+};

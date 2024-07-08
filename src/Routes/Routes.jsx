@@ -39,6 +39,8 @@ import Dashboard from "../Pages/Admin/Dashboard/Dashboard";
 // customer
 import CustomerDashboard from '../Pages/Customer/CustomerDashboard/CustomerDashboard';
 import OurPolicy from "../Pages/OurPolicy/OurPolicy";
+import CustomerAccounts from "../Pages/Customer/CustomerAccounts/CustomerAccounts";
+import CustomerTransactions from "../Pages/Customer/CustomerTransactions/CustomerTransactions";
 
 
 const Routes = createBrowserRouter([
@@ -199,6 +201,22 @@ const Routes = createBrowserRouter([
              {
                 path: '/customer',
                 element: <CustomerDashboard></CustomerDashboard>
+            },
+            {
+                path: '/customer/transactions',
+                element: <CustomerTransactions />
+            },
+            {
+                path: '/customer/accounts',
+                element: <CustomerAccounts />
+            },
+            {
+                path: '/customer/customer-documents',
+                element: <CustomerDocuments />
+            },
+            {
+                path: '/customer/nominee-documents',
+                element: <NomineeDocuments />
             },
         ]
     }

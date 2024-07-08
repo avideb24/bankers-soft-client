@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { IoCloudUploadOutline } from "react-icons/io5";
 import { FaCamera } from "react-icons/fa";
-import userImg from '../../../../../public/images/user.png';
+import userImg from '../../../../assets/user.png';
 
 const ChangeImage = () => {
 

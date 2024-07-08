@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import PropTypes from 'prop-types';
 import { MdOutlineDesktopMac, MdSpaceDashboard, MdMessage, MdGraphicEq, MdOutlineSupportAgent } from "react-icons/md";
-import { FaUsers, FaUserTie, FaUserCircle } from "react-icons/fa";
+import { FaUsers, FaUserTie, FaUserCircle, FaChartBar } from "react-icons/fa";
 import { RiUserAddFill, RiDonutChartFill, RiStackshareFill, RiBankCardFill, RiFlowerFill } from "react-icons/ri";
 import { FaUserGroup, FaMoneyCheckDollar, FaGear, FaKey, FaXmark } from "react-icons/fa6";
 import { GrGrid } from "react-icons/gr";
@@ -13,6 +13,7 @@ import { SiGoogletagmanager } from "react-icons/si";
 import { ImSwitch } from "react-icons/im";
 import { useTranslation } from "react-i18next";
 import useLoggedUser from "../../../hooks/useLoggedUser";
+import logo from '../../../assets/bankers-logo.png';
 
 const SidebarLink = ({ to, icon: Icon, iconSize, children }) => (
     <NavLink to={to} className='flex items-center gap-5 font-semibold'>
@@ -72,7 +73,9 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
             <div className={`${userRole == 'admin' ? '' : 'hidden'} w-full min-h-screen bg-white flex flex-col items-start gap-3 text-black px-8 py-5  shadow-xl relative`}>
 
                 {/* logo */}
-                <Link to={'/admin'} className="text-3xl font-bold py-2">Bankers</Link>
+                <Link to={'/admin'} className="max-w-28 lg:max-w-32 mb-4">
+                    <img src={logo} className="w-full object-contain" alt="Bankers-logo" />
+                </Link>
 
                 {/* dashboard */}
                 <div className="pb-1">
@@ -173,7 +176,7 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
                 </div>
 
                 {/* logout */}
-                <button onClick={handleLogout} className="flex items-center gap-6 font-semibold"><ImSwitch />Logout</button>
+                <button onClick={handleLogout} className="flex items-center gap-6 font-semibold"><ImSwitch />{lang.logout}</button>
 
             </div>
 
@@ -181,36 +184,25 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
             <div className={`${userRole == 'customer' ? '' : 'hidden'} w-full min-h-screen bg-white flex flex-col items-start gap-3 text-black px-8 py-5  shadow-xl relative`}>
 
                 {/* logo */}
-                <Link to={'/'} className="text-3xl font-bold py-2">Bankers</Link>
+                <Link to={'/customer'} className="max-w-28 lg:max-w-32 mb-4">
+                    <img src={logo} className="w-full object-contain" alt="Bankers-logo" />
+                </Link>
 
                 {/* dashboard */}
                 <div className="pb-1">
-                    <SidebarLink to='/' icon={MdOutlineDesktopMac}>{lang?.dashboard}</SidebarLink>
+                    <SidebarLink to='/customer' icon={MdOutlineDesktopMac}>{lang?.dashboard}</SidebarLink>
                 </div>
 
-                {/* banking */}
-                <SidebarLink to='/banking' icon={PiBankFill} iconSize={'text-xl'}>{lang?.banking}</SidebarLink>
-
-                {/* income - expenditure */}
+                {/* transactions */}
                 <div className="py-2">
-                    <SidebarLink to='/income-expenditure' icon={BsGraphUp} iconSize={'text-base'}>{lang?.incomeExpenditure}</SidebarLink>
+                    <SidebarLink to='/customer/transactions' icon={FaChartBar} iconSize={'text-base'}>{lang?.transactions}</SidebarLink>
                 </div>
 
-                {/* salary */}
-                <SidebarLink to='/salaries-of-employeees' icon={FaMoneyCheckDollar} iconSize={'text-base'}>{lang?.salariesOfEmployees}</SidebarLink>
-
-                {/* profits */}
-                <div className="py-2">
-                    <SidebarLink to='/profits-distribution' icon={MdGraphicEq} iconSize={'text-xl'}>{lang?.profitDistribution}</SidebarLink>
-                </div>
-
-                {/* help center */}
-                <div className="py-2">
-                    <SidebarLink to='/help-center' icon={MdOutlineSupportAgent} iconSize={'text-xl'}>{lang?.helpCenter}</SidebarLink>
-                </div>
+                {/* accounts */}
+                <SidebarLink to='/customer/accounts' icon={PiBankFill} iconSize={'text-xl'}>{lang?.accounts}</SidebarLink>
 
                 {/* logout */}
-                <button onClick={handleLogout} className="flex items-center gap-6 font-semibold"><ImSwitch />Logout</button>
+                <button onClick={handleLogout} className="flex items-center gap-6 font-semibold"><ImSwitch className="mt-[2px]" />{lang.logout}</button>
 
             </div>
 

@@ -2,9 +2,10 @@ import { Link } from "react-router-dom";
 import { FaFolder } from "react-icons/fa";
 import TransactionTable from "./TransactionTable/TransactionTable";
 import { useTranslation } from "react-i18next";
+import PropTypes from 'prop-types';
 
 
-const OtherInfos = () => {
+const OtherInfos = ({isAdmin}) => {
 
     // fake data
     const data = [
@@ -28,11 +29,11 @@ const OtherInfos = () => {
             <div className="bg-white p-5 shadow-sm">
                 <h2 className="text-lg md:text-xl font-bold pb-2 border-b border-b-slate-300 mb-3">{lang.otherDocuments}</h2>
                 <div className="space-y-2">
-                    <Link to={'/customer-documents'} className="flex items-center gap-1 bg-slate-300 px-3 py-1 rounded-sm font-semibold">
+                    <Link to={isAdmin ? '/admin/customer-documents' : '/customer/customer-documents'} className="flex items-center gap-1 bg-slate-300 px-3 py-1 rounded-sm font-semibold">
                         <FaFolder className="mt-[2px]" />
                         <span>{lang.customerDocuments}</span>
                     </Link>
-                    <Link to={'/nominee-documents'} className="flex items-center gap-1 bg-slate-300 px-3 py-1 rounded-sm font-semibold">
+                    <Link to={isAdmin ? '/admin/nominee-documents' : '/customer/nominee-documents'} className="flex items-center gap-1 bg-slate-300 px-3 py-1 rounded-sm font-semibold">
                         <FaFolder className="mt-[2px]" />
                         <span>{lang.nomineeDocuments}</span>
                     </Link>
@@ -51,3 +52,8 @@ const OtherInfos = () => {
 };
 
 export default OtherInfos;
+
+
+OtherInfos.propTypes = {
+    isAdmin: PropTypes.bool,
+};

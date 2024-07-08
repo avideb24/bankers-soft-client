@@ -4,7 +4,7 @@ import { FaCalendarAlt, FaChartBar, FaExclamationCircle } from "react-icons/fa";
 import { RiSearchLine } from "react-icons/ri";
 import { MdLocalPrintshop } from "react-icons/md";
 import { useReactToPrint } from "react-to-print";
-import userImg from '../../../../public/images/user.png';
+import userImg from '../../../assets/user.png';
 import UserReportCard from "../../../components/Pages/UserReports/UserReportCard/UserReportCard";
 
 

@@ -82,7 +82,7 @@ const CustomersList = () => {
                                 customers?.map((customer, idx) =>
                                     <div key={idx} className="grid grid-cols-3 gap-3 items-center mb-4 pb-3 border-b border-b-slate-300">
                                         {/* img / name / role */}
-                                        <Link to={'/customer-profile'} className="flex gap-3">
+                                        <Link to={'/admin/customer-profile'} className="flex gap-3">
                                             <img src={customer?.img} className="w-12 h-12 object-contain" alt={customer?.name} />
                                             <div className="flex flex-col justify-between">
                                                 <h2 className="font-bold">{customer?.name}</h2>

@@ -61,9 +61,6 @@ i18next.use(LanguageDetector).use(initReactI18next).init({
                         text8: 'Customer filtering',
                     },
                 },
-
-
-
                 Sidebar:{
                     dashboard: 'Dashboard',
                     customers: 'Customers',
@@ -94,6 +91,7 @@ i18next.use(LanguageDetector).use(initReactI18next).init({
                     userList: 'User List',
                     helpCenter: 'Help Center',
                     logout: 'Log Out',
+                    transactions: 'Transactions',
                 },
                 Header: {
                     searchCustomer: 'Search Customer',
@@ -382,6 +380,27 @@ i18next.use(LanguageDetector).use(initReactI18next).init({
                         lastTransactions: 'Last Transactions',
                     },
                 },
+                Customer: {
+                    Dashboard: {
+                        dashboard: 'Dashboard',
+                        yourAccounts: 'Your Accounts',
+                        share: 'Share',
+                        savings: 'Savings',
+                        dps: 'DPS',
+                        fixedDeposit: 'Fixed Deposit',
+                        loan: 'Loan',
+                        insurance: 'Insurance',
+                        lastTransactions: 'Last Transactions',
+                        last10Transactions: 'Last 10 Transactions',
+                        seeAll: 'See All',
+                        notFound: 'No records founds...',
+                    },
+                    Transactions: {
+                        transactions: 'Transactions',
+                        search: 'Search',
+                        notFound: 'No records founds...',
+                    },
+                },
             }
         },
         bn: {
@@ -436,10 +455,6 @@ i18next.use(LanguageDetector).use(initReactI18next).init({
                         text8: 'গ্রাহক ফিল্টারিং',
                     },
                 },
-
-
-
-
                 Sidebar:{
                     dashboard: 'ড্যাশবোর্ড',
                     customers: 'গ্রাহক',
@@ -470,6 +485,7 @@ i18next.use(LanguageDetector).use(initReactI18next).init({
                     userList: 'ইউজার তালিকা',
                     helpCenter: 'সহায়তা কেন্দ্র',
                     logout: 'লগ আউট',
+                    transactions: 'লেনদেন',
                 },
                 Header: {
                     searchCustomer: 'গ্রাহক অনুসন্ধান',
@@ -757,6 +773,27 @@ i18next.use(LanguageDetector).use(initReactI18next).init({
                         changePassword: 'পাসওয়ার্ড পরিবর্তন',
                         editProfile: 'ইডিট প্রোফাইল',
                         lastTransactions: 'সর্বশেষ লেনদেন',
+                    },
+                },
+                Customer: {
+                    Dashboard: {
+                        dashboard: 'ড্যাশবোর্ড ',
+                        yourAccounts: 'আপনার হিসাব',
+                        share: 'শেয়ার',
+                        savings: 'সঞ্চয়',
+                        dps: 'ডিপিএস',
+                        fixedDeposit: 'ডিপিএস',
+                        loan: 'ঋণ',
+                        insurance: 'বীমা',
+                        lastTransactions: 'সর্বশেষ লেনদেন',
+                        last10Transactions: 'শেষ ১০টি লেনদেন',
+                        seeAll: 'সবগুলো দেখুন',
+                        notFound: 'কোন রেকর্ড পাওয়া যায়নি...',
+                    },
+                    Transactions: {
+                        transactions: ' লেনদেন',
+                        search: 'অনুসন্ধান',
+                        notFound: 'কোন রেকর্ড পাওয়া যায়নি...',
                     },
                 },
             }

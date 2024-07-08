@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 
 
 const TransactionTable = ({ title, data }) => {
@@ -19,14 +18,10 @@ const TransactionTable = ({ title, data }) => {
                         data?.map((singleData, idx) =>
                             <tr key={idx}>
                                 <th className='font-normal p-1'>
-                                    <Link to={'/'}>
-                                        {singleData?.date}
-                                    </Link>
+                                    {singleData?.date}
                                 </th>
                                 <th className='font-normal p-1'>
-                                    <Link to={'/'}>
-                                        <span className='text-base md:text-lg'>৳</span>{singleData?.balance}
-                                    </Link>
+                                    <span className='text-base md:text-lg'>৳</span>{singleData?.balance}
                                 </th>
                             </tr>
                         )

@@ -1,11 +1,10 @@
 import { useTranslation } from "react-i18next";
-import OtherInfos from "../../../components/Pages/CustomerProfile/OtherInfos/OtherInfos";
+import CustomerHeader from "../../../components/Shared/CustomerHeader/CustomerHeader";
 import ProfileInfos from "../../../components/Pages/CustomerProfile/ProfileInfos/ProfileInfos";
-import Header from "../../../components/Shared/Header/Header";
+import OtherInfos from "../../../components/Pages/CustomerProfile/OtherInfos/OtherInfos";
 
 
-const CustomerProfile = () => {
-
+const CustomerAccounts = () => {
     // translations --------------
     const {t} = useTranslation();
     const lang = t('Profile').Customer;
@@ -13,15 +12,15 @@ const CustomerProfile = () => {
 
     return (
         <div>
-            <Header title={lang.customerProfile} />
+            <CustomerHeader title={lang.customerProfile} />
 
             <div className="m-4 flex flex-col md:flex-row gap-5">
-                <ProfileInfos isAdmin={true} />
-                <OtherInfos isAdmin={true} />
+                <ProfileInfos isAdmin={false} />
+                <OtherInfos isAdmin={false} />
             </div>
             
         </div>
     );
 };
 
-export default CustomerProfile;
+export default CustomerAccounts;

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
-import bannerImage from '../../../public/images/HomeBanner.jpg';
+import bannerImage from '../../assets/HomeBanner.jpg';
 import InitialHeader from '../../components/Shared/InitialHeader/InitialHeader';
 
 const Home = () => {
