@@ -87,7 +87,7 @@ const AccountCommon = ({ title, icon: Icon }) => {
                             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3'>
                                 {
                                     data?.map((data, idx) =>
-                                        <Link to={`/wallet/${title?.toLowerCase().replace(/\s+/g, '-')}/${data?.id}`} key={idx} className='flex gap-3 border border-slate-300 p-2 rounded-sm'>
+                                        <Link to={`/admin/wallet/${title?.toLowerCase().replace(/\s+/g, '-')}/${data?.id}`} key={idx} className='flex gap-3 border border-slate-300 p-2 rounded-sm'>
                                             <img src={data?.image} className='max-w-14 max-h-16 object-contain rounded-md' alt={data?.name} />
                                             <div className='hover:text-blue-600 duration-300'>
                                                 <h3 className='font-bold'>{data?.name}</h3>

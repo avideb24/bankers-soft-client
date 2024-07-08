@@ -33,7 +33,7 @@ const LastTransactions = () => {
                 {/* title */}
                 <h2 className="text-base md:text-xl font-bold flex items-center gap-2"><TbTransfer className="mt-1" />{lang.lastTransactions}</h2>
                 <div className="flex items-center gap-3">
-                    <Link to={'/transactions'}>
+                    <Link to={'/admin/transactions'}>
                         <p className="flex items-center gap-1 bg-slate-200 px-3 py-1"><MdOutlineChecklist /> {lang.seeAll}</p>
                     </Link>
                 </div>
@@ -44,7 +44,6 @@ const LastTransactions = () => {
                 <table className="w-full bg-slate-50 text-center">
                     <thead>
                         <tr>
-                            <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -67,13 +66,8 @@ const LastTransactions = () => {
                                     <p className="flex justify-center items-center"><FaCirclePlus /><span className="text-sm md:text-lg ml-1">৳</span>100</p>
                                 </td>
                                 <td className="p-1">
-                                    <p className="font-semibold">Approver</p>
+                                    <p className="font-bold">Approver</p>
                                     <p>Avi Debnath</p>
-                                </td>
-                                <td className="p-1">
-                                    <Link to={'/income-expenditure'}>
-                                        <button className="bg-blue-500 text-white font-semibold px-3 py-1 rounded-md">Check</button>
-                                    </Link>
                                 </td>
                             </tr>
                             )

@@ -21,7 +21,7 @@ const EmployeeReports = () => {
 
     return (
         <div className="w-1/2 p-4 border-t border-t-slate-300 pt-3">
-            <h2 className="flex items-center gap-1 text-lg md:text-xl font-bold pb-4"><FaChartBar />{lang.employeeReports}</h2>
+            <h2 className="flex items-center gap-1 text-base md:text-lg font-bold pb-4"><FaChartBar />{lang.employeeReports}</h2>
 
             {/* reports table */}
             <div>
@@ -43,7 +43,7 @@ const EmployeeReports = () => {
                                         <tr key={idx} className="border-t border-t-slate-300">
                                             <td className="flex gap-2 p-1">
                                                 <img src={report?.image} className="w-10 h-10 object-contain rounded-lg" alt={report?.name} />
-                                                <Link to={'/user-reports'}>
+                                                <Link to={'/admin/user-reports'}>
                                                     <p className="font-bold">{report?.name}</p>
                                                     <p>{report?.role}</p>
                                                 </Link>

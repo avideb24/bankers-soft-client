@@ -140,7 +140,7 @@ const Banking = () => {
                                     {
                                         banks?.map((bank, idx) =>
                                             <div key={idx} className="flex justify-between items-center gap-3 pt-3">
-                                                <Link to={'/bank-profile'}>
+                                                <Link to={'/admin/bank-profile'}>
                                                     <p className="font-bold mb-1">{idx + 1}. {bank?.nameEn}</p>
                                                     <p><span className="font-bold">{lang.address}: </span>{bank?.address}</p>
                                                 </Link>
@@ -186,7 +186,7 @@ const Banking = () => {
                                                     </dialog>
 
                                                     {/* link to bank detail page */}
-                                                    <Link to={'/bank-profile'}>
+                                                    <Link to={'/admin/bank-profile'}>
                                                         <button className="text-lg md:text-2xl text-blue-500"><MdAccountBalanceWallet /></button>
                                                     </Link>
                                                 </div>

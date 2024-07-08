@@ -42,9 +42,9 @@ const Header = ({ title }) => {
                         <Button text={lang.addNew} icon={FaPlusCircle} bg={'bg-blue-600'} handleClick={() => setOpenMenu(!openMenu)} />
                         {/* menu */}
                         <div className={`${openMenu ? 'opacity-100 visible' : 'opacity-0 invisible'} absolute -left-4 -bottom-28 flex bg-white z-50 flex-col shadow-md rounded-sm duration-300`}>
-                            <Link to={'/customers-list'} className='px-3 py-1 hover:bg-slate-200 mt-2 duration-300'>+ {lang.newLoan}</Link>
-                            <Link to={'/customers-list'} className='px-3 py-1 hover:bg-slate-200 duration-300'>+ {lang.newSavings}</Link>
-                            <Link to={'/customers-list'} className='px-3 py-1 hover:bg-slate-200 mb-2 duration-300'>+ {lang.newDps}</Link>
+                            <Link to={'/admin/customers-list'} className='px-3 py-1 hover:bg-slate-200 mt-2 duration-300'>+ {lang.newLoan}</Link>
+                            <Link to={'/admin/customers-list'} className='px-3 py-1 hover:bg-slate-200 duration-300'>+ {lang.newSavings}</Link>
+                            <Link to={'/admin/customers-list'} className='px-3 py-1 hover:bg-slate-200 mb-2 duration-300'>+ {lang.newDps}</Link>
                         </div>
                     </div>
 

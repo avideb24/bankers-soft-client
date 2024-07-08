@@ -17,7 +17,7 @@ const SmsReports = () => {
 
     return (
         <div className="w-1/2 p-4 border-t border-t-slate-300 pt-3">
-            <h2 className="flex items-center gap-1 text-lg md:text-xl font-bold "><IoIosMailOpen />{lang.smsReports}</h2>
+            <h2 className="flex items-center gap-1 text-base md:text-lg font-bold "><IoIosMailOpen />{lang.smsReports}</h2>
 
             {/* reports */}
             <div  className="py-4">
@@ -29,7 +29,7 @@ const SmsReports = () => {
                 }
             </div>
             <div className="text-right">
-            <Link to={'/message-reports'} className="text-blue-700 font-bold">{lang.seeMore}...</Link>
+            <Link to={'/admin/message-reports'} className="text-blue-700 font-bold">{lang.seeMore}...</Link>
             </div>
 
         </div>

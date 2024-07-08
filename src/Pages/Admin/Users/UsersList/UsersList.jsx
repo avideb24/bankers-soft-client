@@ -90,7 +90,7 @@ const UsersList = () => {
                                 users?.map((user, idx) =>
                                     <div key={idx} className="grid grid-cols-3 gap-3 items-center mb-4 pb-3 border-b border-b-slate-300">
                                         {/* img / name / role */}
-                                        <Link to={'/user-profile'} className="flex gap-3">
+                                        <Link to={'/admin/user-profile'} className="flex gap-3">
                                             <img src={user?.img} className="w-12 h-12 object-contain" alt={user?.name} />
                                             <div className="flex flex-col justify-between">
                                                 <h2 className="font-bold">{user?.name}</h2>
