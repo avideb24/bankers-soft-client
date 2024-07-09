@@ -6,6 +6,7 @@ import nidBackImg from '../../../assets/documents/NID-Back.png';
 import birthCertificateImg from '../../../assets/documents/Birth-cetificate.png';
 import documentImg from '../../../assets/documents/Document.png';
 import { MdChangeCircle } from "react-icons/md";
+import { useTranslation } from "react-i18next";
 
 const Title = ({ title }) => {
     return (
@@ -16,6 +17,13 @@ const Title = ({ title }) => {
 };
 
 const CustomerDocuments = () => {
+
+    // translation -----------
+    const {t} = useTranslation();
+    const lang = t('Documents');
+    // -----------------------
+
+
     const [nidFrontImage, setNidFrontImage] = useState(nidFrontImg);
     const [nidBackImage, setNidBackImage] = useState(nidBackImg);
     const [birthCertificateImage, setBirthCertificateImage] = useState(birthCertificateImg);
@@ -29,13 +37,13 @@ const CustomerDocuments = () => {
 
     return (
         <div>
-            <Header title="Customer Documents" />
+            <Header title={lang.customerDocuments} />
 
             <div className="m-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
 
                 {/* NID */}
                 <div className="bg-white p-5 shadow-sm rounded-sm h-max">
-                    <Title title={'NID Card'} />
+                    <Title title={lang.nid} />
 
                     <div>
                         <img src={nidFrontImage} className="w-full" alt="NID Front Image" />
@@ -45,7 +53,7 @@ const CustomerDocuments = () => {
                             className="hidden"
                             onChange={(e) => handleImageChange(e, setNidFrontImage)}
                         />
-                        <button className="w-full bg-blue-600 text-white font-bold py-2 flex justify-center items-center gap-2 mt-3 mb-5" onClick={() => document.getElementById('nid-front-upload').click()}><MdChangeCircle />Change</button>
+                        <button className="w-full bg-blue-600 text-white font-bold py-2 flex justify-center items-center gap-2 mt-3 mb-5" onClick={() => document.getElementById('nid-front-upload').click()}><MdChangeCircle />{lang.change}</button>
                     </div>
 
                     <div>
@@ -56,14 +64,14 @@ const CustomerDocuments = () => {
                             className="hidden"
                             onChange={(e) => handleImageChange(e, setNidBackImage)}
                         />
-                        <button className="w-full bg-blue-600 text-white font-bold py-2 flex justify-center items-center gap-2 mt-3" onClick={() => document.getElementById('nid-back-upload').click()}><MdChangeCircle />Change</button>
+                        <button className="w-full bg-blue-600 text-white font-bold py-2 flex justify-center items-center gap-2 mt-3" onClick={() => document.getElementById('nid-back-upload').click()}><MdChangeCircle />{lang.change}</button>
                     </div>
 
                 </div>
 
                 {/* Birth Certificate */}
                 <div className="bg-white p-5 shadow-sm rounded-sm h-max">
-                    <Title title={'Birth Certificate'} />
+                    <Title title={lang.birthCertificate} />
                     <div>
                         <img src={birthCertificateImage} className="w-full" alt="Birth Certificate Image" />
                         <input
@@ -72,13 +80,13 @@ const CustomerDocuments = () => {
                             className="hidden"
                             onChange={(e) => handleImageChange(e, setBirthCertificateImage)}
                         />
-                        <button onClick={() => document.getElementById('birth-certificate-upload').click()} className="w-full bg-blue-600 text-white font-bold py-2 flex justify-center items-center gap-2 mt-3" ><MdChangeCircle />Change</button>
+                        <button onClick={() => document.getElementById('birth-certificate-upload').click()} className="w-full bg-blue-600 text-white font-bold py-2 flex justify-center items-center gap-2 mt-3" ><MdChangeCircle />{lang.change}</button>
                     </div>
                 </div>
 
                 {/* Other Document */}
                 <div className="bg-white p-5 shadow-sm rounded-sm h-max">
-                    <Title title={'Other Document'} />
+                    <Title title={lang.otherDocument} />
                     <div>
                         <img src={otherDocumentImage} className="w-full" alt="Other Document Image" />
                         <input
@@ -87,7 +95,7 @@ const CustomerDocuments = () => {
                             className="hidden"
                             onChange={(e) => handleImageChange(e, setOtherDocumentImage)}
                         />
-                        <button onClick={() => document.getElementById('other-document-upload').click()} className="w-full bg-blue-600 text-white font-bold py-2 flex justify-center items-center gap-2 mt-3" ><MdChangeCircle />Change</button>
+                        <button onClick={() => document.getElementById('other-document-upload').click()} className="w-full bg-blue-600 text-white font-bold py-2 flex justify-center items-center gap-2 mt-3" ><MdChangeCircle />{lang.change}</button>
                     </div>
                 </div>
 

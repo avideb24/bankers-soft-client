@@ -356,7 +356,15 @@ i18next.use(LanguageDetector).use(initReactI18next).init({
                     withdraw: 'Withdraw',
                 },
 
-                
+
+                Documents: {
+                    customerDocuments: 'Customer Documents',
+                    nomineeDocuments: 'Nominee Documents',
+                    nid: 'NID Card',
+                    birthCertificate: 'Birth Certificate',
+                    otherDocument: 'Other Document',
+                    change: 'Change',
+                },
                 Transactions: {
                     transactions: 'Transactions',
                     search: 'Search',
@@ -456,6 +464,14 @@ i18next.use(LanguageDetector).use(initReactI18next).init({
                         notFound: 'No records founds...',
                     },
                 },
+                Login: {
+                    loginPlease: 'Login Please...',
+                    mobile: 'Mobile Number',
+                    password: 'Password',
+                    admin: 'Admin',
+                    customer: 'Customer',
+                    login: 'Login', 
+                },
                 Modals: {
                     SearchByDate: {
                         searchByDate: 'Search By Date',
@@ -478,6 +494,11 @@ i18next.use(LanguageDetector).use(initReactI18next).init({
                         editBank: 'Edit Bank',
                         save: 'Save',
                         close: 'Close',
+                    },
+                    ChangePassword: {
+                        changePassword: 'Change Password',
+                        oldPassword: 'Old Password',
+                        newPassword: 'New Password',
                     },
                 },
             }
@@ -831,6 +852,14 @@ i18next.use(LanguageDetector).use(initReactI18next).init({
                 },
 
 
+                Documents: {
+                    customerDocuments: 'গ্রাহকের নথিপত্র',
+                    nomineeDocuments: 'নমিনির নথিপত্র',
+                    nid: 'জাতীয় পরিচয়পত্র',
+                    birthCertificate: 'জন্মসনদ',
+                    otherDocument: 'অন্যান্য নথিপত্র',
+                    change: 'পরিবর্তন',
+                },
                 Transactions: {
                     transactions: 'লেনদেন',
                     search: 'অনুসন্ধান',
@@ -930,6 +959,14 @@ i18next.use(LanguageDetector).use(initReactI18next).init({
                         notFound: 'কোন রেকর্ড পাওয়া যায়নি...',
                     },
                 },
+                Login: {
+                    loginPlease: 'লগ-ইন প্লিজ...',
+                    mobile: 'মোবাইল নম্বর',
+                    password: 'পাসওয়ার্ড',
+                    admin: 'অ্যাডমিন',
+                    customer: ' গ্রাহক',
+                    login: 'লগ-ইন', 
+                },
                 Modals: {
                     SearchByDate: {
                         searchByDate: 'তারিখ দিয়ে অনুসন্ধান করুন',
@@ -952,6 +989,11 @@ i18next.use(LanguageDetector).use(initReactI18next).init({
                         editBank: 'এডিট ব্যাংক',
                         save: 'সেভ',
                         close: 'ক্লোজ',
+                    },
+                    ChangePassword: {
+                        changePassword: 'পাসওয়ার্ড পরিবর্তন',
+                        oldPassword: 'পুরাতন পাসওয়ার্ড',
+                        newPassword: 'নতুন পাসওয়ার্ড',
                     },
                 },
             }

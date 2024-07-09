@@ -29,7 +29,7 @@ const AccountCommon = ({ title, icon: Icon }) => {
     
 
     const handleNavigate = () => {
-        navigate('/customers-list')
+        navigate('/admin/customers-list')
     };
 
 
