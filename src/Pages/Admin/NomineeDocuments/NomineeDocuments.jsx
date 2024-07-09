@@ -1,10 +1,10 @@
 import Header from "../../../components/Shared/Header/Header";
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-import nidFrontImg from '../../../../public/images/documents/NID-Front.png';
-import nidBackImg from '../../../../public/images/documents/NID-Back.png';
-import birthCertificateImg from '../../../../public/images/documents/Birth-cetificate.png';
-import documentImg from '../../../../public/images/documents/Document.png';
+import nidFrontImg from '../../../assets/documents/NID-Front.png';
+import nidBackImg from '../../../assets/documents/NID-Back.png';
+import birthCertificateImg from '../../../assets/documents/Birth-cetificate.png';
+import documentImg from '../../../assets/documents/Document.png';
 import { MdChangeCircle } from "react-icons/md";
 
 const Title = ({ title }) => {

@@ -1,7 +1,14 @@
 import PropTypes from 'prop-types';
+import { useTranslation } from 'react-i18next';
 
 
 const Profile = ({profileData}) => {
+
+    // translation ------------------
+    const {t} = useTranslation();
+    const lang = t('Wallet');
+    // ------------------------------
+
 
     return (
         <div className='relative mb-6'>
@@ -10,7 +17,7 @@ const Profile = ({profileData}) => {
                 <img src={profileData?.image} className='max-w-16 max-h-16 object-contain rounded-md' alt={profileData?.nameEn} />
                 <div className='flex flex-col justify-between py-1'>
                     <h2 className="font-bold text-base md:text-lg">{profileData?.nameEn}</h2>
-                    <p><span className='font-bold'>Area: </span>{profileData?.presentAddress}</p>
+                    <p><span className='font-bold'>{lang.area}: </span>{profileData?.presentAddress}</p>
                 </div>
             </div>
         </div>

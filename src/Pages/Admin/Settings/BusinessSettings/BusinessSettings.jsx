@@ -162,7 +162,7 @@ const BusinessSettings = () => {
                             <h2 className="flex items-center gap-1 text-lg md:text-xl font-bold pb-3 mb-3 border-b border-b-slate-300"><IoMdWallet className="mt-1" />{lang.balanceSettings}</h2>
                             <div className="flex items-center gap-4">
                                 <div className="w-5/12 flex justify-between font-semibold">
-                                    <span>{lang.mainBalance}e</span>
+                                    <span>{lang.mainBalance}</span>
                                     <span>:</span>
                                 </div>
                                 <div className="w-7/12">

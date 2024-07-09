@@ -1,7 +1,7 @@
 import { BsGraphUp } from "react-icons/bs";
 import { FaCirclePlus } from "react-icons/fa6";
 import { IoSearch } from "react-icons/io5";
-import { FaCalendarAlt, FaExclamationCircle, FaEdit } from "react-icons/fa";
+import { FaCalendarAlt, FaEdit } from "react-icons/fa";
 import Button from "../../../Shared/Button/Button";
 import { useTranslation } from "react-i18next";
 
@@ -20,6 +20,8 @@ const SectorList = () => {
     // translation-----------------
     const { t } = useTranslation();
     const lang = t('IncomeExpenditure');
+    const sector = t('IncomeExpenditure').Sector;
+    const modals = t('Modals').SearchByDate;
     // ----------------------------
 
     // add new sector
@@ -69,19 +71,19 @@ const SectorList = () => {
                     <dialog id="my_modal_1" className="modal">
                         <div className="modal-box min-w-80 relative bg-white">
                             <div className="rounded-sm">
-                                <h2 className="flex items-center gap-2 text-base md:text-xl font-bold pb-2"><FaCirclePlus />Add New Sector</h2>
+                                <h2 className="flex items-center gap-2 text-base md:text-xl font-bold pb-2"><FaCirclePlus />{sector.addNewSector}</h2>
                                 <form onSubmit={handleAddSector} className="space-y-3">
-                                    <label className="text-sm md:text-base font-semibold" htmlFor="sector">Sector Name</label>
-                                    <input type="text" name="sector" className="w-full bg-white border border-slate-300 rounded-sm px-2 py-1 outline-none" id="sector" placeholder="Type here..." required />
+                                    <label className="text-sm md:text-base font-semibold" htmlFor="sector">{sector.sectorName}</label>
+                                    <input type="text" name="sector" className="w-full bg-white border border-slate-300 rounded-sm px-2 py-1 outline-none" id="sector" placeholder={sector.sectorName} required />
                                     <div className="text-right">
-                                        <input type="submit" value="Save" className="bg-green-600 px-3 py-1 rounded-sm text-white font-semibold cursor-pointer" />
+                                        <input type="submit" value={sector.save} className="bg-green-600 px-3 py-1 rounded-sm text-white font-semibold cursor-pointer" />
                                     </div>
                                 </form>
                             </div>
                             <div className="modal-action absolute right-24 bottom-6">
                                 <form method="dialog">
                                     {/* close btn */}
-                                    <button className="bg-red-600 text-white px-3 py-1 rounded-sm">Close</button>
+                                    <button className="bg-red-600 text-white px-3 py-1 rounded-sm">{sector.close}</button>
                                 </form>
                             </div>
                         </div>
@@ -92,28 +94,27 @@ const SectorList = () => {
                     {/* modal body */}
                     <dialog id="my_modal_2" className="modal">
                         <div className="modal-box p-4 relative bg-white">
-                            <h3 className="text-base md:text-xl font-semibold flex items-center gap-2"><FaCalendarAlt />Search By Date</h3>
+                            <h3 className="text-base md:text-xl font-semibold flex items-center gap-2"><FaCalendarAlt />{modals.searchByDate}</h3>
                             {/* date form */}
                             <form onSubmit={handleSearchByDate} className="pt-4">
                                 <div className="flex gap-5">
                                     <div className="w-1/2">
-                                        <label htmlFor="from" className="font-bold">From Date</label>
+                                        <label htmlFor="from" className="font-bold">{modals.fromDate}</label>
                                         <input type="date" className="w-full bg-white mt-2  border border-slate-300" name="fromDate" id="from" required />
                                     </div>
                                     <div className="w-1/2">
-                                        <label htmlFor="to" className="font-bold">To Date</label>
+                                        <label htmlFor="to" className="font-bold">{modals.toDate}</label>
                                         <input type="date" className="w-full bg-white mt-2  border border-slate-300" name="toDate" id="to" required />
                                     </div>
                                 </div>
-                                <p className="mt-4"><span className="text-red-600 font-semibold"><FaExclamationCircle className="inline" /> Special Note: </span>If no dates are selected, sectors will show manually.</p>
                                 <div className="text-right">
-                                    <input type="submit" value="Search" className="bg-green-600 text-white font-semibold px-3 py-1 rounded-sm mt-6 cursor-pointer" />
+                                    <input type="submit" value={modals.search} className="bg-green-600 text-white font-semibold px-3 py-1 rounded-sm mt-6 cursor-pointer" />
                                 </div>
                             </form>
                             {/* close btn */}
-                            <div className="modal-action text-right absolute right-24 bottom-4">
+                            <div className="modal-action text-right absolute right-28 bottom-4">
                                 <form method="dialog">
-                                    <button className="bg-red-600 text-white font-semibold px-3 py-1 rounded-sm mt-5">Close</button>
+                                    <button className="bg-red-600 text-white font-semibold px-3 py-1 rounded-sm mt-5">{modals.cancel}</button>
                                 </form>
                             </div>
                         </div>
@@ -126,7 +127,7 @@ const SectorList = () => {
             {/* sector list */}
             {
                 sectors?.length == 0 ?
-                    <p>No sector found!</p>
+                    <p>{sector.notFound}</p>
                     :
                     <div>
                         {
@@ -138,19 +139,19 @@ const SectorList = () => {
                                     <dialog id={`my_modal_${idx + 3}`} className="modal">
                                         <div className="modal-box min-w-80 relative bg-white">
                                             <div className="rounded-sm">
-                                                <h2 className="flex items-center gap-2 text-base md:text-xl font-bold pb-2"><FaEdit />Edit Sector</h2>
+                                                <h2 className="flex items-center gap-2 text-base md:text-xl font-bold pb-2"><FaEdit />{sector.editSector}</h2>
                                                 <form onSubmit={handleEditSector} className="space-y-3">
-                                                    <label className="text-sm md:text-base font-semibold" htmlFor="sector">Sector Name</label>
-                                                    <input type="text" name="sector" className="w-full bg-white border border-slate-300 rounded-sm px-2 py-1 outline-none" id="sector" placeholder="Type here..." defaultValue={sector?.name} required />
+                                                    <label className="text-sm md:text-base font-semibold" htmlFor="sector">{sector.sectorName}</label>
+                                                    <input type="text" name="sector" className="w-full bg-white border border-slate-300 rounded-sm px-2 py-1 outline-none" id="sector" placeholder={sector.sectorName} defaultValue={sector?.name} required />
                                                     <div className="text-right">
-                                                        <input type="submit" value="Save" className="bg-green-600 px-3 py-1 rounded-sm text-white font-semibold cursor-pointer" />
+                                                        <input type="submit" value={sector.save} className="bg-green-600 px-3 py-1 rounded-sm text-white font-semibold cursor-pointer" />
                                                     </div>
                                                 </form>
                                             </div>
                                             <div className="modal-action absolute right-24 bottom-6">
                                                 <form method="dialog">
                                                     {/* close btn */}
-                                                    <button className=" bg-red-600 text-white px-3 py-1 rounded-sm">Close</button>
+                                                    <button className=" bg-red-600 text-white px-3 py-1 rounded-sm">{sector.close}</button>
                                                 </form>
                                             </div>
                                         </div>

@@ -25,6 +25,7 @@ const Banking = () => {
     // translation-----------------
     const { t } = useTranslation();
     const lang = t('Banking');
+    const modals = t('Modals').EditBank;
     // ----------------------------
 
 
@@ -90,28 +91,28 @@ const Banking = () => {
                     {/* modal body*/}
                     <dialog id="my_modal_1" className="modal">
                         <div className="modal-box min-w-80 relative bg-white">
-                            <h2 className="flex items-center gap-2 text-base md:text-xl font-bold px-4 py-4 border-b border-b-slate-300"><FaCirclePlus className="mt-1" />New Bank</h2>
+                            <h2 className="flex items-center gap-2 text-base md:text-xl font-bold px-4 py-4 border-b border-b-slate-300"><FaCirclePlus className="mt-1" />{lang.newBank}</h2>
                             <div className="rounded-sm">
 
                                 {/* add new bank form */}
                                 <form onSubmit={handleAddBank} className="space-y-3">
                                     <div className="grid grid-cols-2 gap-3">
                                         <div>
-                                            <label className="text-sm md:text-base font-semibold" htmlFor="bankNameEn">Bank Name (English)</label>
-                                            <input type="text" name="bankNameEn" className="w-full bg-white border border-slate-300 rounded-sm px-2 py-1 outline-none" id="bankNameEn" placeholder="Type here..." required />
+                                            <label className="text-sm md:text-base font-semibold" htmlFor="bankNameEn">{modals.bankName} (English)</label>
+                                            <input type="text" name="bankNameEn" className="w-full bg-white border border-slate-300 rounded-sm px-2 py-1 outline-none" id="bankNameEn" placeholder={modals.typeHere} required />
                                         </div>
                                         <div>
-                                            <label className="text-sm md:text-base font-semibold" htmlFor="bankNameBn">Bank Name (বাংলা)</label>
-                                            <input type="text" name="bankNameBn" className="w-full bg-white border border-slate-300 rounded-sm px-2 py-1 outline-none" id="bankNameBn" placeholder="Type here..." required />
+                                            <label className="text-sm md:text-base font-semibold" htmlFor="bankNameBn">{modals.bankName} (বাংলা)</label>
+                                            <input type="text" name="bankNameBn" className="w-full bg-white border border-slate-300 rounded-sm px-2 py-1 outline-none" id="bankNameBn" placeholder={modals.typeHere} required />
                                         </div>
                                     </div>
                                     {/* bank address */}
                                     <div>
-                                        <label className="text-sm md:text-base font-semibold" htmlFor="address">Address</label>
-                                        <input type="text" name="address" className="w-full bg-white border border-slate-300 rounded-sm px-2 py-1 outline-none" id="address" placeholder="Type here..." required />
+                                        <label className="text-sm md:text-base font-semibold" htmlFor="address">{modals.address}</label>
+                                        <input type="text" name="address" className="w-full bg-white border border-slate-300 rounded-sm px-2 py-1 outline-none" id="address" placeholder={modals.typeHere} required />
                                     </div>
                                     <div className="text-right">
-                                        <input type="submit" value="Save" className="bg-green-600 px-3 py-1 rounded-sm text-white font-semibold cursor-pointer" />
+                                        <input type="submit" value={modals.save} className="bg-green-600 px-3 py-1 rounded-sm text-white font-semibold cursor-pointer" />
                                     </div>
                                 </form>
 
@@ -119,7 +120,7 @@ const Banking = () => {
                             <div className="modal-action absolute right-24 bottom-6">
                                 <form method="dialog">
                                     {/* close btn */}
-                                    <button className="bg-red-600 text-white px-3 py-1 rounded-sm">Close</button>
+                                    <button className="bg-red-600 text-white px-3 py-1 rounded-sm">{modals.close}</button>
                                 </form>
                             </div>
                         </div>
@@ -152,34 +153,34 @@ const Banking = () => {
                                                     {/* modal body */}
                                                     <dialog id={`my_modal_${idx + 5}`} className="modal">
                                                         <div className="modal-box p-4 relative bg-white">
-                                                            <h3 className="text-base md:text-xl font-semibold flex items-center gap-2"><FaEdit />Edit Bank</h3>
+                                                            <h3 className="text-base md:text-xl font-semibold flex items-center gap-2"><FaEdit />{modals.editBank}</h3>
                                                             {/* date form */}
                                                             <form onSubmit={(e) => handleUpdateBank(e, 2)} className="pt-4">
                                                                 <div className="flex gap-5">
                                                                     {/* name en */}
                                                                     <div className="w-1/2">
-                                                                        <label htmlFor="nameEn" className="font-bold">Name (English)</label>
+                                                                        <label htmlFor="nameEn" className="font-bold">{modals.bankName} (English)</label>
                                                                         <input type="text" className="w-full px-2 py-1 my-2 bg-white border border-slate-300" name="nameEn" id="nameEn" defaultValue={bank?.nameEn} required />
                                                                     </div>
                                                                     {/* name bn */}
                                                                     <div className="w-1/2">
-                                                                        <label htmlFor="nameBn" className="font-bold">Name (বাংলা)</label>
+                                                                        <label htmlFor="nameBn" className="font-bold">{modals.bankName} (বাংলা)</label>
                                                                         <input type="text" className="w-full px-2 py-1 my-2 bg-white border border-slate-300" name="nameBn" id="nameBn" defaultValue={bank?.nameBn} required />
                                                                     </div>
                                                                 </div>
                                                                 {/* address */}
                                                                 <div className="w-full">
-                                                                    <label htmlFor="address" className="font-bold">Address</label>
+                                                                    <label htmlFor="address" className="font-bold">{modals.address}</label>
                                                                     <input type="text" className="w-full px-2 py-1 mt-2 bg-white border border-slate-300" name="address" id="address" defaultValue={bank?.address} required />
                                                                 </div>
                                                                 <div className="text-right">
-                                                                    <input type="submit" value="Search" className="bg-green-600 text-white font-semibold px-3 py-1 rounded-sm mt-6 cursor-pointer" />
+                                                                    <input type="submit" value={modals.save} className="bg-green-600 text-white font-semibold px-3 py-1 rounded-sm mt-6 cursor-pointer" />
                                                                 </div>
                                                             </form>
                                                             {/* close btn */}
                                                             <div className="modal-action text-right absolute right-24 bottom-4">
                                                                 <form method="dialog">
-                                                                    <button className=" bg-red-600 text-white font-semibold px-3 py-1 rounded-sm mt-5">Close</button>
+                                                                    <button className=" bg-red-600 text-white font-semibold px-3 py-1 rounded-sm mt-5">{modals.close}</button>
                                                                 </form>
                                                             </div>
                                                         </div>

@@ -8,6 +8,7 @@ import CustomerInfo from "../../../../components/Pages/Admin/Wallet/CustomerInfo
 import ShareElement from "../../../../components/Pages/Admin/Wallet/ShareElement/ShareElement";
 import FixedDepositElement from "../../../../components/Pages/Admin/Wallet/FixedDepositElement/FixedDepositElement";
 import DpsElement from "../../../../components/Pages/Admin/Wallet/DpsElement/DpsElement";
+import { useTranslation } from "react-i18next";
 
 
 const Wallet = () => {
@@ -41,13 +42,20 @@ const Wallet = () => {
 
 
     // ---------------------------
+
+    // translation ------------------
+    const {t} = useTranslation();
+    const lang = t('Wallet');
+    // ------------------------------
+
+
     const { accountType, id } = useParams();
 
     console.log(accountType, id);
 
     return (
         <div>
-            <Header title={`${accountType} Wallet`} />
+            <Header title={`${accountType} ${lang.wallet}`} />
 
             <div className="m-4 grid grid-cols-1 lg:grid-cols-2 gap-5">
                 <div className="bg-white p-5 shadow-sm">

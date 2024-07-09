@@ -7,7 +7,6 @@ import PropTypes from 'prop-types';
 
 const WalletBtns = ({ accountType }) => {
 
-
     // deposit fn
     const handleDeposit = e => {
         e.preventDefault();

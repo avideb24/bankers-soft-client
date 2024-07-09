@@ -2,6 +2,7 @@ import { FaChartBar } from "react-icons/fa";
 import { RiDeleteBin7Fill } from "react-icons/ri";
 import { FaCircleMinus, FaCirclePlus } from "react-icons/fa6";
 import Swal from "sweetalert2";
+import { useTranslation } from "react-i18next";
 
 
 const Transactions = () => {
@@ -14,6 +15,11 @@ const Transactions = () => {
 
 
     // --------------------------
+
+    // translation ---------------
+    const {t} = useTranslation();
+    const lang = t('Banking').BankProfile;
+    // ---------------------------
 
     const tableHeads = ['Trx Type', 'Trx Date', 'Amount', 'Current Balance', 'Delete']
 
@@ -48,12 +54,12 @@ const Transactions = () => {
     return (
         <div className="bg-white p-5 shadow-sm rounded-sm">
 
-            <h2 className="text-lg md:text-xl font-bold flex items-center gap-1 pb-2 mb-4 border-b border-b-slate-300"><FaChartBar className="mt-1" />Transactions</h2>
+            <h2 className="text-lg md:text-xl font-bold flex items-center gap-1 pb-2 mb-4 border-b border-b-slate-300"><FaChartBar className="mt-1" />{lang.transactions}</h2>
 
             {/* transaction table */}
             {
                 transactions?.length == 0 ?
-                    <div className="py-2">No data found!</div>
+                    <div className="py-2">{lang.notFound}</div>
                     :
                     <div className="overflow-x-scroll">
                         <table className="w-full text-center">

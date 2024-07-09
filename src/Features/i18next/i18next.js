@@ -9,6 +9,8 @@ i18next.use(LanguageDetector).use(initReactI18next).init({
     fallbackLng: 'en',
     returnObjects: true,
     resources: {
+
+        // for english
         en: {
             translation: {
                 HomePage: {
@@ -229,12 +231,53 @@ i18next.use(LanguageDetector).use(initReactI18next).init({
                     bankName: 'Bank Name',
                     address: 'Address',
                     notFound: 'No data found!',
+                    BankProfile: {
+                        bankProfile: 'Bank Profile',
+                        bankDeposit: 'Bank Deposit',
+                        bankWithdraw: 'Bank Withdraw',
+                        deposit: 'Deposit',
+                        withdraw: 'Withdraw',
+                        transactions: 'Transactions',
+                        date: 'Date',
+                        amount: 'Amount',
+                        save: 'Save',
+                        close: 'Close',
+                        notFount: 'No data found!',
+                    },
                 },
                 IncomeExpenditure: {
                     incomeExpenditure: 'Income - Expenditure',
                     sector: 'Sector',
                     addNew: 'Add New',
                     search: 'Search',
+                    incomeExpenditureForm: 'Income - Expenditure (Form)',
+                    incomeExpendituretable: 'Income - Expenditure (Table)',
+                    selectSector: 'Select a sector',
+                    selectDate: 'Select Date',
+                    selectType: 'Select Type',
+                    income: 'Income',
+                    expense: 'Expense',
+                    amount : 'Amount',
+                    transactionDetails  : 'Transaction Details ',
+                    description  : 'Description',
+                    save: 'Save',
+                    print: 'Print',
+                    Sector: {
+                        addNewSector: 'Add New Sector',
+                        sectorName: 'Sector Name',
+                        editSector: 'Edit Sector',
+                        save: 'Save',
+                        close: 'Close',
+                        notFound: 'No sector found!',
+                    },
+                    UpdateForm: {
+                        updateInfo: 'Update Info',
+                        type: 'Type',
+                        date: 'Date',
+                        amount: 'Amount',
+                        update: 'Update',
+                        close: 'close',
+                    },  
                 },
                 SalariesOfEmployees: {
                     salariesOfEmployees: 'Salaries of Employees',
@@ -305,6 +348,18 @@ i18next.use(LanguageDetector).use(initReactI18next).init({
                         mobile: 'Mobile',
                         joiningDate: 'Joining Date',
                     },
+                },
+                Wallet: {
+                    wallet: 'Wallet',
+                    area: 'Area',
+                    deposit: 'Deposit',
+                    withdraw: 'Withdraw',
+                },
+
+                
+                Transactions: {
+                    transactions: 'Transactions',
+                    search: 'Search',
                 },
                 ErrorPage: {
                     errorText: 'Sorry! Your Requested page was not found!',
@@ -401,8 +456,34 @@ i18next.use(LanguageDetector).use(initReactI18next).init({
                         notFound: 'No records founds...',
                     },
                 },
+                Modals: {
+                    SearchByDate: {
+                        searchByDate: 'Search By Date',
+                        fromDate: 'From Date',
+                        toDate: 'To Date',
+                        cancel: 'Cancel',
+                        search: 'Search',
+                    },
+                    SearchCustomer: {
+                        searchCustomer: 'Search Customer',
+                        searchByMobile: 'Search By Mobile/AC',
+                        typeHere: 'Type here...',
+                        cancel: 'Cancel',
+                        search: 'Search',
+                    },
+                    EditBank: {
+                        bankName: 'Bank Name',
+                        address: 'Address',
+                        typeHere: 'Type here...',
+                        editBank: 'Edit Bank',
+                        save: 'Save',
+                        close: 'Close',
+                    },
+                },
             }
         },
+
+        // for bangla
         bn: {
             translation: {
                 HomePage: {
@@ -624,12 +705,53 @@ i18next.use(LanguageDetector).use(initReactI18next).init({
                     bankName: 'ব্যাংকের নাম',
                     address: 'ঠিকানা',
                     notFound: 'কোন তথ্য নেই!',
+                    BankProfile: {
+                        bankProfile: 'ব্যাংক প্রোফাইল',
+                        bankDeposit: 'ব্যাংক জমা',
+                        bankWithdraw: 'ব্যাংক উত্তোলন',
+                        deposit: 'জমা',
+                        withdraw: 'উত্তোলন',
+                        transactions: 'লেনদেন',
+                        date: 'তারিখ নির্বাচন করুন',
+                        amount: 'টাকার পরিমান ',
+                        save: 'জমা',
+                        close: 'বাতিল',
+                        notFount: 'কোন তথ্য নেই!',
+                    },
                 },
                 IncomeExpenditure: {
                     incomeExpenditure: 'আয় - ব্যয় ',
                     sector: 'খাত',
                     addNew: 'যোগ করুন',
                     search: 'অনুসন্ধান',
+                    incomeExpenditureForm: 'আয় ব্যয় (ফর্ম)',
+                    incomeExpendituretable: 'আয় ব্যয় (টেবিল)',
+                    selectSector: 'খাত নির্বাচন করুন',
+                    selectDate: 'তারিখ নির্বাচন করুন ',
+                    selectType: 'ধরণ নির্বাচন করুন ',
+                    income: 'আয়',
+                    expense: 'ব্যয়',
+                    amount : 'টাকার পরিমান ',
+                    transactionDetails  : 'লেনদেন বিবরণ',
+                    description  : 'বর্ণনা',
+                    save: 'সেভ',
+                    print: 'প্রিন্ট',
+                    Sector: {
+                        addNewSector: 'নতুন খাত যোগ করুন',
+                        sectorName: 'খাতের নাম',
+                        editSector: 'এডিট খাত',
+                        save: 'সেভ',
+                        close: 'ক্লোজ',
+                        notFound: 'কোন খাত নেই!',
+                    },
+                    UpdateForm: {
+                        updateInfo: 'আপডেট তথ্য',
+                        type: 'ধরন',
+                        date: 'তারিখ',
+                        amount: 'টাকার পরিমান',
+                        update: 'আপডেট',
+                        close: 'ক্লোজ',
+                    },  
                 },
                 SalariesOfEmployees: {
                     salariesOfEmployees: 'কর্মচারীদের বেতন',
@@ -700,6 +822,18 @@ i18next.use(LanguageDetector).use(initReactI18next).init({
                         mobile: 'মোবাইল',
                         joiningDate: 'যোগদানের তারিখ',
                     },
+                },
+                Wallet: {
+                    wallet: 'ওয়ালেট',
+                    area: 'এলাকা',
+                    deposit: 'জমা',
+                    withdraw: 'উত্তোলন',
+                },
+
+
+                Transactions: {
+                    transactions: 'লেনদেন',
+                    search: 'অনুসন্ধান',
                 },
                 ErrorPage: {
                     errorText: 'দুঃখিত! পেজটি খুঁজে পাওয়া যায়নি!',
@@ -794,6 +928,30 @@ i18next.use(LanguageDetector).use(initReactI18next).init({
                         transactions: ' লেনদেন',
                         search: 'অনুসন্ধান',
                         notFound: 'কোন রেকর্ড পাওয়া যায়নি...',
+                    },
+                },
+                Modals: {
+                    SearchByDate: {
+                        searchByDate: 'তারিখ দিয়ে অনুসন্ধান করুন',
+                        fromDate: 'তারিখ হইতে',
+                        toDate: 'তারিখ পর্যন্ত',
+                        cancel: 'বাতিল',
+                        search: 'অনুসন্ধান',
+                    },
+                    SearchCustomer: {
+                        searchCustomer: 'কাস্টমার অনুসন্ধান',
+                        searchByMobile: 'মোবাইল / হিসাব নং দিন',
+                        typeHere: 'এখানে লিখুন...',
+                        cancel: 'বাতিল',
+                        search: 'অনুসন্ধান',
+                    },
+                    EditBank: {
+                        bankName: 'ব্যাংকের নাম',
+                        address: ' ঠিকানা',
+                        typeHere: 'এখানে লিখুন...',
+                        editBank: 'এডিট ব্যাংক',
+                        save: 'সেভ',
+                        close: 'ক্লোজ',
                     },
                 },
             }
