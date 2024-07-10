@@ -1,124 +1,131 @@
 import PropTypes from 'prop-types';
+import { useTranslation } from 'react-i18next';
 
 
-const CustomerInfo = ({customer}) => {
+const CustomerInfo = ({ customer }) => {
+
+    // translation ------------------
+    const { t } = useTranslation();
+    const lang = t('FormTexts');
+    // ------------------------------
+
     return (
         <div className="pt-5 md:pt-0 border-b border-b-slate-300 pb-4" >
 
-                <div className=" pb-3 mb-4 border-b border-b-slate-300 flex justify-between items-center flex-wrap">
-                    <h2 className="text-lg md:text-xl font-bold">Customer Details</h2>
+            <div className=" pb-3 mb-4 border-b border-b-slate-300 flex justify-between items-center flex-wrap">
+                <h2 className="text-lg md:text-xl font-bold">{lang.customerDetails}</h2>
+            </div>
+
+            <div className="space-y-2">
+
+                {/* name english */}
+                <div className="flex gap-4  overflow-hidden">
+                    <span className="font-bold w-[40%]">{lang.name} (English)</span>
+                    <span>:</span>
+                    <span>{customer.nameEn}</span>
                 </div>
 
-                <div className="space-y-2">
+                {/* name bangla */}
+                <div className="flex gap-4  overflow-hidden">
+                    <span className="font-bold w-[40%]">{lang.name} (বাংলা)</span>
+                    <span>:</span>
+                    <span>{customer?.nameBn}</span>
+                </div>
 
-                    {/* name english */}
-                    <div className="flex gap-4  overflow-hidden">
-                        <span className="font-bold w-[40%]">Name (English)</span>
-                        <span>:</span>
-                        <span>{customer.nameEn}</span>
-                    </div>
+                {/* father */}
+                <div className="flex gap-4  overflow-hidden">
+                    <span className="font-bold w-[40%]">{lang.father}</span>
+                    <span>:</span>
+                    <span>{customer?.father}</span>
+                </div>
 
-                    {/* name bangla */}
-                    <div className="flex gap-4  overflow-hidden">
-                        <span className="font-bold w-[40%]">Name (বাংলা)</span>
-                        <span>:</span>
-                        <span>{customer?.nameBn}</span>
-                    </div>
+                {/* mother */}
+                <div className="flex gap-4  overflow-hidden">
+                    <span className="font-bold w-[40%]">{lang.mother}</span>
+                    <span>:</span>
+                    <span>{customer?.mother}</span>
+                </div>
 
-                    {/* father */}
-                    <div className="flex gap-4  overflow-hidden">
-                        <span className="font-bold w-[40%]">Father</span>
-                        <span>:</span>
-                        <span>{customer?.father}</span>
-                    </div>
+                {/* father */}
+                <div className="flex gap-4  overflow-hidden">
+                    <span className="font-bold w-[40%]">{lang.dateOfBirth}</span>
+                    <span>:</span>
+                    <span>{customer?.birthDate}</span>
+                </div>
 
-                    {/* mother */}
-                    <div className="flex gap-4  overflow-hidden">
-                        <span className="font-bold w-[40%]">Mother</span>
-                        <span>:</span>
-                        <span>{customer?.mother}</span>
-                    </div>
+                {/* cccupation */}
+                <div className="flex gap-4  overflow-hidden">
+                    <span className="font-bold w-[40%]">{lang.occupation}</span>
+                    <span>:</span>
+                    <span>{customer?.occupation}</span>
+                </div>
 
-                    {/* father */}
-                    <div className="flex gap-4  overflow-hidden">
-                        <span className="font-bold w-[40%]">Birthdate</span>
-                        <span>:</span>
-                        <span>{customer?.birthDate}</span>
-                    </div>
+                {/* gender */}
+                <div className="flex gap-4  overflow-hidden">
+                    <span className="font-bold w-[40%]">{lang.gender}</span>
+                    <span>:</span>
+                    <span>{customer?.gender}</span>
+                </div>
 
-                    {/* cccupation */}
-                    <div className="flex gap-4  overflow-hidden">
-                        <span className="font-bold w-[40%]">Occupation</span>
-                        <span>:</span>
-                        <span>{customer?.occupation}</span>
-                    </div>
+                {/* present address */}
+                <div className="flex gap-4  overflow-hidden">
+                    <span className="font-bold w-[40%]">{lang.presentAddress}</span>
+                    <span>:</span>
+                    <span>{customer?.presentAddress}</span>
+                </div>
 
-                    {/* gender */}
-                    <div className="flex gap-4  overflow-hidden">
-                        <span className="font-bold w-[40%]">Gender</span>
-                        <span>:</span>
-                        <span>{customer?.gender}</span>
-                    </div>
+                {/* permanent address */}
+                <div className="flex gap-4  overflow-hidden">
+                    <span className="font-bold w-[40%]">{lang.permanentAddress}</span>
+                    <span>:</span>
+                    <span>{customer?.permanentAddress}</span>
+                </div>
 
-                    {/* present address */}
-                    <div className="flex gap-4  overflow-hidden">
-                        <span className="font-bold w-[40%]">Present Address</span>
-                        <span>:</span>
-                        <span>{customer?.presentAddress}</span>
-                    </div>
+                {/* registration date */}
+                <div className="flex gap-4  overflow-hidden">
+                    <span className="font-bold w-[40%]">{lang.registrationDate}</span>
+                    <span>:</span>
+                    <span>{customer?.registrationDate}</span>
+                </div>
 
-                    {/* permanent address */}
-                    <div className="flex gap-4  overflow-hidden">
-                        <span className="font-bold w-[40%]">Permanent Address</span>
-                        <span>:</span>
-                        <span>{customer?.permanentAddress}</span>
-                    </div>
+                {/* identity type */}
+                <div className="flex gap-4  overflow-hidden">
+                    <span className="font-bold w-[40%]">{lang.identityType}</span>
+                    <span>:</span>
+                    <span>{customer?.identityType}</span>
+                </div>
 
-                    {/* registration date */}
-                    <div className="flex gap-4  overflow-hidden">
-                        <span className="font-bold w-[40%]">Registration Date</span>
-                        <span>:</span>
-                        <span>{customer?.registrationDate}</span>
-                    </div>
+                {/* identity no. */}
+                <div className="flex gap-4  overflow-hidden">
+                    <span className="font-bold w-[40%]">{lang.identityNumber}</span>
+                    <span>:</span>
+                    <span>{customer?.identityNumber}</span>
+                </div>
 
-                    {/* identity type */}
-                    <div className="flex gap-4  overflow-hidden">
-                        <span className="font-bold w-[40%]">Identity Type</span>
-                        <span>:</span>
-                        <span>{customer?.identityType}</span>
-                    </div>
+                {/* account no. */}
+                <div className="flex gap-4  overflow-hidden">
+                    <span className="font-bold w-[40%]">{lang.accountNo}</span>
+                    <span>:</span>
+                    <span>{customer?.accountNumber}</span>
+                </div>
 
-                    {/* account no. */}
-                    <div className="flex gap-4  overflow-hidden">
-                        <span className="font-bold w-[40%]">Account No.</span>
-                        <span>:</span>
-                        <span>{customer?.accountNumber}</span>
-                    </div>
+                {/* mobile */}
+                <div className="flex gap-4  overflow-hidden">
+                    <span className="font-bold w-[40%]">{lang.mobile}</span>
+                    <span>:</span>
+                    <span>{customer?.mobile}</span>
+                </div>
 
-                    {/* identity no. */}
-                    <div className="flex gap-4  overflow-hidden">
-                        <span className="font-bold w-[40%]">Identity No.</span>
-                        <span>:</span>
-                        <span>{customer?.identityNumber}</span>
-                    </div>
-
-                    {/* mobile */}
-                    <div className="flex gap-4  overflow-hidden">
-                        <span className="font-bold w-[40%]">Mobile</span>
-                        <span>:</span>
-                        <span>{customer?.mobile}</span>
-                    </div>
-
-                    {/* email */}
-                    <div className="flex gap-4  overflow-hidden">
-                        <span className="font-bold w-[40%]">E-mail</span>
-                        <span>:</span>
-                        <span>{customer?.email}</span>
-                    </div>
-
+                {/* email */}
+                <div className="flex gap-4  overflow-hidden">
+                    <span className="font-bold w-[40%]">{lang.email}</span>
+                    <span>:</span>
+                    <span>{customer?.email}</span>
                 </div>
 
             </div>
+
+        </div>
     );
 };
 

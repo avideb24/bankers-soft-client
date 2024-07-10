@@ -1,6 +1,7 @@
 import Swal from "sweetalert2";
 import Button from "../../../../Shared/Button/Button";
 import { FaPlusCircle } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 
 const LoanElement = () => {
@@ -23,6 +24,11 @@ const LoanElement = () => {
     };
 
     // ------------------------------------
+
+    // translation -----------
+    const {t} = useTranslation();
+    const lang = t('Wallet').Loans;
+    // -----------------------
 
     const handleCollection = e => {
         e.preventDefault();
@@ -67,7 +73,7 @@ const LoanElement = () => {
             {/* btns */}
             <div className="flex gap-4 pb-4">
                 {/* collection btn */}
-                <Button text={'Collection'} icon={FaPlusCircle} bg={'bg-blue-600'} handleClick={() => document.getElementById('my_modal_10').showModal()} />
+                <Button text={lang.collection} icon={FaPlusCircle} bg={'bg-blue-600'} handleClick={() => document.getElementById('my_modal_10').showModal()} />
                 {/* collection modal */}
                 <dialog id="my_modal_10" className="modal">
                     <div className="modal-box p-4 relative bg-white">
@@ -132,15 +138,15 @@ const LoanElement = () => {
                     </div>
                 </dialog>
 
-                <Button text={'Full Pay'} icon={FaPlusCircle} bg={'bg-red-600'} handleClick={handleFullPay} />
+                <Button text={lang.fullPay} icon={FaPlusCircle} bg={'bg-red-600'} handleClick={handleFullPay} />
 
             </div>
 
             <div className="flex justify-between items-center gap-3 p-2 bg-slate-200">
-                <h2 className="text-base md:text-lg font-bold">Current Loans</h2>
+                <h2 className="text-base md:text-lg font-bold">{lang.currentLoans}</h2>
 
                 <p>
-                    <span className="font-bold"> Savings: </span>
+                    <span className="font-bold"> {lang.savings}: </span>
                     <span><span className="text-base md:text-lg">৳</span>{loanData?.savings}</span>
                 </p>
             </div>
@@ -150,61 +156,61 @@ const LoanElement = () => {
                     <tbody>
                         <tr>
                             {/* loan id */}
-                            <th className="border border-slate-300 px-2 py-1 text-blue-600">Loan ID</th>
+                            <th className="border border-slate-300 px-2 py-1 text-blue-600">{lang.loanId}</th>
                             <td className="border border-slate-300 px-2 py-1 text-center text-blue-600">:</td>
                             <td className="border border-slate-300 px-2 py-1 text-right text-blue-600">{loanData?.loanID}</td>
                         </tr>
                         <tr>
                             {/* loan group */}
-                            <th className="border border-slate-300 px-2 py-1">Loan Group</th>
+                            <th className="border border-slate-300 px-2 py-1">{lang.loanGroup}</th>
                             <td className="border border-slate-300 px-2 py-1 text-center">:</td>
                             <td className="border border-slate-300 px-2 py-1 text-right">{loanData?.loanGroup}</td>
                         </tr>
                         <tr>
                             {/* Account No */}
-                            <th className="border border-slate-300 px-2 py-1">Account No</th>
+                            <th className="border border-slate-300 px-2 py-1">{lang.accountNo}</th>
                             <td className="border border-slate-300 px-2 py-1 text-center">:</td>
                             <td className="border border-slate-300 px-2 py-1 text-right">{loanData?.accountNo}</td>
                         </tr>
                         <tr>
                             {/* Installment Due */}
-                            <th className="border border-slate-300 px-2 py-1 text-red-600">Installment Due</th>
+                            <th className="border border-slate-300 px-2 py-1 text-red-600">{lang.installmentDue}</th>
                             <td className="border border-slate-300 px-2 py-1 text-center text-red-600">:</td>
                             <td className="border border-slate-300 px-2 py-1 text-right text-red-600">{loanData?.installmentDue}</td>
                         </tr>
                         <tr>
                             {/* Loan Amount */}
-                            <th className="border border-slate-300 px-2 py-1">Loan Amount</th>
+                            <th className="border border-slate-300 px-2 py-1">{lang.loanAmount}</th>
                             <td className="border border-slate-300 px-2 py-1 text-center">:</td>
                             <td className="border border-slate-300 px-2 py-1 text-right"><span className="text-base md:text-lg">৳</span>{loanData?.loanAmount}</td>
                         </tr>
                         <tr>
                             {/* Installments */}
-                            <th className="border border-slate-300 px-2 py-1 text-blue-600">Installments</th>
+                            <th className="border border-slate-300 px-2 py-1 text-blue-600">{lang.installments}</th>
                             <td className="border border-slate-300 px-2 py-1 text-center text-blue-600">:</td>
                             <td className="border border-slate-300 px-2 py-1 text-right text-blue-600">{loanData?.installments}</td>
                         </tr>
                         <tr>
                             {/* Per Installment */}
-                            <th className="border border-slate-300 px-2 py-1">Per Installment</th>
+                            <th className="border border-slate-300 px-2 py-1">{lang.perInstallment}</th>
                             <td className="border border-slate-300 px-2 py-1 text-center">:</td>
                             <td className="border border-slate-300 px-2 py-1 text-right"><span className="text-base md:text-lg">৳</span>{loanData?.perInstallment}</td>
                         </tr>
                         <tr>
                             {/* Remaining Loan */}
-                            <th className="border border-slate-300 px-2 py-1 text-red-600">Remaining Loan</th>
+                            <th className="border border-slate-300 px-2 py-1 text-red-600">{lang.remainingLoan}</th>
                             <td className="border border-slate-300 px-2 py-1 text-center text-red-600">:</td>
                             <td className="border border-slate-300 px-2 py-1 text-right text-red-600"><span className="text-base md:text-lg">৳</span>{loanData?.remainingLoan}</td>
                         </tr>
                         <tr>
                             {/* Last Payment */}
-                            <th className="border border-slate-300 px-2 py-1">Last Payment</th>
+                            <th className="border border-slate-300 px-2 py-1">{lang.lastPayment}</th>
                             <td className="border border-slate-300 px-2 py-1 text-center">:</td>
                             <td className="border border-slate-300 px-2 py-1 text-right">{loanData?.lastPayment}</td>
                         </tr>
                         <tr>
                             {/* Next Date */}
-                            <th className="border border-slate-300 px-2 py-1 text-blue-600">Next Date</th>
+                            <th className="border border-slate-300 px-2 py-1 text-blue-600">{lang.nextDate}</th>
                             <td className="border border-slate-300 px-2 py-1 text-center text-blue-600">:</td>
                             <td className="border border-slate-300 px-2 py-1 text-right text-blue-600">{loanData?.nextDate}</td>
                         </tr>
@@ -213,8 +219,8 @@ const LoanElement = () => {
             </div>
 
             <div className="p-2 bg-slate-200 font-bold">
-                <p>Possible tenor of the loan:</p>
-                <p>{loanData?.possibleTenorStart} <span className="text-orange-700">To</span> {loanData?.possibleTenorEnd}</p>
+                <p>{lang.tenor}</p>
+                <p>{loanData?.possibleTenorStart} <span className="text-orange-700">{lang.to}</span> {loanData?.possibleTenorEnd}</p>
             </div>
 
 

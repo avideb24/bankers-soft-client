@@ -24,8 +24,8 @@ const Wallet = () => {
     // customer fake data
     const customer = {
         nameEn: 'Belal',
-        image: 'https://i.ibb.co/NZFtFPL/user.png',
         nameBn: 'বেলাল',
+        image: 'https://i.ibb.co/NZFtFPL/user.png',
         father: 'Hasan Ali',
         mother: 'Moriam Begum',
         birthDate: '1999-08-03',
@@ -47,6 +47,7 @@ const Wallet = () => {
     // translation ------------------
     const {t} = useTranslation();
     const lang = t('Wallet');
+    const titles = t('Accounts').PageTitles;
     // ------------------------------
 
 
@@ -55,9 +56,29 @@ const Wallet = () => {
     console.log(accountType, id);
 
 
+    const getTitle = () => {
+        if (accountType == 'share') {
+            return titles.share;
+        }
+        else if(accountType == 'savings'){
+            return titles.savings;
+        }
+        else if(accountType == 'fixed-deposit'){
+            return titles.fixedDeposit;
+        }
+        else if(accountType == 'dps'){
+            return titles.dps;
+        }
+        else if(accountType == 'loan'){
+            return titles.loan;
+        }
+        return titles.insurance;
+    };
+
+
     return (
         <div>
-            <Header title={`${accountType} ${lang.wallet}`} />
+            <Header title={`${getTitle()} ${lang.wallet}`} />
 
             <div className="m-4 grid grid-cols-1 lg:grid-cols-2 gap-5">
                 <div className="bg-white p-5 shadow-sm">
@@ -69,7 +90,7 @@ const Wallet = () => {
                         <WalletBtns accountType={accountType} />
 
                         {/* total amount */}
-                        <h2><span className="font-bold capitalize">{accountType}: </span><span className="text-base md:text-lg">৳</span>500</h2>
+                        <h2><span className="font-bold capitalize">{getTitle()}: </span><span className="text-base md:text-lg">৳</span>500</h2>
                     </div>
 
                     {/* share element */}
@@ -82,7 +103,7 @@ const Wallet = () => {
                         <SavingsElement />
                     </div>
 
-                    {/* fixed deposit element */}
+                    {/* dps element */}
                     <div className={`${accountType == 'dps' ? '' : 'hidden'}`}>
                         <DpsElement />
                     </div>
@@ -102,7 +123,7 @@ const Wallet = () => {
                     <CustomerInfo customer={customer} />
 
                 </div>
-                <Transactions title={accountType} data={data} />
+                <Transactions title={getTitle()} data={data} />
             </div>
         </div>
     );
