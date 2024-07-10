@@ -9,6 +9,7 @@ import ShareElement from "../../../../components/Pages/Admin/Wallet/ShareElement
 import FixedDepositElement from "../../../../components/Pages/Admin/Wallet/FixedDepositElement/FixedDepositElement";
 import DpsElement from "../../../../components/Pages/Admin/Wallet/DpsElement/DpsElement";
 import { useTranslation } from "react-i18next";
+import LoanElement from "../../../../components/Pages/Admin/Wallet/LoanElement/LoanElement";
 
 
 const Wallet = () => {
@@ -41,7 +42,7 @@ const Wallet = () => {
     };
 
 
-    // ---------------------------
+    // ------------------------------------------------
 
     // translation ------------------
     const {t} = useTranslation();
@@ -52,6 +53,7 @@ const Wallet = () => {
     const { accountType, id } = useParams();
 
     console.log(accountType, id);
+
 
     return (
         <div>
@@ -85,6 +87,11 @@ const Wallet = () => {
                         <DpsElement />
                     </div>
 
+                    {/* loan element */}
+                    <div className={`${accountType == 'loan' ? '' : 'hidden'}`}>
+                        <LoanElement />
+                    </div>
+                    
                     {/* dps element */}
                     <div className={`${accountType == 'fixed-deposit' ? '' : 'hidden'}`}>
                         <FixedDepositElement />
