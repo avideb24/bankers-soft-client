@@ -77,24 +77,24 @@ const LoanElement = () => {
                 {/* collection modal */}
                 <dialog id="my_modal_10" className="modal">
                     <div className="modal-box p-4 relative bg-white">
-                        <h3 className="text-base md:text-xl font-semibold flex items-center gap-2 capitalize"><FaPlusCircle /> Loan Collection</h3>
+                        <h3 className="text-base md:text-xl font-semibold flex items-center gap-2 capitalize"><FaPlusCircle />{lang.loanCollection}</h3>
                         {/* date form */}
                         <form onSubmit={handleCollection} className="pt-4">
 
                             <div className="grid grid-cols-3 gap-3">
                                 {/* Collection Date */}
                                 <div>
-                                    <label htmlFor="date" className="font-bold">Date</label>
+                                    <label htmlFor="date" className="font-bold">{lang.date}</label>
                                     <input type="date" className="w-full px-2 py-1 mt-2 bg-white border border-slate-300 outline-none" name="collectionDate" id="date" required />
                                 </div>
                                 {/* Installment Due */}
                                 <div>
-                                    <label htmlFor="installmentDue" className="font-bold">Installment Due</label>
+                                    <label htmlFor="installmentDue" className="font-bold">{lang.installmentDue}</label>
                                     <input type="number" className="w-full px-2 py-1 mt-2 bg-white border border-slate-300 outline-none" name="installmentDue" id="installmentDue" placeholder="0" required />
                                 </div>
                                 {/* Fine */}
                                 <div>
-                                    <label htmlFor="fine" className="font-bold">Fine</label>
+                                    <label htmlFor="fine" className="font-bold">{lang.fine}</label>
                                     <input type="number" className="w-full px-2 py-1 mt-2 bg-white border border-slate-300 outline-none" name="fine" id="fine" placeholder="0" required />
                                 </div>
                             </div>
@@ -102,12 +102,12 @@ const LoanElement = () => {
                             <div className="grid grid-cols-2 gap-3 my-2">
                                 {/* Installments  */}
                                 <div>
-                                    <label htmlFor="installmemts" className="font-bold">Installments</label>
+                                    <label htmlFor="installmemts" className="font-bold">{lang.installments}</label>
                                     <input type="number" className="w-full px-2 py-1 mt-2 bg-white border border-slate-300 outline-none" name="installmemts" id="installmemts" placeholder="0" defaultValue={'1'} required />
                                 </div>
                                 {/* Savings  */}
                                 <div>
-                                    <label htmlFor="savings" className="font-bold">Savings</label>
+                                    <label htmlFor="savings" className="font-bold">{lang.savings}</label>
                                     <input type="number" className="w-full px-2 py-1 mt-2 bg-white border border-slate-300 outline-none" name="savings" id="savings" placeholder="0" required />
                                 </div>
                             </div>
@@ -115,30 +115,46 @@ const LoanElement = () => {
                             <div className="grid grid-cols-2 gap-3 ">
                                 {/* Loan Collection  */}
                                 <div>
-                                    <label htmlFor="installmemts" className="font-bold">Loan Collection</label>
+                                    <label htmlFor="installmemts" className="font-bold">{lang.loanCollection}</label>
                                     <input type="number" className="w-full px-2 py-1 mt-2 bg-white border border-slate-300 outline-none" name="loanCollection" id="loanCollection" placeholder="0.00" required />
                                 </div>
                                 {/* Total Collection  */}
                                 <div>
-                                    <label htmlFor="totalCollection" className="font-bold">Total Collection</label>
+                                    <label htmlFor="totalCollection" className="font-bold">{lang.totalCollection}</label>
                                     <input type="number" className="w-full px-2 py-1 mt-2 bg-white border border-slate-300 outline-none" name="totalCollection" id="totalCollection" placeholder="0.00" required />
                                 </div>
                             </div>
 
                             <div className="text-right">
-                                <input type="submit" value="Save" className="bg-green-600 text-white font-semibold px-3 py-1 rounded-sm mt-6 cursor-pointer" />
+                                <input type="submit" value={lang.collection} className="bg-green-600 text-white font-semibold px-3 py-1 rounded-sm mt-6 cursor-pointer" />
                             </div>
                         </form>
                         {/* close btn */}
                         <div className="modal-action text-right absolute right-24 bottom-4">
                             <form method="dialog">
-                                <button className=" bg-red-600 text-white font-semibold px-3 py-1 rounded-sm mt-5">Close</button>
+                                <button className=" bg-red-600 text-white font-semibold px-3 py-1 rounded-sm mt-5">{lang.cancel}</button>
                             </form>
                         </div>
                     </div>
                 </dialog>
 
-                <Button text={lang.fullPay} icon={FaPlusCircle} bg={'bg-red-600'} handleClick={handleFullPay} />
+                {/* full pay btn */}
+                <Button text={lang.fullPay} icon={FaPlusCircle} bg={'bg-red-600'} handleClick={() => document.getElementById('my_modal_11').showModal()} />
+                {/* full pay modal */}
+                <dialog id="my_modal_11" className="modal">
+                    <div className="modal-box p-4 relative bg-white">
+                        <h3 className="text-base md:text-xl font-semibold flex items-center gap-2 capitalize"><FaPlusCircle />{lang.fullPay}</h3>
+                        <div className="text-center text-lg md:text-2xl font-bold pt-8 pb-10">{lang.areYouSure}</div>
+                        {/* full pay btn */}
+                        <button onClick={handleFullPay} className="bg-green-600 px-3 py-1 text-white font-semibold float-right">{lang.fullPay}</button>
+                        {/* close btn */}
+                        <div className="modal-action text-right absolute right-32 bottom-4">
+                            <form method="dialog">
+                                <button className=" bg-red-600 text-white font-semibold px-3 py-1 rounded-sm mt-5">{lang.cancel}</button>
+                            </form>
+                        </div>
+                    </div>
+                </dialog>
 
             </div>
 

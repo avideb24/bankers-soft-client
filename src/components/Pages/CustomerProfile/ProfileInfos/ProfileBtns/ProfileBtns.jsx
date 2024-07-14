@@ -9,6 +9,7 @@ const ProfileBtns = () => {
      // translations --------------
      const {t} = useTranslation();
      const lang = t('Profile').Customer;
+     const modal = t('Profile').Customer.Modal;
      // ---------------------------
 
 
@@ -113,60 +114,60 @@ const ProfileBtns = () => {
             {/* new loan modal */}
             <dialog id="my_modal_8" className="modal">
                 <div className="modal-box p-4 relative bg-white rounded-none">
-                    <h3 className="text-base md:text-xl font-semibold flex items-center gap-2"><FaCirclePlus />New Loan</h3>
+                    <h3 className="text-base md:text-xl font-semibold flex items-center gap-2"><FaCirclePlus />{modal.newLoan}</h3>
                     {/* loan form */}
                     <form onSubmit={handleNewLoan} className="pt-4 space-y-2 text-left">
                         {/* group and amount */}
                         <div className="grid grid-cols-2 gap-4">
                             <div>
-                                <label htmlFor="group" className="font-bold">Select Group</label>
+                                <label htmlFor="group" className="font-bold">{modal.selectGroup}</label>
                                 <select name="group" id="group" className="w-full bg-white px-3 py-1 border border-slate-300 mt-2 outline-none" defaultValue={'Monthly'}>
-                                    <option value="Monthly">Monthly</option>
-                                    <option value="Weekly">Weekly</option>
-                                    <option value="Daily">Daily</option>
+                                    <option value="Monthly">{modal.monthly}</option>
+                                    <option value="Weekly">{modal.weekly}</option>
+                                    <option value="Daily">{modal.daily}</option>
                                 </select>
                             </div>
                             <div>
-                                <label htmlFor="loanAmount" className="font-bold">Loan Amount</label>
+                                <label htmlFor="loanAmount" className="font-bold">{modal.amount}</label>
                                 <input type="number" className="w-full mt-2 bg-white px-3 py-1 border border-slate-300 outline-none" name="loanAmount" id="loanAmount" placeholder="0.00" required />
                             </div>
                         </div>
                         {/* savings , interest and installments */}
                         <div className="grid grid-cols-3 gap-3">
                             <div>
-                                <label htmlFor="savings" className="font-bold">Savings</label>
+                                <label htmlFor="savings" className="font-bold">{modal.savings}</label>
                                 <input type="number" className="w-full mt-2 bg-white px-3 py-1 border border-slate-300 outline-none" name="savings" id="savings" placeholder="0.00" required />
                             </div>
                             <div>
-                                <label htmlFor="interest" className="font-bold">Interest</label>
+                                <label htmlFor="interest" className="font-bold">{modal.interest}</label>
                                 <input type="number" className="w-full bg-white px-3 py-1 mt-2 border border-slate-300 outline-none" name="interest" id="interest" placeholder="0%" required />
                             </div>
                             <div>
-                                <label htmlFor="installments" className="font-bold">Installments</label>
+                                <label htmlFor="installments" className="font-bold">{modal.installments}</label>
                                 <input type="number" className="w-full bg-white px-3 py-1 mt-2 border border-slate-300 outline-none" name="installments" id="installments" placeholder="0" required />
                             </div>
                         </div>
                         {/* fromtDate and toDate */}
                         <div className="grid grid-cols-2 gap-4">
                             <div>
-                                <label htmlFor="fromDate" className="font-bold">From Date</label>
+                                <label htmlFor="fromDate" className="font-bold">{modal.fromDate}</label>
                                 <input type="date" className="w-full mt-2 bg-white px-3 py-1 border border-slate-300 outline-none" name="fromDate" id="fromDate" required />
                             </div>
                             <div>
-                                <label htmlFor="toDate" className="font-bold">To Date</label>
+                                <label htmlFor="toDate" className="font-bold">{modal.toDate}</label>
                                 <input type="date" className="w-full bg-white px-3 py-1 mt-2 border border-slate-300 outline-none" name="toDate" id="toDate" required />
                             </div>
                         </div>
 
                         {/* submit btn */}
                         <div className="text-right">
-                            <input type="submit" value="Save" className="bg-green-600 text-white font-semibold px-3 py-1 rounded-sm mt-6 cursor-pointer" />
+                            <input type="submit" value={modal.save} className="bg-green-600 text-white font-semibold px-3 py-1 rounded-sm mt-6 cursor-pointer" />
                         </div>
                     </form>
                     {/* close btn */}
                     <div className="modal-action text-right absolute right-20 bottom-4">
                         <form method="dialog">
-                            <button className="bg-red-600 text-white font-semibold px-3 py-1 rounded-sm mt-5">Close</button>
+                            <button className="bg-red-600 text-white font-semibold px-3 py-1 rounded-sm mt-5">{modal.close}</button>
                         </form>
                     </div>
                 </div>
@@ -180,49 +181,49 @@ const ProfileBtns = () => {
             {/* new dps modal */}
             <dialog id="my_modal_4" className="modal">
                 <div className="modal-box p-4 relative bg-white rounded-none">
-                    <h3 className="text-base md:text-xl font-semibold flex items-center gap-2"><FaCirclePlus />New DPS</h3>
+                    <h3 className="text-base md:text-xl font-semibold flex items-center gap-2"><FaCirclePlus />{modal.newDPS}</h3>
                     {/* dps form */}
                     <form onSubmit={handleNewDps} className="pt-4 space-y-2 text-left">
                         {/* group and first installment */}
                         <div className="grid grid-cols-2 gap-4">
                             <div>
-                                <label htmlFor="group" className="font-bold">Select a Group</label>
+                                <label htmlFor="group" className="font-bold">{modal.selectGroup}</label>
                                 <select name="group" id="group" className="w-full bg-white px-3 py-1 border border-slate-300 mt-2 outline-none" defaultValue={'Monthly'}>
-                                    <option value="Monthly">Monthly</option>
-                                    <option value="Weekly">Weekly</option>
-                                    <option value="Daily">Daily</option>
+                                    <option value="Monthly">{modal.monthly}</option>
+                                    <option value="Weekly">{modal.weekly}</option>
+                                    <option value="Daily">{modal.daily}</option>
                                 </select>
                             </div>
                             <div>
-                                <label htmlFor="perInstallment" className="font-bold">Per Installment <span className="text-pink-500 text-[10px] md:text-xs">(First Deposit)</span></label>
+                                <label htmlFor="perInstallment" className="font-bold">{modal.perInstallment}<span className="text-pink-500 text-[10px] md:text-xs">({modal.firstDeposit})</span></label>
                                 <input type="number" className="w-full bg-white px-3 py-1 mt-2 border border-slate-300 outline-none" name="perInstallment" id="perInstallment" placeholder="0.00" required />
                             </div>
                         </div>
                         {/* duration */}
                         <div className="grid grid-cols-3 gap-3">
                             <div>
-                                <label htmlFor="duration" className="font-bold">Duration <span className="text-pink-500 text-[10px] md:text-xs">(Year)</span></label>
+                                <label htmlFor="duration" className="font-bold">{modal.duration}<span className="text-pink-500 text-[10px] md:text-xs">({modal.year})</span></label>
                                 <input type="number" className="w-full mt-2 bg-white px-3 py-1 border border-slate-300 outline-none" name="duration" id="duration" placeholder="0" required />
                             </div>
                             <div>
-                                <label htmlFor="interest" className="font-bold">Interest</label>
+                                <label htmlFor="interest" className="font-bold">{modal.interest}</label>
                                 <input type="number" className="w-full bg-white px-3 py-1 mt-2 border border-slate-300 outline-none" name="interest" id="interest" placeholder="0%" required />
                             </div>
                             <div>
-                                <label htmlFor="installments" className="font-bold">Installments</label>
+                                <label htmlFor="installments" className="font-bold">{modal.installments}</label>
                                 <input type="number" className="w-full bg-white px-3 py-1 mt-2 border border-slate-300 outline-none" name="installments" id="installments" placeholder="0" required />
                             </div>
                         </div>
 
                         {/* submit btn */}
                         <div className="text-right">
-                            <input type="submit" value="Save" className="bg-green-600 text-white font-semibold px-3 py-1 rounded-sm mt-6 cursor-pointer" />
+                            <input type="submit" value={modal.save} className="bg-green-600 text-white font-semibold px-3 py-1 rounded-sm mt-6 cursor-pointer" />
                         </div>
                     </form>
                     {/* close btn */}
                     <div className="modal-action text-right absolute right-20 bottom-4">
                         <form method="dialog">
-                            <button className="bg-red-600 text-white font-semibold px-3 py-1 rounded-sm mt-5">Close</button>
+                            <button className="bg-red-600 text-white font-semibold px-3 py-1 rounded-sm mt-5">{modal.close}</button>
                         </form>
                     </div>
                 </div>
@@ -232,38 +233,39 @@ const ProfileBtns = () => {
             {/* ---------------- SAVINGS---------------------- */}
             {/* new savings btn */}
             <Button text={lang.savings} icon={FaCirclePlus} bg={'bg-green-600'} handleClick={() => document.getElementById('my_modal_11').showModal()} />
+
             {/* new savings modal */}
             <dialog id="my_modal_11" className="modal">
                 <div className="modal-box p-4 relative bg-white rounded-none">
-                    <h3 className="text-base md:text-xl font-semibold flex items-center gap-2"><FaCirclePlus />New Savings</h3>
+                    <h3 className="text-base md:text-xl font-semibold flex items-center gap-2"><FaCirclePlus />{modal.newSavings}</h3>
                     {/* savings form */}
                     <form onSubmit={handleNewSavings} className="pt-4 space-y-2 text-left">
                         {/* date and interest */}
                         <div className="grid grid-cols-2 gap-4">
                             <div>
-                                <label htmlFor="date" className="font-bold">Select Date</label>
+                                <label htmlFor="date" className="font-bold">{modal.selectDate}</label>
                                 <input type="date" className="w-full mt-2 bg-white px-3 py-1 border border-slate-300 outline-none" name="date" id="date" required />
                             </div>
                             <div>
-                                <label htmlFor="interest" className="font-bold">Interest</label>
+                                <label htmlFor="interest" className="font-bold">{modal.interest}</label>
                                 <input type="number" className="w-full bg-white px-3 py-1 mt-2 border border-slate-300 outline-none" name="interest" id="interest" placeholder="0%" required />
                             </div>
                         </div>
                         {/* amount */}
                         <div>
-                            <label htmlFor="amount" className="font-bold">Amount</label>
+                            <label htmlFor="amount" className="font-bold">{modal.amount}</label>
                             <input type="number" className="w-full mt-2 bg-white px-3 py-1 border border-slate-300 outline-none" name="amount" id="amount" placeholder="0" required />
                         </div>
 
                         {/* submit btn */}
                         <div className="text-right">
-                            <input type="submit" value="Save" className="bg-green-600 text-white font-semibold px-3 py-1 rounded-sm mt-6 cursor-pointer" />
+                            <input type="submit" value={modal.save} className="bg-green-600 text-white font-semibold px-3 py-1 rounded-sm mt-6 cursor-pointer" />
                         </div>
                     </form>
                     {/* close btn */}
                     <div className="modal-action text-right absolute right-20 bottom-4">
                         <form method="dialog">
-                            <button className="bg-red-600 text-white font-semibold px-3 py-1 rounded-sm mt-5">Close</button>
+                            <button className="bg-red-600 text-white font-semibold px-3 py-1 rounded-sm mt-5">{modal.close}</button>
                         </form>
                     </div>
                 </div>
@@ -278,45 +280,45 @@ const ProfileBtns = () => {
             {/* new share modal */}
             <dialog id="my_modal_10" className="modal">
                 <div className="modal-box p-4 relative bg-white rounded-none">
-                    <h3 className="text-base md:text-xl font-semibold flex items-center gap-2"><FaCirclePlus />New Share</h3>
+                    <h3 className="text-base md:text-xl font-semibold flex items-center gap-2"><FaCirclePlus />{modal.newShare}</h3>
                     {/* share form */}
                     <form onSubmit={handleNewShare} className="pt-4 space-y-2 text-left">
                         {/* share amount and interest */}
                         <div className="grid grid-cols-2 gap-4">
                             <div>
-                                <label htmlFor="amount" className="font-bold">Share Amount</label>
+                                <label htmlFor="amount" className="font-bold">{modal.amount}</label>
                                 <input type="number" className="w-full mt-2 bg-white px-3 py-1 border border-slate-300 outline-none" name="amount" id="amount" placeholder="0.00" required />
                             </div>
                             <div>
-                                <label htmlFor="interest" className="font-bold">Interest</label>
+                                <label htmlFor="interest" className="font-bold">{modal.interest}</label>
                                 <input type="number" className="w-full bg-white px-3 py-1 mt-2 border border-slate-300 outline-none" name="interest" id="interest" placeholder="0%" required />
                             </div>
                         </div>
                         {/* duration */}
                         <div className="grid grid-cols-2 gap-4">
                             <div>
-                                <label htmlFor="duration" className="font-bold">Duration</label>
+                                <label htmlFor="duration" className="font-bold">{modal.duration}</label>
                                 <input type="number" className="w-full mt-2 bg-white px-3 py-1 border border-slate-300 outline-none" name="duration" id="duration" placeholder="0" required />
                             </div>
                             <div>
                                 <label htmlFor="durationType" className="font-bold"></label>
                                 <select name="durationType" id="durationType" className="w-full bg-white px-3 py-1 border border-slate-300 mt-7 outline-none" defaultValue={'Monthly'}>
-                                    <option value="Monthly">Monthly</option>
-                                    <option value="Weekly">Weekly</option>
-                                    <option value="Daily">Daily</option>
+                                    <option value="Monthly">{modal.monthly}</option>
+                                    <option value="Weekly">{modal.weekly}</option>
+                                    <option value="Daily">{modal.daily}</option>
                                 </select>
                             </div>
                         </div>
 
                         {/* submit btn */}
                         <div className="text-right">
-                            <input type="submit" value="Save" className="bg-green-600 text-white font-semibold px-3 py-1 rounded-sm mt-6 cursor-pointer" />
+                            <input type="submit" value={modal.save} className="bg-green-600 text-white font-semibold px-3 py-1 rounded-sm mt-6 cursor-pointer" />
                         </div>
                     </form>
                     {/* close btn */}
                     <div className="modal-action text-right absolute right-20 bottom-4">
                         <form method="dialog">
-                            <button className="bg-red-600 text-white font-semibold px-3 py-1 rounded-sm mt-5">Close</button>
+                            <button className="bg-red-600 text-white font-semibold px-3 py-1 rounded-sm mt-5">{modal.close}</button>
                         </form>
                     </div>
                 </div>
@@ -330,45 +332,45 @@ const ProfileBtns = () => {
             {/* new fdr modal */}
             <dialog id="my_modal_12" className="modal">
                 <div className="modal-box p-4 relative bg-white rounded-none">
-                    <h3 className="text-base md:text-xl font-semibold flex items-center gap-2"><FaCirclePlus />New FDR</h3>
+                    <h3 className="text-base md:text-xl font-semibold flex items-center gap-2"><FaCirclePlus />{modal.newFDR}</h3>
                     {/* fdr form */}
                     <form onSubmit={handleNewFdr} className="pt-4 space-y-2 text-left">
                         {/* amount and interest */}
                         <div className="grid grid-cols-2 gap-4">
                             <div>
-                                <label htmlFor="amount" className="font-bold">Deposit Amount</label>
+                                <label htmlFor="amount" className="font-bold">{modal.amount}</label>
                                 <input type="number" className="w-full mt-2 bg-white px-3 py-1 border border-slate-300 outline-none" name="amount" id="amount" placeholder="0.00" required />
                             </div>
                             <div>
-                                <label htmlFor="interest" className="font-bold">Interest</label>
+                                <label htmlFor="interest" className="font-bold">{modal.interest}</label>
                                 <input type="number" className="w-full bg-white px-3 py-1 mt-2 border border-slate-300 outline-none" name="interest" id="interest" placeholder="0%" required />
                             </div>
                         </div>
                         {/* duration */}
                         <div className="grid grid-cols-2 gap-4">
                             <div>
-                                <label htmlFor="duration" className="font-bold">Duration</label>
+                                <label htmlFor="duration" className="font-bold">{modal.duration}</label>
                                 <input type="number" className="w-full mt-2 bg-white px-3 py-1 border border-slate-300 outline-none" name="duration" id="duration" placeholder="0" required />
                             </div>
                             <div>
                                 <label htmlFor="durationType" className="font-bold"></label>
                                 <select name="durationType" id="durationType" className="w-full bg-white px-3 py-1 border border-slate-300 mt-7 outline-none" defaultValue={'Monthly'}>
-                                    <option value="Monthly">Monthly</option>
-                                    <option value="Weekly">Weekly</option>
-                                    <option value="Daily">Daily</option>
+                                    <option value="Monthly">{modal.monthly}</option>
+                                    <option value="Weekly">{modal.weekly}</option>
+                                    <option value="Daily">{modal.daily}</option>
                                 </select>
                             </div>
                         </div>
 
                         {/* submit btn */}
                         <div className="text-right">
-                            <input type="submit" value="Save" className="bg-green-600 text-white font-semibold px-3 py-1 rounded-sm mt-6 cursor-pointer" />
+                            <input type="submit" value={modal.save} className="bg-green-600 text-white font-semibold px-3 py-1 rounded-sm mt-6 cursor-pointer" />
                         </div>
                     </form>
                     {/* close btn */}
                     <div className="modal-action text-right absolute right-20 bottom-4">
                         <form method="dialog">
-                            <button className="bg-red-600 text-white font-semibold px-3 py-1 rounded-sm mt-5">Close</button>
+                            <button className="bg-red-600 text-white font-semibold px-3 py-1 rounded-sm mt-5">{modal.close}</button>
                         </form>
                     </div>
                 </div>
@@ -382,31 +384,31 @@ const ProfileBtns = () => {
             {/* new insurance modal */}
             <dialog id="my_modal_6" className="modal">
                 <div className="modal-box p-4 relative bg-white rounded-none">
-                    <h3 className="text-base md:text-xl font-semibold flex items-center gap-2"><FaCirclePlus />New Insurance</h3>
+                    <h3 className="text-base md:text-xl font-semibold flex items-center gap-2"><FaCirclePlus />{modal.newInsurance}</h3>
                     {/* insurance form */}
                     <form onSubmit={handleNewInsurance} className="pt-4 space-y-2 text-left">
 
                         {/* date and amount */}
                         <div className="grid grid-cols-2 gap-4">
                             <div>
-                                <label htmlFor="date" className="font-bold">Select Date</label>
+                                <label htmlFor="date" className="font-bold">{modal.selectDate}</label>
                                 <input type="date" className="w-full bg-white px-3 py-1 mt-2 border border-slate-300 outline-none" name="date" id="date" required />
                             </div>
                             <div>
-                                <label htmlFor="amount" className="font-bold">Amount</label>
+                                <label htmlFor="amount" className="font-bold">{modal.amount}</label>
                                 <input type="number" className="w-full bg-white px-3 py-1 mt-2 border border-slate-300 outline-none" name="amount" id="amount" placeholder="0.00" required />
                             </div>
                         </div>
 
                         {/* submit btn */}
                         <div className="text-right">
-                            <input type="submit" value="Save" className="bg-green-600 text-white font-semibold px-3 py-1 rounded-sm mt-6 cursor-pointer" />
+                            <input type="submit" value={modal.save} className="bg-green-600 text-white font-semibold px-3 py-1 rounded-sm mt-6 cursor-pointer" />
                         </div>
                     </form>
                     {/* close btn */}
                     <div className="modal-action text-right absolute right-20 bottom-4">
                         <form method="dialog">
-                            <button className="bg-red-600 text-white font-semibold px-3 py-1 rounded-sm mt-5">Close</button>
+                            <button className="bg-red-600 text-white font-semibold px-3 py-1 rounded-sm mt-5">{modal.close}</button>
                         </form>
                     </div>
                 </div>

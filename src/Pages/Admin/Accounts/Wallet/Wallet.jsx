@@ -87,7 +87,7 @@ const Wallet = () => {
 
                     <div className="flex justify-between items-center gap-3 flex-wrap pt-6 pb-4 border-b border-b-slate-300">
                         {/* btns */}
-                        <WalletBtns accountType={accountType} />
+                        <WalletBtns title={getTitle()} accountType={accountType} />
 
                         {/* total amount */}
                         <h2><span className="font-bold capitalize">{getTitle()}: </span><span className="text-base md:text-lg">৳</span>500</h2>
