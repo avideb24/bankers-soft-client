@@ -5,7 +5,6 @@ import { FaCirclePlus } from "react-icons/fa6";
 import { FaEdit } from "react-icons/fa";
 import { RiDeleteBin7Fill } from "react-icons/ri";
 import { MdAccountBalanceWallet } from "react-icons/md";
-import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
@@ -21,11 +20,12 @@ const Banking = () => {
 
 
     // ------------------------------
-    
+
     // translation-----------------
     const { t } = useTranslation();
     const lang = t('Banking');
     const modals = t('Modals').EditBank;
+    const deleteModal = t('Modals').Warning;
     // ----------------------------
 
 
@@ -44,34 +44,14 @@ const Banking = () => {
 
     // delete bank
     const handleDeleteBank = id => {
-
-        console.log(id);
-
-        Swal.fire({
-            title: "Are you sure?",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Delete"
-        }).then((result) => {
-
-
-            // call your delete api here
-
-            if (result.isConfirmed) {
-                Swal.fire({
-                    title: "Deleted!",
-                    icon: "success"
-                });
-            }
-        });
+        // this id is fake - please provide original id to html fn 
+        console.log('deleted bank id:', id);
     };
 
     // update bank
     const handleUpdateBank = (e, id) => {
         e.preventDefault();
-
+        // this id is fake - please provide original id to html fn 
         console.log(id);
 
     };
@@ -146,11 +126,29 @@ const Banking = () => {
                                                     <p><span className="font-bold">{lang.address}: </span>{bank?.address}</p>
                                                 </Link>
                                                 <div className="flex gap-3">
-                                                    <button onClick={() => handleDeleteBank(1)} className="text-lg md:text-2xl text-red-600"><RiDeleteBin7Fill /></button>
+                                                    {/* bank delete btn */}
+                                                    <button onClick={() => document.getElementById('my_modal_3').showModal()} className="text-lg md:text-2xl text-red-600"><RiDeleteBin7Fill /></button>
 
+                                                    {/* bank delete modal */}
+                                                    <dialog id="my_modal_3" className="modal">
+                                                        <div className="modal-box p-4 relative bg-white">
+                                                            <h3 className="text-base md:text-xl font-semibold flex items-center gap-2 capitalize">{deleteModal.pleaseConfirm}</h3>
+                                                            <div className="text-center text-lg md:text-2xl font-bold  py-5 my-4 border-y border-y-slate-300">{deleteModal.areYouSure}</div>
+                                                            {/* full pay btn */}
+                                                            <button onClick={() => handleDeleteBank(1)} className="bg-green-600 px-3 py-1 text-white font-semibold float-right">{deleteModal.yes}</button>
+                                                            {/* close btn */}
+                                                            <div className="modal-action text-right absolute right-24 bottom-4">
+                                                                <form method="dialog">
+                                                                    <button className=" bg-red-600 text-white font-semibold px-3 py-1 rounded-sm mt-5">{deleteModal.no}</button>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </dialog>
+
+                                                    {/* bank edit btn */}
                                                     <button onClick={() => document.getElementById(`my_modal_${idx + 5}`).showModal()} className="text-lg md:text-2xl"><FaEdit /></button>
 
-                                                    {/* modal body */}
+                                                    {/* bank edit modal */}
                                                     <dialog id={`my_modal_${idx + 5}`} className="modal">
                                                         <div className="modal-box p-4 relative bg-white">
                                                             <h3 className="text-base md:text-xl font-semibold flex items-center gap-2"><FaEdit />{modals.editBank}</h3>

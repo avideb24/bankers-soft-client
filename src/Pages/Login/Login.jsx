@@ -1,35 +1,33 @@
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import Swal from "sweetalert2";
-import useLoggedUser from "../../hooks/useLoggedUser";
 import { useTranslation } from "react-i18next";
-
+import { useAuth } from "../../Provider/AuthProvider/AuthProvider";
 
 
 const Login = () => {
 
     // translation --------
-    const {t} = useTranslation();
+    const { t } = useTranslation();
     const lang = t('Login');
     // --------------------
 
-
+    const location = useLocation();
     const navigate = useNavigate();
-    const { isLoggedIn, userRole, setIsLoggedIn, setUserRole  } = useLoggedUser();
+    const { isLoggedIn, userRole, setIsLoggedIn, setUserRole } = useAuth();
 
     useEffect(() => {
         if (isLoggedIn) {
             // If already
             if (userRole === "admin") {
                 navigate('/admin');
-            } 
+            }
             else if (userRole === "customer") {
                 navigate('/customer');
             }
         }
     }, [isLoggedIn, userRole, navigate]);
 
-    // console.log("old",isLoggedIn);
 
     // login fn
     const handleLogin = e => {
@@ -42,32 +40,32 @@ const Login = () => {
 
         console.log(checkbox, mobile, password);
 
-
         const isValidUser = true; // Replace with actual validation
 
         if (isValidUser) {
             localStorage.setItem("isLoggedIn", "true");
             setIsLoggedIn(true);
 
-            console.log("new",isLoggedIn);
+            // navigate to customer
             if (checkbox) {
                 localStorage.setItem("userRole", "customer");
                 setUserRole("customer");
-                navigate('/customer');
+                navigate(location?.state ? location?.state : '/customer');
             }
+            // navigate to admin
             else {
                 localStorage.setItem("userRole", "admin");
                 setUserRole("admin");
-                navigate('/admin');
+                navigate(location?.state ? location?.state : '/admin');
             }
         }
         else {
             Swal.fire({
                 icon: "error",
                 title: "Invalid Credentials!",
-              });
+            });
         }
-    }
+    };
 
 
     return (

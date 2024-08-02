@@ -2,13 +2,12 @@ import Header from "../../../../components/Shared/Header/Header";
 import { FaUsers } from "react-icons/fa6";
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import Swal from "sweetalert2";
 import { RiDeleteBin6Fill } from "react-icons/ri";
 import { useTranslation } from "react-i18next";
 
 
 const CustomersList = () => {
-    
+
     // fake data
     const customers = [
         { name: 'Belal', area: 'Nilphamari', mobile: '01723622125', accountNo: '657465456', img: 'https://i.ibb.co/XFw1xTb/user.png' },
@@ -23,40 +22,20 @@ const CustomersList = () => {
 
     // translation -----------
     const { t } = useTranslation();
-    const lang = t('Customers')
+    const lang = t('Customers');
+    const modal = t('Modals').Warning;
     // -----------------------
 
 
     // delete customer fn
     const handleDeteleCustomer = id => {
-        Swal.fire({
-            title: "Are you sure?",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, delete!"
-        }).then((result) => {
-            if (result.isConfirmed) {
-
-                // call delete api here
-
-                console.log(id);
-
-                Swal.fire({
-                    title: "Deleted!",
-                    text: "User been deleted!",
-                    icon: "success"
-                });
-            }
-        });
-
-    }
+        console.log('deleted customer id:', id);
+    };
 
 
     return (
         <div>
-            
+
             <Header title={lang.customerList} />
 
             <div className="bg-white m-3 px-5 py-4">
@@ -75,7 +54,7 @@ const CustomersList = () => {
                 {/* customer list */}
                 {
                     customers?.length == 0 ?
-                        <div className="font-bold text-center py-4">No users found!</div>
+                        <div className="font-bold text-center py-4">{lang.notFound}</div>
                         :
                         <div>
                             {
@@ -94,11 +73,26 @@ const CustomersList = () => {
                                             <p><span className="font-bold">{lang.area}:</span> {customer?.area}</p>
                                             <p><span className="font-bold">{lang.accountNo}: </span>{customer?.accountNo}</p>
                                         </div>
-                                        {/* delete btn */}
+                                        {/* customer delete btn */}
                                         <div className="text-right">
-                                            <button onClick={() => handleDeteleCustomer(1)} className="text-xl md:text-2xl text-red-600">
+                                            <button onClick={() => document.getElementById('my_modal_1').showModal()} className="text-xl md:text-2xl text-red-600">
                                                 <RiDeleteBin6Fill />
                                             </button>
+                                            {/* customer delete modal */}
+                                            <dialog id="my_modal_1" className="modal">
+                                                <div className="modal-box p-4 relative bg-white">
+                                                    <h3 className="text-base md:text-xl font-semibold flex items-center gap-2 capitalize">{modal.pleaseConfirm}</h3>
+                                                    <div className="text-center text-lg md:text-2xl font-bold  py-5 my-4 border-y border-y-slate-300">{modal.areYouSure}</div>
+                                                    {/* full pay btn */}
+                                                    <button onClick={() => handleDeteleCustomer(1)} className="bg-green-600 px-3 py-1 text-white font-semibold float-right">{modal.yes}</button>
+                                                    {/* close btn */}
+                                                    <div className="modal-action text-right absolute right-24 bottom-4">
+                                                        <form method="dialog">
+                                                            <button className=" bg-red-600 text-white font-semibold px-3 py-1 rounded-sm mt-5">{modal.no}</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </dialog>
                                         </div>
                                     </div>
                                 )

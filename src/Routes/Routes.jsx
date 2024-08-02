@@ -1,6 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 import Error from "../Pages/Error/Error";
 import Root from "../Pages/Root/Root";
+import Home from "../Pages/Home/Home";
+import Login from "../Pages/Login/Login";
+import OurPolicy from "../Pages/OurPolicy/OurPolicy";
+
+// Admin Pages
+import Dashboard from "../Pages/Admin/Dashboard/Dashboard";
 import AddUser from "../Pages/Admin/Users/AddUser/AddUser";
 import UsersList from "../Pages/Admin/Users/UsersList/UsersList";
 import Area from "../Pages/Admin/Customers/Area/Area";
@@ -17,6 +23,7 @@ import Savings from "../Pages/Admin/Accounts/Savings/Savings";
 import FixedDeposit from "../Pages/Admin/Accounts/FixedDeposit/FixedDeposit";
 import Loan from "../Pages/Admin/Accounts/Loan/Loan";
 import Insurance from "../Pages/Admin/Accounts/Insurance/Insurance";
+import Wallet from "../Pages/Admin/Accounts/Wallet/Wallet";
 import Banking from "../Pages/Admin/Banking/Banking";
 import IncomeExpenditure from "../Pages/Admin/IncomeExpenditure/IncomeExpenditure";
 import SalariesOfEmployees from "../Pages/Admin/SalariesOfEmployees/SalariesOfEmployees";
@@ -31,16 +38,14 @@ import NomineeDocuments from "../Pages/Admin/NomineeDocuments/NomineeDocuments";
 import UserReports from "../Pages/Admin/UserReports/UserReports";
 import BankProfile from "../Pages/Admin/BankProfile/BankProfile";
 import Transactions from "../Pages/Admin/Transactions/Transactions";
-import Wallet from "../Pages/Admin/Accounts/Wallet/Wallet";
-import Home from "../Pages/Home/Home";
-import Login from "../Pages/Login/Login";
-import Dashboard from "../Pages/Admin/Dashboard/Dashboard";
 
-// customer
+// Customer Pages
 import CustomerDashboard from '../Pages/Customer/CustomerDashboard/CustomerDashboard';
-import OurPolicy from "../Pages/OurPolicy/OurPolicy";
 import CustomerAccounts from "../Pages/Customer/CustomerAccounts/CustomerAccounts";
 import CustomerTransactions from "../Pages/Customer/CustomerTransactions/CustomerTransactions";
+
+// PrivateRoute
+import PrivateRoute from "./PrivateRoute";
 
 
 const Routes = createBrowserRouter([
@@ -61,165 +66,159 @@ const Routes = createBrowserRouter([
                 path: '/login',
                 element: <Login />
             },
-            // admin routes ------------------->>>
+            // Admin Routes 
             {
                 path: '/admin',
-                element: <Dashboard />
+                element: <PrivateRoute><Dashboard /></PrivateRoute>
             },
             {
                 path: '/admin/add-user',
-                element: <AddUser />
+                element: <PrivateRoute><AddUser /></PrivateRoute>
             },
             {
                 path: '/admin/userslist',
-                element: <UsersList />
+                element: <PrivateRoute><UsersList /></PrivateRoute>
             },
             {
                 path: '/admin/area',
-                element: <Area />
+                element: <PrivateRoute><Area /></PrivateRoute>
             },
             {
                 path: '/admin/add-customer',
-                element: <AddNew />
+                element: <PrivateRoute><AddNew /></PrivateRoute>
             },
             {
                 path: '/admin/customers-list',
-                element: <CustomersList />
+                element: <PrivateRoute><CustomersList /></PrivateRoute>
             },
             {
                 path: '/admin/customer-laser',
-                element: <CustomerLaser />
+                element: <PrivateRoute><CustomerLaser /></PrivateRoute>
             },
             {
                 path: '/admin/settlement-reports',
-                element: <SettlementReports />
+                element: <PrivateRoute><SettlementReports /></PrivateRoute>
             },
             {
                 path: '/admin/collection-reports',
-                element: <CollectionReports />
+                element: <PrivateRoute><CollectionReports /></PrivateRoute>
             },
             {
                 path: '/admin/collection-sheet',
-                element: <CollectionSheet />
+                element: <PrivateRoute><CollectionSheet /></PrivateRoute>
             },
             {
                 path: '/admin/message-reports',
-                element: <MessageReports />
+                element: <PrivateRoute><MessageReports /></PrivateRoute>
             },
             {
                 path: '/admin/share',
-                element: <Share />
+                element: <PrivateRoute><Share /></PrivateRoute>
             },
             {
                 path: '/admin/savings',
-                element: <Savings />
+                element: <PrivateRoute><Savings /></PrivateRoute>
             },
             {
                 path: '/admin/fixed-deposit',
-                element: <FixedDeposit />
+                element: <PrivateRoute><FixedDeposit /></PrivateRoute>
             },
             {
                 path: '/admin/dps',
-                element: <Dps />
+                element: <PrivateRoute><Dps /></PrivateRoute>
             },
             {
                 path: '/admin/loan',
-                element: <Loan />
+                element: <PrivateRoute><Loan /></PrivateRoute>
             },
             {
                 path: '/admin/insurance',
-                element: <Insurance />
+                element: <PrivateRoute><Insurance /></PrivateRoute>
             },
             {
-                // dynamic route
                 path: '/admin/wallet/:accountType/:id',
-                element: <Wallet />
+                element: <PrivateRoute><Wallet /></PrivateRoute>
             },
             {
                 path: '/admin/banking',
-                element: <Banking />
+                element: <PrivateRoute><Banking /></PrivateRoute>
             },
             {
-                // dynamic route
                 path: '/admin/bank-profile',
-                element: <BankProfile />
+                element: <PrivateRoute><BankProfile /></PrivateRoute>
             },
             {
                 path: '/admin/income-expenditure',
-                element: <IncomeExpenditure />
+                element: <PrivateRoute><IncomeExpenditure /></PrivateRoute>
             },
             {
                 path: '/admin/salaries-of-employeees',
-                element: <SalariesOfEmployees />
+                element: <PrivateRoute><SalariesOfEmployees /></PrivateRoute>
             },
             {
                 path: '/admin/profits-distribution',
-                element: <ProfitsDistribution />
+                element: <PrivateRoute><ProfitsDistribution /></PrivateRoute>
             },
             {
                 path: '/admin/business-settings',
-                element: <BusinessSettings />
+                element: <PrivateRoute><BusinessSettings /></PrivateRoute>
             },
             {
                 path: '/admin/profile',
-                element: <Profile />
+                element: <PrivateRoute><Profile /></PrivateRoute>
             },
             {
                 path: '/admin/user-profile',
-                element: <UserProfile />
+                element: <PrivateRoute><UserProfile /></PrivateRoute>
             },
             {
                 path: '/admin/user-reports',
-                element: <UserReports />
+                element: <PrivateRoute><UserReports /></PrivateRoute>
             },
             {
                 path: '/admin/customer-profile',
-                element: <CustomerProfile />
+                element: <PrivateRoute><CustomerProfile /></PrivateRoute>
             },
             {
                 path: '/admin/customer-documents',
-                element: <CustomerDocuments />
+                element: <PrivateRoute><CustomerDocuments /></PrivateRoute>
             },
             {
                 path: '/admin/nominee-documents',
-                element: <NomineeDocuments />
+                element: <PrivateRoute><NomineeDocuments /></PrivateRoute>
             },
             {
                 path: '/admin/transactions',
-                element: <Transactions />
+                element: <PrivateRoute><Transactions /></PrivateRoute>
             },
             {
                 path: '/admin/help-center',
-                element: <HelpCenter />
-            },
-            {
-                path: '/admin/help-center',
-                element: <HelpCenter />
+                element: <PrivateRoute><HelpCenter /></PrivateRoute>
             },
 
-             // customer routes----------------------->>>
-             {
+            // Customer Routes 
+            {
                 path: '/customer',
-                element: <CustomerDashboard></CustomerDashboard>
+                element: <PrivateRoute><CustomerDashboard /></PrivateRoute>
             },
             {
                 path: '/customer/transactions',
-                element: <CustomerTransactions />
+                element: <PrivateRoute><CustomerTransactions /></PrivateRoute>
             },
             {
                 path: '/customer/accounts',
-                element: <CustomerAccounts />
+                element: <PrivateRoute><CustomerAccounts /></PrivateRoute>
             },
             {
                 path: '/customer/customer-documents',
-                element: <CustomerDocuments />
+                element: <PrivateRoute><CustomerDocuments /></PrivateRoute>
             },
             {
                 path: '/customer/nominee-documents',
-                element: <NomineeDocuments />
+                element: <PrivateRoute><NomineeDocuments /></PrivateRoute>
             },
         ]
     }
-])
+]);
 
 export default Routes;

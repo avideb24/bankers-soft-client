@@ -12,8 +12,8 @@ import { PiBankFill } from "react-icons/pi";
 import { SiGoogletagmanager } from "react-icons/si";
 import { ImSwitch } from "react-icons/im";
 import { useTranslation } from "react-i18next";
-import useLoggedUser from "../../../hooks/useLoggedUser";
 import logo from '../../../assets/bankers-logo.png';
+import { useAuth } from "../../../Provider/AuthProvider/AuthProvider";
 
 const SidebarLink = ({ to, icon: Icon, iconSize, children }) => (
     <NavLink to={to} className='flex items-center gap-5 font-semibold'>
@@ -30,7 +30,7 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
     // ------------------------
 
 
-    const { isLoggedIn, userRole, setIsLoggedIn, setUserRole } = useLoggedUser();
+    const { isLoggedIn, userRole, setIsLoggedIn, setUserRole } = useAuth();
     const navigate = useNavigate();
 
 
@@ -52,7 +52,7 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
             [menu]: !prev[menu],
         }));
     };
-
+    
 
     // logout fn
     const handleLogout = () => {

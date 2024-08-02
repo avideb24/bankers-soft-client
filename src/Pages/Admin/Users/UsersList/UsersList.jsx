@@ -23,6 +23,7 @@ const UsersList = () => {
     // translation -----------------
     const { t } = useTranslation();
     const lang = t('Users').UserList;
+    const modal = t('Modals').Warning;
     // -----------------------------
 
 
@@ -102,11 +103,29 @@ const UsersList = () => {
                                             <p><span className="font-bold">{lang.mobile}:</span> {user?.mobile}</p>
                                             <p><span className="font-bold">{lang.joiningDate}: </span>{user?.joiningDate}</p>
                                         </div>
-                                        {/* delete btn */}
                                         <div className="text-right">
-                                            <button onClick={() => handleDeteleUser(1)} className="text-xl md:text-2xl text-red-600">
+                                            {/* user delete btn */}
+                                            <button onClick={() => document.getElementById('my_modal_1').showModal()} className="text-xl md:text-2xl text-red-600">
                                                 <RiDeleteBin6Fill />
                                             </button>
+
+                                            {/* user delete modal */}
+                                            <dialog id="my_modal_1" className="modal">
+                                                <div className="modal-box p-4 relative bg-white">
+                                                    <h3 className="text-base md:text-xl font-semibold flex items-center gap-2 capitalize">{modal.pleaseConfirm}</h3>
+                                                    <div className="text-center text-lg md:text-2xl font-bold  py-5 my-4 border-y border-y-slate-300">{modal.areYouSure}</div>
+                                                    {/* full pay btn */}
+                                                    <button onClick={() => handleDeteleUser(1)} className="bg-green-600 px-3 py-1 text-white font-semibold float-right">{modal.yes}</button>
+                                                    {/* close btn */}
+                                                    <div className="modal-action text-right absolute right-24 bottom-4">
+                                                        <form method="dialog">
+                                                            <button className=" bg-red-600 text-white font-semibold px-3 py-1 rounded-sm mt-5">{modal.no}</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </dialog>
+
+
                                         </div>
                                     </div>
                                 )

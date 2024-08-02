@@ -6,6 +6,7 @@ import { GrLanguage } from "react-icons/gr";
 import { useState } from "react";
 import { IoCloudUploadOutline } from "react-icons/io5";
 import { useTranslation } from "react-i18next";
+import useCurrentLanguage from "../../../../hooks/useCurrentLanguage";
 
 
 const BusinessSettings = () => {
@@ -15,6 +16,7 @@ const BusinessSettings = () => {
     const lang = t('BusinessSettings');
     // -----------------------------
 
+    const { setCurrentLanguage } = useCurrentLanguage();
     const [image, setImage] = useState(null);
 
     const handleImageChange = (e) => {
@@ -46,19 +48,19 @@ const BusinessSettings = () => {
     // change language
     const handleChangeLanguage = e => {
         const selectedLan = e.target.value;
-
-        i18n.changeLanguage(selectedLan)
-    }
+        i18n.changeLanguage(selectedLan);
+        setCurrentLanguage(selectedLan);
+    };
 
 
     return (
         <div>
             <Header title={lang.businessSettings} />
 
-            <div className="bg-white m-4 p-5 ">
+            <div className="bg-white m-4 p-5 pt-2">
 
                 {/* language */}
-                <div className="pb-8 flex gap-2 items-start">
+                <div className="pb-5 flex gap-2 items-start">
                     <h2 className="text-lg md:text-xl font-bold flex items-center gap-1"><GrLanguage />{lang.language}: </h2>
                     <select onChange={(e) => handleChangeLanguage(e)} className="bg-white px-4 py-1 border border-slate-300 rounded-sm" defaultValue={i18n?.language}>
                         <option value="en">English</option>
@@ -176,7 +178,7 @@ const BusinessSettings = () => {
                     <div className="flex justify-end">
                         <button type="submit" className="flex items-center gap-1 font-semibold text-white bg-blue-600 px-3 py-1 rounded-sm">
                             <FaSave />
-                            <span>{lang.submit}</span>
+                            <span>{lang.update}</span>
                         </button>
                     </div>
 

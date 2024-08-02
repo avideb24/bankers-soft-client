@@ -606,6 +606,12 @@ i18next.use(LanguageDetector).use(initReactI18next).init({
                         upload: 'Upload',
                         close: 'Close',
                     },
+                    Warning: {
+                        pleaseConfirm: 'Please Confirm',
+                        areYouSure: 'Are You Sure?',
+                        yes: 'Yes',
+                        no: 'No',
+                    },
                 },
             }
         },
@@ -1206,6 +1212,12 @@ i18next.use(LanguageDetector).use(initReactI18next).init({
                         uploadPhoto: 'ছবি আপলোড',
                         upload: 'আপলোড',
                         close: 'ক্লোজ',
+                    },
+                    Warning: {
+                        pleaseConfirm: 'কনফার্ম করুন',
+                        areYouSure: 'আপনি কি নিশ্চিত?',
+                        yes: 'হ্যাঁ',
+                        no: 'না',
                     },
                 },
             }

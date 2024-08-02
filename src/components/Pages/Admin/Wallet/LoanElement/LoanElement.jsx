@@ -1,4 +1,3 @@
-import Swal from "sweetalert2";
 import Button from "../../../../Shared/Button/Button";
 import { FaPlusCircle } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
@@ -30,6 +29,7 @@ const LoanElement = () => {
     const lang = t('Wallet').Loans;
     // -----------------------
 
+    // loan collection fn
     const handleCollection = e => {
         e.preventDefault();
 
@@ -47,22 +47,9 @@ const LoanElement = () => {
     };
 
 
+    // full pay fn
     const handleFullPay = () => {
-        Swal.fire({
-            icon: "warning",
-            title: "Are you sure?",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Full Pay"
-        }).then((result) => {
-            if (result.isConfirmed) {
-                Swal.fire({
-                    icon: "success",
-                    title: "Sucessfully Paid!",
-                });
-            }
-        });
+        console.log('hitted full pay');
     }
 
 
@@ -144,7 +131,7 @@ const LoanElement = () => {
                 <dialog id="my_modal_11" className="modal">
                     <div className="modal-box p-4 relative bg-white">
                         <h3 className="text-base md:text-xl font-semibold flex items-center gap-2 capitalize"><FaPlusCircle />{lang.fullPay}</h3>
-                        <div className="text-center text-lg md:text-2xl font-bold pt-8 pb-10">{lang.areYouSure}</div>
+                        <div className="text-center text-lg md:text-2xl font-bold  py-5 my-4 border-y border-y-slate-300">{lang.areYouSure}</div>
                         {/* full pay btn */}
                         <button onClick={handleFullPay} className="bg-green-600 px-3 py-1 text-white font-semibold float-right">{lang.fullPay}</button>
                         {/* close btn */}

@@ -4,7 +4,6 @@ import { FaPlusCircle, FaSearch } from "react-icons/fa";
 import Button from "../../../../components/Shared/Button/Button";
 import { FaEdit } from "react-icons/fa";
 import { RiDeleteBin7Fill } from "react-icons/ri";
-import Swal from "sweetalert2";
 
 
 const Area = () => {
@@ -20,7 +19,8 @@ const Area = () => {
 
     // translation -----------
     const { t, i18n } = useTranslation();
-    const lang = t('Customers')
+    const lang = t('Customers');
+    const modal = t('Modals').Warning;
     // -----------------------
 
     // search area fn
@@ -58,30 +58,8 @@ const Area = () => {
 
     // delete area fn
     const handleDeleteArea = id => {
-
         // this id is fake - please provide original id to html fn 
-
-        Swal.fire({
-            title: "Are you sure?",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Delete"
-        }).then((result) => {
-            if (result.isConfirmed) {
-
-                console.log(id);
-
-                // call your delete api here
-
-                Swal.fire({
-                    title: "Deleted!",
-                    text: "Area has been deleted.",
-                    icon: "success"
-                });
-            }
-        });
+        console.log('deleted area id:', id);
     }
 
 
@@ -156,9 +134,9 @@ const Area = () => {
                                 </div>
                                 <div className="flex gap-4">
                                     {/* area edit btn */}
-                                    <button className="text-lg md:text-2xl" onClick={() => document.getElementById(`my_modal_${idx + 2}`).showModal()}><FaEdit /></button>
+                                    <button className="text-lg md:text-2xl" onClick={() => document.getElementById(`my_modal_${idx + 3}`).showModal()}><FaEdit /></button>
                                     {/* add area modal */}
-                                    <dialog id={`my_modal_${idx + 2}`} className="modal">
+                                    <dialog id={`my_modal_${idx + 3}`} className="modal">
                                         <div className="modal-box min-w-80 relative bg-white">
                                             <div className="rounded-sm">
                                                 <h2 className="flex items-center gap-2 text-base md:text-xl font-bold pb-2"><FaEdit />{lang.editArea}</h2>
@@ -191,7 +169,24 @@ const Area = () => {
 
 
                                     {/* delete area btn */}
-                                    <button onClick={() => handleDeleteArea(2)} className="text-lg md:text-2xl text-red-600"><RiDeleteBin7Fill /></button>
+                                    <button onClick={() => document.getElementById('my_modal_2').showModal()} className="text-lg md:text-2xl text-red-600"><RiDeleteBin7Fill /></button>
+
+                                    {/* area delete modal */}
+                                    <dialog id="my_modal_2" className="modal">
+                                        <div className="modal-box p-4 relative bg-white">
+                                            <h3 className="text-base md:text-xl font-semibold flex items-center gap-2 capitalize">{modal.pleaseConfirm}</h3>
+                                            <div className="text-center text-lg md:text-2xl font-bold  py-5 my-4 border-y border-y-slate-300">{modal.areYouSure}</div>
+                                            {/* full pay btn */}
+                                            <button onClick={() => handleDeleteArea(1)} className="bg-green-600 px-3 py-1 text-white font-semibold float-right">{modal.yes}</button>
+                                            {/* close btn */}
+                                            <div className="modal-action text-right absolute right-24 bottom-4">
+                                                <form method="dialog">
+                                                    <button className=" bg-red-600 text-white font-semibold px-3 py-1 rounded-sm mt-5">{modal.no}</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </dialog>
+
                                 </div>
                             </div>
                         )

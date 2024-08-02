@@ -2,22 +2,29 @@ import { Outlet } from "react-router-dom";
 import Sidebar from "../../components/Shared/Sidebar/Sidebar";
 import { useEffect, useState } from "react";
 import { HiMenuAlt1 } from "react-icons/hi";
-import useLoggedUser from "../../hooks/useLoggedUser";
+import useCurrentLanguage from "../../hooks/useCurrentLanguage";
+import { useAuth } from "../../Provider/AuthProvider/AuthProvider";
 
 
 const Root = () => {
 
     const [showSidebar, setShowSidebar] = useState(false);
-    const {isLoggedIn } = useLoggedUser();
-
+    const { isLoggedIn, loading } = useAuth();
+    const { currentLanguage } = useCurrentLanguage();
 
     useEffect(() => {
-        // This effect ensures the component re-renders when the login state changes
-        // You can add any other logic here if necessary
+        // Re-render on login state change
+        // console.log('isLoggedIn state changed:', isLoggedIn);
     }, [isLoggedIn]);
 
+    if (loading) {
+        return <div className="flex justify-center items-center py-5">
+            <span className="loading loading-dots loading-lg"></span>
+        </div>;
+    }
+
     return (
-        <main className="min-h-screen text-xs md:text-sm">
+        <main className={`min-h-screen ${currentLanguage == 'en' ? 'text-xs md:text-sm' : 'text-[10px] md:text-[13px]'} `}>
 
             {/* mobile menu btn */}
             <button onClick={() => setShowSidebar(true)} className={`${isLoggedIn ? '' : 'hidden'} fixed top-[14px] md:top-4 left-2 text-2xl p-1 z-[90] lg:hidden`} ><HiMenuAlt1 /></button>

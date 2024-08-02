@@ -2,8 +2,15 @@ import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import bannerImage from '../../assets/HomeBanner.jpg';
 import InitialHeader from '../../components/Shared/InitialHeader/InitialHeader';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../Provider/AuthProvider/AuthProvider';
 
 const Home = () => {
+
+    const navigate = useNavigate();
+    const { isLoggedIn, userRole  } = useAuth();
+
     const { t } = useTranslation();
     const lang = t('HomePage');
     const { Accounting, UsersRole, AccountsType, Customer, AdditionalFeatures } = lang;
@@ -41,6 +48,18 @@ const Home = () => {
             text8: PropTypes.string,
         }),
     };
+
+    useEffect(() => {
+        if (isLoggedIn) {
+            // If already
+            if (userRole === "admin") {
+                navigate('/admin');
+            } 
+            else if (userRole === "customer") {
+                navigate('/customer');
+            }
+        }
+    }, [isLoggedIn, userRole, navigate]);
 
     return (
         <div>
