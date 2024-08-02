@@ -87,7 +87,7 @@ const IncomeExpenseFrom = () => {
                 {/* description */}
                 <div>
                     <label htmlFor="description" className="font-bold">{lang.description}</label>
-                    <input type="text" name="description" id="description" className="w-full px-2 py-1 bg-white border border-slate-300 mt-1 outline-none" placeholder={lang.description} required />
+                    <textarea name="description" id="description" className="w-full px-2 py-1 bg-white border border-slate-300 mt-1 outline-none" placeholder={lang.description} required></textarea>
                 </div>
                 {/* submit btn */}
                 <div className="text-right">

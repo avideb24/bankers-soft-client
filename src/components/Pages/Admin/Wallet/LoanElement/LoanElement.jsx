@@ -117,7 +117,7 @@ const LoanElement = () => {
                             </div>
                         </form>
                         {/* close btn */}
-                        <div className="modal-action text-right absolute right-24 bottom-4">
+                        <div className="modal-action text-right absolute right-28 bottom-4">
                             <form method="dialog">
                                 <button className=" bg-red-600 text-white font-semibold px-3 py-1 rounded-sm mt-5">{lang.cancel}</button>
                             </form>

@@ -572,6 +572,15 @@ i18next.use(LanguageDetector).use(initReactI18next).init({
                     customer: 'Customer',
                     login: 'Login', 
                 },
+                HelpCenter: {
+                    helpCenter: 'Help Center',
+                    title: 'Bankers Software',
+                    slogan: 'A Smart Solution for Modern Banking!',
+                    facingIssues: 'Facing issues?',
+                    pleaseContact: 'Please Contact...',
+                    email: 'E-mail',
+                    phone: 'Phone',
+                },
                 Modals: {
                     SearchByDate: {
                         searchByDate: 'Search By Date',
@@ -1183,6 +1192,15 @@ i18next.use(LanguageDetector).use(initReactI18next).init({
                     admin: 'অ্যাডমিন',
                     customer: ' গ্রাহক',
                     login: 'লগ-ইন', 
+                },
+                HelpCenter: {
+                    helpCenter: 'সহায়তা কেন্দ্র',
+                    title: 'ব্যাংকার্স সফটওয়্যার',
+                    slogan: 'আধুনিক ব্যাংকিংয়ের জন্য একটি স্মার্ট সমাধান!',
+                    facingIssues: 'সমস্যার সম্মুখীন হচ্ছেন?',
+                    pleaseContact: 'যোগাযোগ করুন...',
+                    email: 'ই-মেইল',
+                    phone: 'ফোন',
                 },
                 Modals: {
                     SearchByDate: {

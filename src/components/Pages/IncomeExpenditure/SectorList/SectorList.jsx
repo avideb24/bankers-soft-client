@@ -59,7 +59,7 @@ const SectorList = () => {
 
 
     return (
-        <div className="bg-white p-5 shadow-sm">
+        <div className="bg-white p-5 shadow-sm h-max">
 
             <div className="flex justify-between items-center gap-3 mb-5 flex-wrap">
                 <h2 className="text-base md:text-lg font-bold flex items-center gap-2"><BsGraphUp />{lang.incomeExpenditure} {lang.sector}</h2>

@@ -25,7 +25,7 @@ const SalaryTable = () => {
     const tableHeads = ['Trx Type', 'Trx Date', 'Amount', 'Current Balance'];
 
     return (
-        <div className="bg-white p-5">
+        <div className="bg-white p-5 h-max">
 
             <div className="flex justify-between items-center gap-3 pb-3 border-b border-b-slate-300 mb-5">
                 <h2 className="flex items-center gap-2 text-base md:text-lg font-bold"><FaChartBar className="mt-1" />{lang.incomeExpenditure}</h2>
