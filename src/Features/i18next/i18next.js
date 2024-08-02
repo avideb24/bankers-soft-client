@@ -612,6 +612,11 @@ i18next.use(LanguageDetector).use(initReactI18next).init({
                         yes: 'Yes',
                         no: 'No',
                     },
+                    Alert: {
+                        PleaseLoginFirst: 'Please Login First!',
+                        warning: 'Warning!',
+                        doNotHavePermission: 'You do not have permission to view this page.',
+                    }
                 },
             }
         },
@@ -1219,6 +1224,11 @@ i18next.use(LanguageDetector).use(initReactI18next).init({
                         yes: 'হ্যাঁ',
                         no: 'না',
                     },
+                    Alert: {
+                        PleaseLoginFirst: 'লগ ইন করুন!',
+                        warning: 'সাবধান!',
+                        doNotHavePermission: 'আপনার এই পৃষ্ঠাটি দেখার অনুমতি নেই',
+                    }
                 },
             }
         }

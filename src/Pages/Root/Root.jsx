@@ -18,7 +18,7 @@ const Root = () => {
     }, [isLoggedIn]);
 
     if (loading) {
-        return <div className="flex justify-center items-center py-5">
+        return <div className="w-full h-screen flex justify-center items-center py-5">
             <span className="loading loading-dots loading-lg"></span>
         </div>;
     }

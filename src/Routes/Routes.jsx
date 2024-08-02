@@ -47,6 +47,10 @@ import CustomerTransactions from "../Pages/Customer/CustomerTransactions/Custome
 // PrivateRoute
 import PrivateRoute from "./PrivateRoute";
 
+// Function to wrap routes with PrivateRoute and roles
+const privateRoute = (element, roles) => (
+    <PrivateRoute roles={roles}>{element}</PrivateRoute>
+);
 
 const Routes = createBrowserRouter([
     {
@@ -69,153 +73,153 @@ const Routes = createBrowserRouter([
             // Admin Routes 
             {
                 path: '/admin',
-                element: <PrivateRoute><Dashboard /></PrivateRoute>
+                element: privateRoute(<Dashboard />, ['admin'])
             },
             {
                 path: '/admin/add-user',
-                element: <PrivateRoute><AddUser /></PrivateRoute>
+                element: privateRoute(<AddUser />, ['admin'])
             },
             {
                 path: '/admin/userslist',
-                element: <PrivateRoute><UsersList /></PrivateRoute>
+                element: privateRoute(<UsersList />, ['admin'])
             },
             {
                 path: '/admin/area',
-                element: <PrivateRoute><Area /></PrivateRoute>
+                element: privateRoute(<Area />, ['admin'])
             },
             {
                 path: '/admin/add-customer',
-                element: <PrivateRoute><AddNew /></PrivateRoute>
+                element: privateRoute(<AddNew />, ['admin'])
             },
             {
                 path: '/admin/customers-list',
-                element: <PrivateRoute><CustomersList /></PrivateRoute>
+                element: privateRoute(<CustomersList />, ['admin'])
             },
             {
                 path: '/admin/customer-laser',
-                element: <PrivateRoute><CustomerLaser /></PrivateRoute>
+                element: privateRoute(<CustomerLaser />, ['admin'])
             },
             {
                 path: '/admin/settlement-reports',
-                element: <PrivateRoute><SettlementReports /></PrivateRoute>
+                element: privateRoute(<SettlementReports />, ['admin'])
             },
             {
                 path: '/admin/collection-reports',
-                element: <PrivateRoute><CollectionReports /></PrivateRoute>
+                element: privateRoute(<CollectionReports />, ['admin'])
             },
             {
                 path: '/admin/collection-sheet',
-                element: <PrivateRoute><CollectionSheet /></PrivateRoute>
+                element: privateRoute(<CollectionSheet />, ['admin'])
             },
             {
                 path: '/admin/message-reports',
-                element: <PrivateRoute><MessageReports /></PrivateRoute>
+                element: privateRoute(<MessageReports />, ['admin'])
             },
             {
                 path: '/admin/share',
-                element: <PrivateRoute><Share /></PrivateRoute>
+                element: privateRoute(<Share />, ['admin'])
             },
             {
                 path: '/admin/savings',
-                element: <PrivateRoute><Savings /></PrivateRoute>
+                element: privateRoute(<Savings />, ['admin'])
             },
             {
                 path: '/admin/fixed-deposit',
-                element: <PrivateRoute><FixedDeposit /></PrivateRoute>
+                element: privateRoute(<FixedDeposit />, ['admin'])
             },
             {
                 path: '/admin/dps',
-                element: <PrivateRoute><Dps /></PrivateRoute>
+                element: privateRoute(<Dps />, ['admin'])
             },
             {
                 path: '/admin/loan',
-                element: <PrivateRoute><Loan /></PrivateRoute>
+                element: privateRoute(<Loan />, ['admin'])
             },
             {
                 path: '/admin/insurance',
-                element: <PrivateRoute><Insurance /></PrivateRoute>
+                element: privateRoute(<Insurance />, ['admin'])
             },
             {
                 path: '/admin/wallet/:accountType/:id',
-                element: <PrivateRoute><Wallet /></PrivateRoute>
+                element: privateRoute(<Wallet />, ['admin'])
             },
             {
                 path: '/admin/banking',
-                element: <PrivateRoute><Banking /></PrivateRoute>
+                element: privateRoute(<Banking />, ['admin'])
             },
             {
                 path: '/admin/bank-profile',
-                element: <PrivateRoute><BankProfile /></PrivateRoute>
+                element: privateRoute(<BankProfile />, ['admin'])
             },
             {
                 path: '/admin/income-expenditure',
-                element: <PrivateRoute><IncomeExpenditure /></PrivateRoute>
+                element: privateRoute(<IncomeExpenditure />, ['admin'])
             },
             {
-                path: '/admin/salaries-of-employeees',
-                element: <PrivateRoute><SalariesOfEmployees /></PrivateRoute>
+                path: '/admin/salaries-of-employees',
+                element: privateRoute(<SalariesOfEmployees />, ['admin'])
             },
             {
                 path: '/admin/profits-distribution',
-                element: <PrivateRoute><ProfitsDistribution /></PrivateRoute>
+                element: privateRoute(<ProfitsDistribution />, ['admin'])
             },
             {
                 path: '/admin/business-settings',
-                element: <PrivateRoute><BusinessSettings /></PrivateRoute>
+                element: privateRoute(<BusinessSettings />, ['admin'])
             },
             {
                 path: '/admin/profile',
-                element: <PrivateRoute><Profile /></PrivateRoute>
+                element: privateRoute(<Profile />, ['admin'])
             },
             {
                 path: '/admin/user-profile',
-                element: <PrivateRoute><UserProfile /></PrivateRoute>
+                element: privateRoute(<UserProfile />, ['admin'])
             },
             {
                 path: '/admin/user-reports',
-                element: <PrivateRoute><UserReports /></PrivateRoute>
+                element: privateRoute(<UserReports />, ['admin'])
             },
             {
                 path: '/admin/customer-profile',
-                element: <PrivateRoute><CustomerProfile /></PrivateRoute>
+                element: privateRoute(<CustomerProfile />, ['admin'])
             },
             {
                 path: '/admin/customer-documents',
-                element: <PrivateRoute><CustomerDocuments /></PrivateRoute>
+                element: privateRoute(<CustomerDocuments />, ['admin'])
             },
             {
                 path: '/admin/nominee-documents',
-                element: <PrivateRoute><NomineeDocuments /></PrivateRoute>
+                element: privateRoute(<NomineeDocuments />, ['admin'])
             },
             {
                 path: '/admin/transactions',
-                element: <PrivateRoute><Transactions /></PrivateRoute>
+                element: privateRoute(<Transactions />, ['admin'])
             },
             {
                 path: '/admin/help-center',
-                element: <PrivateRoute><HelpCenter /></PrivateRoute>
+                element: privateRoute(<HelpCenter />, ['admin'])
             },
 
             // Customer Routes 
             {
                 path: '/customer',
-                element: <PrivateRoute><CustomerDashboard /></PrivateRoute>
+                element: privateRoute(<CustomerDashboard />, ['customer'])
             },
             {
                 path: '/customer/transactions',
-                element: <PrivateRoute><CustomerTransactions /></PrivateRoute>
+                element: privateRoute(<CustomerTransactions />, ['customer'])
             },
             {
                 path: '/customer/accounts',
-                element: <PrivateRoute><CustomerAccounts /></PrivateRoute>
+                element: privateRoute(<CustomerAccounts />, ['customer'])
             },
             {
                 path: '/customer/customer-documents',
-                element: <PrivateRoute><CustomerDocuments /></PrivateRoute>
+                element: privateRoute(<CustomerDocuments />, ['customer'])
             },
             {
                 path: '/customer/nominee-documents',
-                element: <PrivateRoute><NomineeDocuments /></PrivateRoute>
+                element: privateRoute(<NomineeDocuments />, ['customer'])
             },
         ]
     }
