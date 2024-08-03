@@ -15,20 +15,27 @@ import { useTranslation } from "react-i18next";
 import logo from '../../../assets/bankers-logo.png';
 import { useAuth } from "../../../Provider/AuthProvider/AuthProvider";
 
-const SidebarLink = ({ to, icon: Icon, iconSize, children }) => (
-    <NavLink to={to} className='flex items-center gap-5 font-semibold'>
-        <Icon className={iconSize} />
-        {children}
-    </NavLink>
-);
+
 
 const Sidebar = ({ showSidebar, setShowSidebar }) => {
+
+    const SidebarLink = ({ to, icon: Icon, iconSize, children }) => (
+        <NavLink to={to} onClick={() => setShowSidebar(false)} className='flex items-center gap-5 font-semibold'>
+            <Icon className={iconSize} />
+            {children}
+        </NavLink>
+    );
+    SidebarLink.propTypes = {
+        to: PropTypes.string.isRequired,
+        icon: PropTypes.elementType.isRequired,
+        children: PropTypes.node.isRequired,
+        iconSize: PropTypes.string,
+    };
 
     // translation ------------
     const { t } = useTranslation();
     const lang = t('Sidebar');
     // ------------------------
-
 
     const { isLoggedIn, userRole, setIsLoggedIn, setUserRole } = useAuth();
     const navigate = useNavigate();
@@ -215,15 +222,12 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
     );
 };
 
+
+
 export default Sidebar;
 
 
-SidebarLink.propTypes = {
-    to: PropTypes.string.isRequired,
-    icon: PropTypes.elementType.isRequired,
-    children: PropTypes.node.isRequired,
-    iconSize: PropTypes.string,
-};
+
 
 Sidebar.propTypes = {
     showSidebar: PropTypes.bool,

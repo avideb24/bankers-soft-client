@@ -16,7 +16,7 @@ const SmsReports = () => {
     // ------------------------
 
     return (
-        <div className="w-1/2 p-4 border-t border-t-slate-300 pt-3">
+        <div className="p-4 border-t border-t-slate-300 pt-3">
             <h2 className="flex items-center gap-1 text-base md:text-lg font-bold "><IoIosMailOpen />{lang.smsReports}</h2>
 
             {/* reports */}

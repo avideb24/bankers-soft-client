@@ -20,8 +20,8 @@ const EmployeeReports = () => {
 
 
     return (
-        <div className="w-1/2 p-4 border-t border-t-slate-300 pt-3">
-            <h2 className="flex items-center gap-1 text-base md:text-lg font-bold pb-4"><FaChartBar />{lang.employeeReports}</h2>
+        <div className="p-4 border-t border-t-slate-300 pt-3">
+            <h2 className="flex items-center gap-1 text-base md:text-lg font-bold pb-4"><FaChartBar className="mt-1" />{lang.employeeReports}</h2>
 
             {/* reports table */}
             <div>
