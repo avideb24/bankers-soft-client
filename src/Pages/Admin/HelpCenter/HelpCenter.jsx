@@ -18,7 +18,7 @@ const HelpCenter = () => {
             <div className="bg-white m-4 p-5 shadow-sm">
 
                 <div className="text-center space-y-3">
-                    <h1 className="text-lg md:text-3xl font-bold text-blue-600">{lang.title}</h1>
+                    <h1 className="text-lg md:text-3xl font-bold text-blue-700">{lang.title}</h1>
                     <p className="text-sm md:text-base font-bold">{lang.slogan}</p>
                 </div>
 
