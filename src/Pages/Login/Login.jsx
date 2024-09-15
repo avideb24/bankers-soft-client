@@ -1,4 +1,4 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import Swal from "sweetalert2";
 import { useTranslation } from "react-i18next";
@@ -69,7 +69,7 @@ const Login = () => {
 
 
     return (
-        <div className="w-full h-screen flex flex-col justify-center items-center">
+        <div style={{ height: 'calc(100vh - 24px)' }} className="w-full flex flex-col justify-center items-center">
 
             <div className="min-w-80 md:min-w-96 shadow-lg p-4">
                 <h2 className="text-lg md:text-2xl font-bold pb-3 border-b border-b-slate-300 mb-4">{lang.loginPlease}</h2>
@@ -78,10 +78,10 @@ const Login = () => {
                 <form onSubmit={handleLogin} className="w-full flex flex-col gap-2">
                     {/* mobile */}
                     <label htmlFor="number" className="font-bold">{lang.mobile}</label>
-                    <input type="number" name="mobile" className="bg-white w-full px-3 py-1 rounded-sm mb-2 border border-slate-300 outline-none" placeholder="Type here" required />
+                    <input type="number" name="mobile" className="bg-white w-full px-3 py-1 rounded-sm mb-2 border border-slate-300 outline-none" defaultValue={+8801752145687} placeholder="Type here" required />
                     {/* password */}
                     <label htmlFor="password" className="font-bold">{lang.password}</label>
-                    <input type="password" name="password" className="bg-white w-full px-3 py-1 rounded-sm mb-2 border border-slate-300 outline-none" placeholder="Type here" required />
+                    <input type="password" name="password" className="bg-white w-full px-3 py-1 rounded-sm mb-2 border border-slate-300 outline-none" defaultValue={'12345'} placeholder="Type here" required />
                     {/* checkbox */}
                     <div className="flex justify-end gap-2 font-semibold">
                         <span>{lang.admin}</span>
@@ -90,6 +90,10 @@ const Login = () => {
                     </div>
                     <input type="submit" value={lang.login} className="w-full bg-blue-600 font-bold text-white py-[6px] rounded-sm mt-2 cursor-pointer" />
                 </form>
+
+
+                {/* home btn */}
+                <Link to={'/'} className="text-blue-800 mt-4 underline flex justify-center">Go Home</Link>
 
             </div>
         </div>

@@ -152,7 +152,7 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
                 <div className="w-full h-[1px] bg-slate-200"></div>
 
                 {/* settings */}
-                <button className="w-full flex justify-between items-center gap-5" onClick={() => toggleMenu('settings')}>
+                <button className="w-full flex justify-between items-center gap-5 pl-1" onClick={() => toggleMenu('settings')}>
                     <span className="flex items-center gap-5 font-semibold"><FaGear />{lang?.settings}</span>
                     <IoIosArrowDown className={expandMenus.settings ? 'rotate-180 duration-200' : 'duration-200'} />
                 </button>
@@ -164,7 +164,7 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
                 </div>
 
                 {/* users */}
-                <button className="w-full flex justify-between items-center gap-5" onClick={() => toggleMenu('users')}>
+                <button className="w-full flex justify-between items-center gap-5 pl-1" onClick={() => toggleMenu('users')}>
                     <span className="flex items-center gap-5 font-semibold"><FaUserTie />{lang?.users}</span>
                     <IoIosArrowDown className={expandMenus.users ? 'rotate-180 duration-200' : 'duration-200'} />
                 </button>
