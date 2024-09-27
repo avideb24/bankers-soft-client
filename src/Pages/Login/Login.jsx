@@ -91,6 +91,9 @@ const Login = () => {
                     <input type="submit" value={lang.login} className="w-full bg-blue-600 font-bold text-white py-[6px] rounded-sm mt-2 cursor-pointer" />
                 </form>
 
+                {/* dummy text for login */}
+                <p className="text-center pt-3 text-[10px] md:text-xs text-pink-700">(use any number & password for login)</p>
+
 
                 {/* home btn */}
                 <Link to={'/'} className="text-blue-800 mt-4 underline flex justify-center">Go Home</Link>
